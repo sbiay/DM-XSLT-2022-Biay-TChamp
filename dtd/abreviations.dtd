@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Entités ÉD. INTERPRETATIVE et  TR. GRAPHEMATIQUE -->
+
+<!--Régularisation des allographes i / j et  u /v-->
+<!ENTITY i "<choice><reg>i</reg><orig>ı</orig></choice>">
+<!ENTITY i-pour-j "<choice><reg>j</reg><orig>ı</orig></choice>">
+<!ENTITY i-plongeant-pour-j "<choice><reg>j</reg><orig>ȷ</orig></choice>">
+<!ENTITY i-plongeant-pour-i "<choice><reg>i</reg><orig>ȷ</orig></choice>">
+<!ENTITY i-long-pour-j "<choice><reg>j</reg><orig>J</orig></choice>">
+<!ENTITY i-long-pour-i "<choice><reg>i</reg><orig>J</orig></choice>">
+<!ENTITY u-pour-v "<choice><reg>v</reg><orig>u</orig></choice>">
+<!ENTITY v-pour-u "<choice><reg>u</reg><orig>v</orig></choice>">
+<!ENTITY V-pour-u "<choice><reg>u</reg><orig>V</orig></choice>">
+
+<!--Accents modernes, cédille et tréma -->
+<!ENTITY e-pour-é "<choice><reg>é</reg><orig>e</orig></choice>">
+<!ENTITY c-pour-ç "<choice><reg>é</reg><orig>e</orig></choice>">
+<!ENTITY i-pour-ï "<choice><reg>ï</reg><orig>i</orig></choice>">
+<!ENTITY u-pour-ü "<choice><reg>ü</reg><orig>u</orig></choice>">
+<!ENTITY e-pour-ë "<choice><reg>ë</reg><orig>e</orig></choice>">
+
+<!-- Tildes et abréviations tironiennes -->
+<!ENTITY tilde1-nasale-m "<choice><expan><ex>m</ex></expan><abbr>&#x0303;</abbr></choice>">
+<!ENTITY tilde1-nasale-n "<choice><expan><ex>n</ex></expan><abbr>&#x0303;</abbr></choice>">
+<!ENTITY tilde1-nasale-en "<choice><expan><ex>en</ex></expan><abbr>&#x0303;</abbr></choice>">
+<!ENTITY tilde1-nasale-men "<choice><expan><ex>men</ex></expan><abbr>&#x0303;</abbr></choice>">
+<!ENTITY tilde1-nasale-an "<choice><expan><ex>an</ex><abbr>&#x303;</abbr></choice>">
+<!ENTITY tilde4-us "<choice><expan><ex>us</ex></expan><abbr>⁹</abbr></choice>">
+<!ENTITY et-tironien-non-barré "<choice><expan>et</expan><abbr><am>&#x204A;</am></abbr></choice>">
+<!ENTITY p-barré-per "<choice><expan>p<ex>er</ex></expan><abbr>&#xA751;</abbr></choice>">
+
+<!--Lettres suscrites -->
+<!ENTITY u-suscrit-ur "<choice><expan>u<ex>r</ex></expan><abbr>&#x0367;</abbr></choice>">
+
+<!-- Mots usuels-->
+<!ENTITY vostre "<choice><expan>v<ex>ost</ex>re</expan><abbr>vre&#x0303;</abbr></choice>">
+<!ENTITY uostre "<choice><expan>v<ex>ost</ex>re</expan><abbr>ure&#x0303;</abbr></choice>">
+<!ENTITY nostre "<choice><expan>n<ex>ost</ex>re</expan><abbr>nre&#x0303;</abbr></choice>">
+<!ENTITY mlt-tilde-mout "<choice><expan>m<ex>out</ex></expan><abbr>mlt&#x0303;</abbr></choice>">
+<!ENTITY bn-tilde-bien "<choice><expan>b<ex>ie</ex>n</expan><abbr>bn&#x0303;</abbr></choice>">
+<!ENTITY gnt-tilde-grant "<choice><expan>gr<ex>an</ex>t</expan><abbr>gnt&#x0303;</abbr></choice>">
+<!ENTITY uers "<choice><expan>u<ex>er</ex>s</expan><abbr>us&#x0303;</abbr></choice>">
+<!ENTITY est "<choice><expan>e<ex>st</ex></expan><abbr>e&#x0303;</abbr></choice>">
+<!ENTITY ihu-jesus "<choice><expan>jh<ex>es</ex>u</expan><abbr>ıh<c rend='apos'>&#x0303;</c>u</abbr></choice>" >
+<!ENTITY Ihu-jesus "<choice><expan>jh<ex>es</ex>u</expan><abbr>Jh<c rend='apos'>&#x0303;</c>u</abbr></choice>" >
+
+<!--Présentes pour les trois-->
+<!ENTITY i-suscrit-ui "<choice><expan><ex>u</ex>i</expan><abbr>&#x0365;</abbr></choice>">
+
+<!-- Bodmer + Mende -->
+<!ENTITY st-tilde-sunt "<choice><expan>s<ex>un</ex>t</expan><abbr>ſ&#x0303;t</abbr></choice>">
+
+<!-- Communes à Bodmer et Vatican -->
+<!ENTITY a-suscrit-ua "<choice><expan><ex>u</ex>a</expan><abbr>&#x0363;</abbr></choice>">
+<!ENTITY o-suscrit-uo "<choice><expan><ex>u</ex>o</expan><abbr>&#870;</abbr></choice>">
+<!ENTITY o-suscrit-ostre "<choice><expan>o<ex>stre</ex></expan><abbr>&#870;</abbr></choice>"> 
+<!ENTITY tilde2-er-pour-ier "<choice><expan><ex>ier</ex></expan><abbr>&#x035B;</abbr></choice>">
+<!ENTITY e-suscrit-ue "<choice><expan><ex>u</ex>e</expan><abbr>&#868;</abbr></choice>">
+<!ENTITY i-suscrit-ui "<choice><expan><ex>u</ex>e</expan><abbr>&#869;</abbr></choice>">
+<!ENTITY oi-tilde-omni "<choice><expan>o<ex>mn</ex>i</expan><abbr>o&#x0303;ı</abbr></choice>">
+
+<!-- Récupérés d'abbreviations_modifs.dtd pour Mende-->
+<!ENTITY pre "<choice><expan>p<ex>re</ex></expan><abbr>p&#x0303;</abbr></choice>"> 
+<!ENTITY que-q-point-virgule "<choice><expan>q<ex>ue</ex></expan><abbr>&#xE8BF;</abbr></choice>">
+<!ENTITY et-tironien "<choice><expan><ex>et</ex></expan><abbr>&#x204A;</abbr></choice>">
+<!ENTITY et-tironien-e "<choice><expan><ex>et</ex></expan><abbr>&#x204A;</abbr></choice>">
+
+<!-- Fragment Garin Vatican -->
+<!ENTITY chevalier-r-droit "<choice><expan>ch<ex>eva</ex>l<ex>ie</ex>r</expan><abbr>ch<c rend='apos'>&#x0303;</c>r</abbr></choice>">
+<!ENTITY tilde2-er-pour-uer "<choice><expan><ex>uer</ex></expan><abbr>&#x035B;</abbr></choice>">
+
+<!--Récupérés du fichier abbrevations_modifs.dtd, pour les besoins du ms. Vatican-->
+<!ENTITY et-tironien-barre "<choice><expan><ex>et</ex></expan><abbr>&#xF1A7;</abbr></choice>">
+<!ENTITY et-perluette "<choice><expan><ex>et</ex></expan><abbr>&amp;</abbr></choice>">
+<!ENTITY et-perluette-e "<choice><expan><ex>et</ex></expan><abbr>&amp;</abbr></choice>">
+<!ENTITY est-e-tilde "<choice><expan>e<ex>st</ex></expan><abbr>e&#x0303;</abbr></choice>">
+<!ENTITY est-point-trait-point "<choice><expan><ex>est</ex></expan><abbr>÷</abbr></choice>">
+<!ENTITY p-barré-par "<choice><expan>p<ex>ar</ex></expan><abbr>&#xA751;</abbr></choice>">
+<!ENTITY p-barré-por "<choice><expan>p<ex>or</ex></expan><abbr>&#xA751;</abbr></choice>">
+<!ENTITY con-9-tironien "<choice><expan><ex>con</ex></expan><abbr>&#xA76F;</abbr></choice>">
+<!ENTITY com-9-tironien "<choice><expan><ex>com</ex></expan><abbr>&#xA76F;</abbr></choice>">
+<!ENTITY a-suscrit-ra "<choice><expan><ex>r</ex>a</expan><abbr>&#x0363;</abbr></choice>">
+<!ENTITY e-suscrit-re "<choice><expan><ex>r</ex>e</expan><abbr>&#x0364;</abbr></choice>">
+<!ENTITY i-suscrit-ri "<choice><expan><ex>r</ex>i</expan><abbr>&#x0365;</abbr></choice>">
+
+<!ENTITY tilde1-nasale-m "<choice><expan><ex>m</ex></expan><abbr>&#x0303;</abbr></choice>">
+<!ENTITY tilde1-nasale-n "<choice><expan><ex>n</ex></expan><abbr>&#x0303;</abbr></choice>">
+<!ENTITY tilde2-er "<choice><expan><ex>er</ex></expan><abbr>&#x035B;</abbr></choice>">
+<!ENTITY tilde2-er-pour-re "<choice><expan><ex>re</ex></expan><abbr>&#x035B;</abbr></choice>">
+<!ENTITY tilde3-ur "<choice><expan><ex>ur</ex></expan><abbr>&#x1DD1;</abbr></choice>">
+<!ENTITY tilde4-us "<choice><expan><ex>us</ex></expan><abbr>⁹</abbr></choice>">
+<!ENTITY tilde4-us-pour-os "<choice><expan><ex>os</ex></expan><abbr>⁹</abbr></choice>">
+<!ENTITY que-q-tilde "<choice><expan>q<ex>ue</ex></expan><abbr>q&#x0303;</abbr></choice>">
+<!ENTITY Que-Q-tilde "<choice><expan>q<ex>ue</ex></expan><abbr>Q&#x0303;</abbr></choice>">
+<!ENTITY pro "<choice><expan>p<ex>ro</ex></expan><abbr>&#xA753;</abbr></choice>">
+<!ENTITY o-suscrit-ro "<choice><expan><ex>r</ex>o</expan><abbr>&#x0366;</abbr></choice>">
+
+<!-- PONCTUATION MEDIEVALE -->
+<!ENTITY punctelev "&#61793;">
+<!ENTITY punctinter "&#61792;">
+
+<!-- Entités  TR. ALLOGRAPHÉTIQUE -->
+<!-- Allographes -->
+<!ENTITY A-oncial-sans-barre "<choice><reg>a</reg><orig>Λ</orig></choice>">
+<!ENTITY a-rond "<choice><reg>a</reg><orig>ɑ</orig></choice>">
+<!ENTITY d-oncial "<choice><reg>d</reg><orig>δ</orig></choice>">
+<!ENTITY r-rond  "<choice><reg>r</reg><orig>&#xA75B;</orig></choice>">
+<!ENTITY r-long "<choice><reg>r</reg><orig>&#x027C;</orig></choice>">
+<!ENTITY s-long  "<choice><reg>s</reg><orig>ſ</orig></choice>">
+<!ENTITY s-rond-plongeant "<choice><reg>s</reg><orig>&#xE476;</orig></choice>">
+<!ENTITY s-long-plongeant "<choice><reg>s</reg><orig>&#xF127;</orig></choice>">
+<!ENTITY ff-ligat  "<choice><reg>f</reg><orig>ﬀ</orig></choice>">
+<!ENTITY E-oncial "<choice><reg>e</reg><orig>&#61975;</orig></choice>">
+<!ENTITY E-capital-double "<choice><reg>E</reg><orig>EE</orig></choice>" >
+<!ENTITY F-oncial "<choice><reg>f</reg><orig>F</orig></choice>">
+<!ENTITY M-oncial "<choice><reg>m</reg><orig>M</orig></choice>">
+<!ENTITY z-3 "<choice><reg>z</reg><orig>&#658;</orig></choice>" >
+
+<!-- Notabiliores de la capitale -->
+<!ENTITY A "<choice><reg>a</reg><orig>A</orig></choice>">
+<!ENTITY B "<choice><reg>b</reg><orig>B</orig></choice>">
+<!ENTITY C "<choice><reg>c</reg><orig>C</orig></choice>">
+<!ENTITY D "<choice><reg>d</reg><orig>D</orig></choice>">
+<!ENTITY E "<choice><reg>e</reg><orig>E</orig></choice>">
+<!ENTITY F "<choice><reg>f</reg><orig>F</orig></choice>">
+<!ENTITY G "<choice><reg>g</reg><orig>G</orig></choice>">
+<!ENTITY K "<choice><reg>k</reg><orig>K</orig></choice>">
+<!ENTITY L "<choice><reg>l</reg><orig>L</orig></choice>">
+<!ENTITY N "<choice><reg>n</reg><orig>N</orig></choice>">
+<!ENTITY O "<choice><reg>o</reg><orig>O</orig></choice>">
+<!ENTITY P "<choice><reg>p</reg><orig>P</orig></choice>">
+<!ENTITY Q "<choice><reg>q</reg><orig>Q</orig></choice>">
+<!ENTITY R "<choice><reg>r</reg><orig>R</orig></choice>">
+<!ENTITY S "<choice><reg>s</reg><orig>S</orig></choice>">
+<!ENTITY T "<choice><reg>t</reg><orig>T</orig></choice>"><!-- T oncial -->
+<!ENTITY V "<choice><reg>v</reg><orig>V</orig></choice>">
