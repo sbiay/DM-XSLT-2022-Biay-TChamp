@@ -223,8 +223,8 @@ Aux mains textuelles et musicales médiévales s'ajoute la main moderne de <ref 
                         <item n="3" corresp="#RS_1440">Je me cuidoie partir</item>
                         <item n="4" corresp="RS_407">De bone amor vient science et biauté</item>
                         <item n="5" corresp="#RS_1908">Tres haute Amors qui tant s'est abessie (attribuée par <bibl default="false" status="draft">G. Steffens</bibl> à Perrin d'Angicourt).</item>
-                     </list>.
-</witness>
+                     </list>
+                  </witness>
                   <witness xml:id="Mt">Le chansonnier Mt (connu aussi sous les noms de <foreign xml:lang="deu">Liederbuch</foreign> ou <foreign xml:lang="lat">Libellus</foreign>de Thibaut de Champagne), Livret thibaudien qui constitue une interpolation du chansonnier M. <bibl default="false" status="draft">J. Haines</bibl> a emis l'hypothèse selon laquelle le mécène qui aurait commandé le chansonnier <ref target="#M">M</ref> aurait estimé que le nombre de chansons thibaudiennes était insuffisant. Datable d'après <bibl default="false" status="draft">S. Asperti</bibl>après 1282, <ref target="#Mt">Mt</ref> est sans doute d'origine  italienne.  Il  aurait été placé par le scribe ou par le compilateur à la fin de la section de Thibaut du chansonnier <ref target="#M">M</ref> (à partir du f.13rb) et poursuivi sur d'autres cahiers insérés. Aujourd'hui ce cahiers ne se trouvent plus après le deuxième cahier qui leur avait été destiné mais ils ont été cousus quelques cahiers plus loins (cahier X, ff. 59r-77r). <ref target="#M">M</ref> comporte 57 pièces de Thibaut (le plus souvent avec les mélodies pour les premières strophes), mais la dernière pièce n'est plus attribuée à Thibaut dès nos jours. Les pièces contenues par Mt sont les suivantes :
 <list>
                         <item><!--Générer en XSL la liste de pièces de Mt --></item>
@@ -238,8 +238,8 @@ Aux mains textuelles et musicales médiévales s'ajoute la main moderne de <ref 
                         <item n="4" corresp="RS_407">De bone amor vient science et biauté</item>
                         <item n="5">Puis qu'il m'estuet (aujourd'hui attribuée à Richart de Fournival <!--vérifier + ajouter n° RS -->).</item>
                         <item n="6" corresp="#RS_1908">Tres haute Amors qui tant s'est abessie (attribuée par <bibl default="false" status="draft">G. Steffens</bibl> à Perrin d'Angicourt).</item>
-                     </list>.
-</witness>
+                     </list>
+                  </witness>
                </listWit>
                <listWit n="2">
                   <head>Autres témoins manuscrits conservant des pièces thibaudiennes</head>
@@ -294,8 +294,8 @@ Afin de décrire de manière exhaustive l'attribution de chaque pièce thibaudie
                   <item n="1">un niveau d'édition normalisée, réalisée pour la totalité des pièces lyriques conservées dans le codex ;</item>
                   <item n="2">un niveau de transcription graphématique, réalisée également pour toutes les pièces avec le logiciel Transkribus (une partie des transcription a été exécutée manuellement ; une autre par post-correction de l'algorithme d'HTR kraken) ;</item>
                   <item n="3">un niveau de transcription allographétique, réalisée manuellement avec Transkribus, à partir d'un échantillon de 24 feuillets du Manuscrit du Roi, à savoir un feuillet par main textuelle.</item>
-               </list>.
-</p>
+               </list>
+            </p>
             <p part="N">Ce choix éditorial conservateur s’est aligné sur les critères proposés par <bibl default="false" status="draft">Robinson et Solopova (1993)</bibl>, <bibl default="false" status="draft">Stutzmann (2011)</bibl>  et la <bibl default="false" status="draft">Base de Français Médiéval</bibl> de l’ENS de Lyon.</p>
          </div>
          <div part="N" org="uniform" sample="complete">
