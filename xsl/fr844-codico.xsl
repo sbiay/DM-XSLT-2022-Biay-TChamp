@@ -10,7 +10,7 @@
     <xsl:strip-space elements="*"/>
     
     <xsl:template match="TEI">
-        <xsl:result-document href="../html/fr844-princip-edition.html" method="html" indent="yes">
+        <xsl:result-document href="../html/fr844-codico.html" method="html" indent="yes">
             <html>
                 <head>
                     <xsl:element name="title">
@@ -20,6 +20,7 @@
                     <xsl:call-template name="stylePageContenu"/>
                 </head>
                 <body>
+                    <xsl:call-template name="navbar"/>
                     <xsl:apply-templates select="descendant::front"/>
                 </body>
             </html>
@@ -29,9 +30,9 @@
     <xsl:template match="front">
         <div class="container">
             <h1 class="display-4 fst-italic">
-            <xsl:value-of select="./child::head"/>
-        </h1>
-        <xsl:apply-templates select="div"/>
+                <xsl:value-of select="./child::head"/>
+            </h1>
+            <xsl:apply-templates select="div"/>
         </div>
     </xsl:template>
     
@@ -100,10 +101,10 @@
                                 <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
                             </li>
                             <!-- Ajouter des liens
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                         -->
+                                <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                                </li>
+                            -->
                         </ul>
                     </div>
                 </div>

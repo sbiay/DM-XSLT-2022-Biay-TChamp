@@ -21,12 +21,7 @@
                         <xsl:attribute name="rel">canonical</xsl:attribute>
                         <xsl:attribute name="href">https://getbootstrap.com/docs/5.1/examples/carousel/</xsl:attribute>
                     </xsl:element>
-                    
-                    <!-- Bootstrap core CSS -->
-                    <xsl:element name="link">
-                        <xsl:attribute name="rel">stylesheet</xsl:attribute>
-                        <xsl:attribute name="href">../static/bootstrap-5.1.3-dist/css/bootstrap.min.css</xsl:attribute>
-                    </xsl:element>
+                    <xsl:call-template name="bootstrapCore"/>
                     <style>
                         img {
                         min-height: 1000px;
@@ -41,30 +36,7 @@
                     </xsl:element>
                 </head>
                 <body>
-                    
-                    <header>
-                        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                            <div class="container-fluid">
-                                <span class="navbar-brand">Corpus lyrique de Thibaut de Champagne</span>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarCollapse">
-                                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
-                                        </li>
-                                        <!-- Ajouter des liens
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                         -->
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
-                    </header>
-                    
+                    <xsl:call-template name="navbar"/>
                     <main>
                         <!-- Carrousel -->
                         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -183,8 +155,60 @@
                 </div>
             </xsl:otherwise>
         </xsl:choose>        
-        
-        
+    </xsl:template>
+
+    <!-- Style -->
+    <xsl:template name="bootstrapCore">
+        <xsl:element name="link">
+            <xsl:attribute name="rel">stylesheet</xsl:attribute>
+            <xsl:attribute name="href">../static/bootstrap-5.1.3-dist/css/bootstrap.min.css</xsl:attribute>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template name="navbar">
+        <header>
+            <!-- Barre de navigation -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Corpus lyrique de Thibaut de Champagne</span>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
+                            </li>
+                            <!-- Ajouter des liens
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link</a>
+                                        </li>
+                                         -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </xsl:template>
+    
+    <xsl:template name="stylePageContenu">
+        <style>
+            body {
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 150px;
+            }
+            ul {
+            margin: 0px;
+            }
+            .container {
+            padding: 80px;
+            background-color:  rgb(253, 245, 245);
+            }
+            h1 {
+            margin-bottom: 80px;
+            }                        
+        </style>
     </xsl:template>
     
 </xsl:stylesheet>
