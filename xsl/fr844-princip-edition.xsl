@@ -10,7 +10,7 @@
     <xsl:strip-space elements="*"/>
     
     <xsl:template match="TEI">
-        <xsl:result-document href="../html/fr884-princip-edition.html" method="html" indent="yes">
+        <xsl:result-document href="../html/fr844-princip-edition.html" method="html" indent="yes">
             <html>
                 <head>
                     <xsl:element name="title">
@@ -40,6 +40,30 @@ margin-bottom: 80px;
                     </style>
                 </head>
                 <body>
+                    <!-- Barre de navigation -->
+                    <header>
+                        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#">Corpus lyrique de Thibaut de Champagne</a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarCollapse">
+                                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
+                                        </li>
+                                        <!-- Ajouter des liens
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link</a>
+                                        </li>
+                                         -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+                    
                     <xsl:apply-templates select="descendant::front"/>
                 </body>
             </html>
@@ -90,7 +114,7 @@ margin-bottom: 80px;
     <xsl:template match="ref">
         <xsl:element name="a">
             <xsl:attribute name="href">
-                <xsl:text>./fr884-codico.html</xsl:text>
+                <xsl:text>./fr844-codico.html</xsl:text>
                 <xsl:value-of select="./@target"/>
             </xsl:attribute>
             <xsl:value-of select="."/>

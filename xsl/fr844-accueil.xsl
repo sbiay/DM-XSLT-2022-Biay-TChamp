@@ -11,7 +11,7 @@
     
     <xsl:template match="TEI">
         <!-- Page d'accueil -->
-        <xsl:result-document href="../html/fr884-accueil.html" method="html" indent="yes">
+        <xsl:result-document href="../html/fr844-accueil.html" method="html" indent="yes">
             <html>
                 <head>
                     <xsl:element name="title">
@@ -52,7 +52,7 @@
                                 <div class="collapse navbar-collapse" id="navbarCollapse">
                                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Accueil</a><!-- MAJ lien vers page d'accueil -->
+                                            <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
                                         </li>
                                         <!-- Ajouter des liens
                                         <li class="nav-item">
@@ -60,7 +60,6 @@
                                         </li>
                                          -->
                                     </ul>
-                                    
                                 </div>
                             </div>
                         </nav>
@@ -99,7 +98,7 @@
                                     </svg>
                                     <h2>Le manuscrit</h2>
                                     <p>Description codicologique <br/> et paléographique du Manuscrit du Roi.</p>
-                                    <p><a class="btn btn-secondary" href="../html/fr884-codico.html">Voir</a></p>
+                                    <p><a class="btn btn-secondary" href="./fr844-codico.html">Voir</a></p>
                                 </div><!-- /.col-lg-4 -->
                                 <div class="col-lg-4">
                                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img"  preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -108,7 +107,7 @@
                                     
                                     <h2>Les principes d'édition</h2>
                                     <p>Explication des objectifs éditoriaux du projet<br/>et description corpus du thibaudien.</p>
-                                    <p><a class="btn btn-secondary" href="./html/fr884-princip-edition.html">Voir</a></p>
+                                    <p><a class="btn btn-secondary" href="./fr844-princip-edition.html">Voir</a></p>
                                 </div><!-- /.col-lg-4 -->
                                 <div class="col-lg-4">
                                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img"  preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -116,7 +115,7 @@
                                     </svg>
                                     <h2>Index</h2>
                                     <p>Un index des noms de personnes<br/>cités dans les chansons.</p>
-                                    <p><a class="btn btn-secondary" href="../html/fr884-index.html">Voir</a></p>
+                                    <p><a class="btn btn-secondary" href="./fr844-index.html">Voir</a></p>
                                 </div><!-- /.col-lg-4 -->
                             </div><!-- /.row -->
                             <!-- START THE FEATURETTES
