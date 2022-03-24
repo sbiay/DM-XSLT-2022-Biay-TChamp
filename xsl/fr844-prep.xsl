@@ -13,12 +13,14 @@
     <xsl:strip-space elements="*"/>
     
     <xsl:template match="TEI">
+        <TEI>
         <xsl:copy-of select="./teiHeader"/>
         <!-- On ignore l'élément facsimile -->
         <text>
             <xsl:copy-of select="descendant::front"/>
             <xsl:apply-templates select="descendant::body"/>
         </text>
+        </TEI>
     </xsl:template>
     
     <xsl:template match="body">
