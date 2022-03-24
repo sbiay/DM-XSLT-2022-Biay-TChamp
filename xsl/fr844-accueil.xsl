@@ -10,7 +10,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:template match="TEI">
         <!-- Page d'accueil -->
-        <xsl:result-document href="../html/fr88-accueil.html" method="html" indent="yes">
+        <xsl:result-document href="../html/fr884-accueil.html" method="html" indent="yes">
             <html>
                 <head>
                     <xsl:element name="title">
