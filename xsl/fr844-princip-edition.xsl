@@ -20,6 +20,7 @@
                     <xsl:call-template name="stylePageContenu"/>
                 </head>
                 <body>
+                    <xsl:call-template name="navbar"/>
                     <xsl:apply-templates select="descendant::front"/>
                 </body>
             </html>
