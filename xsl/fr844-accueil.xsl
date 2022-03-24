@@ -85,7 +85,7 @@
                             </div>
                             <div class="carousel-inner">
                                 <!-- Contenu du carrousel -->
-                                <xsl:apply-templates select="descendant::body"/>
+                                <xsl:apply-templates select="descendant::body/div"/>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -124,12 +124,7 @@
                                     <p><a class="btn btn-secondary" href="#">View details </a></p>
                                 </div><!-- /.col-lg-4 -->
                             </div><!-- /.row -->
-                            
-                            
                             <!-- START THE FEATURETTES
-                            
-                            
-                                
                                 <div class="row featurette">
                                     <div class="col-md-7">
                                         <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
@@ -140,10 +135,8 @@
                                         
                                     </div>
                                 </div>
-                                
                                  -->
-                                            
-                        </div><!-- /.container -->
+                        </div><!-- fin du container -->
                         <!-- FOOTER 
                         <footer class="container">
                             <p class="float-end"><a href="#">Back to top</a></p>
@@ -154,33 +147,44 @@
                     <script src="../static/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"/>
                 </body>
             </html>
-            
         </xsl:result-document>
     </xsl:template>
     
-    <xsl:template match="body">
-        <div class="carousel-item active">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-            
-            <div class="container">
-                <div class="carousel-caption text-start">
-                    <h1>Example headline.</h1>
-                    <p>Some representative placeholder content for the first slide of the carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+    <xsl:template match="body/div">
+        <xsl:choose>
+            <!-- Pour le premier chansonnier, la classe du carrousel est active -->
+            <xsl:when test=".[@n='1']">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>
+                                <xsl:value-of select="./head"/>
+                            </h1>
+                            <p>Du texte pour présenter le chansonnier</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Voir</a></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-            
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>Some representative placeholder content for the second slide of the carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            </xsl:when>
+            <!-- Pour les autres chansonniers, il n'y a pas la classe active -->
+            <xsl:otherwise>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>
+                                <xsl:value-of select="./head"/>
+                            </h1>
+                            <p>Du texte pour présenter le chansonnier</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Voir</a></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </xsl:otherwise>
+        </xsl:choose>        
+        
+        
     </xsl:template>
     
 </xsl:stylesheet>
