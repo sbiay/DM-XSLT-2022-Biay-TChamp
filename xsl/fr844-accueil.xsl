@@ -161,7 +161,12 @@
             <!-- Pour les autres chansonniers, il n'y a pas la classe active -->
             <xsl:otherwise>
                 <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                    <xsl:choose>
+                        <!-- L'image est adaptée au chansonnier qu'elle illustre -->
+                        <xsl:when test=".[@n='2']">
+                            <img class="bd-placeholder-img" src="https://gallica.bnf.fr/iiif/ark:/12148/btv1b84192440/f135/11,2160,3394,1619/1800/0/default.jpg" alt="Paris, BNF, fr. 844, f. 59r"/>
+                        </xsl:when>
+                    </xsl:choose>
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>
