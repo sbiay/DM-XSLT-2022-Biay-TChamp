@@ -44,7 +44,12 @@
                             </xsl:choose>
                         </h1>
                         <div class="corpsChanson">
-                            <!-- TODO ajouter image <div class="img">mon image</div>  -->
+                            <div class="img">
+                                <!-- On récupère dans le premier lb de la chanson le numéro correspondant à la page sur Gallica -->
+                                <xsl:variable name="page" select="replace(substring(./descendant::lb[1]/@facs, 7), '_line.*', '')"/>
+                                <img src="https://gallica.bnf.fr/iiif/ark:/12148/btv1b84192440/f{$page}/full/500/0/default.jpg" alt="Gallica, Paris, BNF, fr. 844, f{$page}">
+                                </img>
+                            </div>
                             <div class="txt">
                                 <xsl:apply-templates select="descendant::lg[@type='stanza']" mode="graphem"/>
                             </div>
@@ -243,7 +248,6 @@
             }
             .corpsChanson {
             display: flex;
-            justify-content: space-between;
             justify-content: space-around;
             }
             .img {
@@ -251,6 +255,7 @@
             .txt {
             font-size: 16pt;
             font-family: "Junicode";
+            max-width: 700px; 
             }
             .stanza {
             margin-bottom: 20px;
@@ -261,6 +266,7 @@
         </style>
     </xsl:template>
     
+    <!-- Javascript : Ce script permet d'afficher ou de cacher l'apparat en fonction de l'action de l'utilisateur sur les boutons de la barre de navigation -->
     <xsl:template name="scriptApparat">
         <script type="text/javascript">
             function auDemarrage() {
