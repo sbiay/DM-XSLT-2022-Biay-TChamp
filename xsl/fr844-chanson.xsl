@@ -94,10 +94,16 @@
                 <xsl:text>'</xsl:text>
             </xsl:when>    
             <xsl:otherwise>
-                <xsl:choose>    
-                    <xsl:when test="./following-sibling::pc[descendant::reg/text()]">
+                <xsl:choose>
+                    <!-- Si le mot est suivi d'un élément pc, il n'est pas suivi d'une espace -->
+                    <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()]">
                         <xsl:apply-templates mode="interp"/>
                     </xsl:when>    
+                    <!-- mais si le signe de ponctuation est un point-virgule, oui -->
+                    <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()=';|?|!']">
+                        <xsl:apply-templates mode="interp"/>
+                        <xsl:text> </xsl:text>
+                    </xsl:when>
                     <xsl:otherwise>    
                         <xsl:apply-templates mode="interp"/>
                         <xsl:text> </xsl:text>
@@ -114,21 +120,31 @@
     <xsl:template match="app" mode="interp">
         <xsl:apply-templates select="lem" mode="interp"/>
         <!-- Les leçons rejetées en apparat -->
-        <xsl:if test="./rdg[@resp='#Wallenskold']">
-            <span style="color : rgb(015, 005, 230, 0.8)">
-                <xsl:text> </xsl:text>
-                <xsl:value-of select="./rdg[@resp='#Wallenskold']"/>
-            </span>
-        </xsl:if>
         <xsl:if test="./rdg[@wit='#Mt']">
             <span style="color : rgb(000, 200, 100, 0.7)">
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="./rdg[@wit='#Mt']"/>
-                <xsl:if test="./following-sibling::w">
-                    <xsl:text> </xsl:text>
-                </xsl:if>
+                    <!-- Si la leçon est suivie d'un élément "w", on ajoute une espace -->
+                    <xsl:if test="./following-sibling::w">
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
             </span>
         </xsl:if>
+        <xsl:if test="./rdg[@resp='#Wallenskold']">
+            <span style="color : rgb(015, 005, 230, 0.8)">
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="./rdg[@resp='#Wallenskold']"/>
+            <xsl:choose>    
+                <xsl:when test="./following-sibling::w">
+                    <xsl:text> </xsl:text>
+                </xsl:when>
+                <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()=';|?|!']">
+                    <xsl:text> </xsl:text>
+                </xsl:when>
+            </xsl:choose>
+            </span>
+        </xsl:if>
+        
     </xsl:template>
     
     <xsl:template match="lem" mode="#all">
