@@ -149,6 +149,11 @@
         <xsl:value-of select="expan"/>
     </xsl:template>
     
+    <xsl:template match="pc" mode="#all">
+        <xsl:apply-templates mode="#current"/>
+        <xsl:text> </xsl:text>
+    </xsl:template>
+    
     <!-- Style -->
     <xsl:template name="bootstrapCore">
         <xsl:element name="link">
