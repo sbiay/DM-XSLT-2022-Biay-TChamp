@@ -78,29 +78,29 @@
     
     <!-- TODO mieux gérer les espaces -->
     <xsl:template match="w" mode="#all">
-        <xsl:value-of select="w"/>
-        <xsl:text> </xsl:text>
-        <xsl:apply-templates mode="#current"/>
+        <xsl:choose>
+            <xsl:when test="position() != last()">    
+                <xsl:apply-templates mode="#current"/>
+                <xsl:text> </xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates mode="#current"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="app" mode="graphem">
-        <xsl:for-each select="./lem/w">        
-            <xsl:choose>
-                <xsl:when test="position() != last()">    
-                    <xsl:apply-templates mode="graphem"/>
-                <xsl:text> </xsl:text>
-            </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates mode="graphem"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:for-each>        
+        <xsl:apply-templates select="lem"/>
     </xsl:template>
     
     <xsl:template match="app" mode="interp">
         <xsl:value-of select="rdg[@resp='#Wallenskold']"/>
     </xsl:template>
     
+    <xsl:template match="lem">
+        <xsl:apply-templates mode="graphem"/>
+    </xsl:template>
+       
     <xsl:template match="choice" mode="graphem">
         <xsl:value-of select="sic"/>
         <xsl:if test="sic[not(text())]">
