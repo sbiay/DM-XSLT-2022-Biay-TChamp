@@ -7,15 +7,22 @@
             input {
             margin-left: 10px;
             }
-            
             body {
             margin-top: 150px;
+            }
+            .intro {
+            margin-left: 5%;
+            margin-left: 5%;
+            margin-bottom: 3%;
+            }
+            .intro > header {
+            margin-bottom: 30px;
+            font-size: 32pt;
             }
             .containerChanson {
             background-color:  rgb(253, 245, 245);
             margin-left: 3%;
             margin-right: 3%;
-            font
             }
             h1 {
             margin-bottom: 80px;
@@ -47,17 +54,17 @@
             let Mt = document.querySelectorAll(".Mt");
             // On écrit les fonctions pour les cacher 
             function cacherWall() {
-                Wall.forEach (span => span.style.display = "none");
+            Wall.forEach (span => span.style.display = "none");
             }; 
             function cacherMt() {
             Mt.forEach (span => span.style.display = "none");
             }; 
             // On écrit les fonctions pour les montrer
             function montrerWall() {
-                Wall.forEach (span => span.style.display = "initial");
+            Wall.forEach (span => span.style.display = "initial");
             }; 
             function montrerMt() {
-                Mt.forEach (span => span.style.display = "initial");
+            Mt.forEach (span => span.style.display = "initial");
             }; 
             
             // Au démarrage on cache tout
@@ -70,40 +77,40 @@
             
             // Si l'un des apparats est sélectionné, les span de la classe lem sont mis en gras
             function animLem() {
-                if (statutMt == true || statutWall == true ) {
-                    let lem = document.querySelectorAll(".lem");
-                    lem.forEach (span => 
-                    span.setAttribute("style", "font-weight:bold;")
-                    );
-                    } else {
-                    let lem = document.querySelectorAll(".lem");
-                    lem.forEach (span => 
-                    span.setAttribute("style", "font-weight:initial;")
-                    );
-                };
+            if (statutMt == true || statutWall == true ) {
+            let lem = document.querySelectorAll(".lem");
+            lem.forEach (span => 
+            span.setAttribute("style", "font-weight:bold;")
+            );
+            } else {
+            let lem = document.querySelectorAll(".lem");
+            lem.forEach (span => 
+            span.setAttribute("style", "font-weight:initial;")
+            );
+            };
             };
             
             function animWall() {
-                if (statutWall == false) {
-                    Wall.forEach (span => span.style.display = "initial");
-                    statutWall = true;
-                    animLem()
-                    } else {
-                    cacherWall()
-                    statutWall = false;
-                    animLem()
-                };
+            if (statutWall == false) {
+            Wall.forEach (span => span.style.display = "initial");
+            statutWall = true;
+            animLem()
+            } else {
+            cacherWall()
+            statutWall = false;
+            animLem()
+            };
             };
             function animMt() {
-                if (statutMt== false) {
-                    Mt.forEach (span => span.style.display = "initial");
-                    statutMt = true;
-                    animLem()
-                    } else {
-                    cacherMt()
-                    statutMt = false;
-                    animLem()
-                };
+            if (statutMt== false) {
+            Mt.forEach (span => span.style.display = "initial");
+            statutMt = true;
+            animLem()
+            } else {
+            cacherMt()
+            statutMt = false;
+            animLem()
+            };
             };
             
             // On définit les évènements liés au clic sur les boutons
@@ -129,6 +136,33 @@
       </header>
       <div class="containerChanson">
          <h1 class="display-4 fst-italic">Tuit mi desir et tuit mi grief tormant</h1>
+         <div class="intro">
+            <header>Thibaut de Champagne</header>
+            <div>
+               <h2>Références</h2>
+               <ul>
+                  <li>RS&nbsp;: 741</li>
+                  <li>Wallenskold&nbsp;: 11</li>
+                  <li>Callahan&nbsp;: 29</li>
+               </ul>
+            </div>
+            <div>
+               <h2>Autorités</h2>
+               <ul>
+                  <li>Li rois de Navare<span> (M TableRoi C K N P T X a)</span></li>
+                  <li>Tiebaut roy de Navarre<span> (R)</span></li>
+                  <li>anonyme<span> (B Mt O S U V zeta e)</span></li>
+               </ul>
+            </div>
+            <div>
+               <h2>Musique</h2>
+               <p>La musique est notée dans B, K, M, Mt, N, O, P, R, T, V, X, Z et a (?).</p>
+            </div>
+            <div>
+               <h2>Note</h2>
+               <p>L'édition Wallensköld donne la graphie de K.</p>
+            </div>
+         </div>
          <div class="corpsChanson">
             <div class="img"><img src="https://gallica.bnf.fr/iiif/ark:/12148/btv1b84192440/f39/full/500/0/default.jpg" alt="Gallica, Paris, BNF, fr. 844, f39"></div>
             <div class="txt">

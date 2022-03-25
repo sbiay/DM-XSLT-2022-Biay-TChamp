@@ -43,6 +43,7 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                         </h1>
+                        <xsl:apply-templates select="child::note"/>
                         <div class="corpsChanson">
                             <div class="img">
                                 <!-- On récupère dans le premier lb de la chanson le numéro correspondant à la page sur Gallica -->
@@ -61,6 +62,57 @@
                 </body>
             </html>
         </xsl:result-document>
+    </xsl:template>
+    
+    <xsl:template match="div[@type='lyrical_text']/note">
+        <!-- Présentation de la chançon -->
+        <div class="intro">
+            <header>
+                <!-- Le nom de l'auteur s'il est certain -->
+                <xsl:value-of select=".//author[@cert='high']"/>
+            </header>
+            <div>
+                <h2>Références</h2>
+                <xsl:variable name="listeCorresp" as="item()" select="./bibl/@corresp"/>
+                <ul>
+                    <xsl:if test=".//idno[@type='RS']">
+                    <li>RS : <xsl:value-of select=".//idno[@type='RS']"/></li>
+                    </xsl:if>
+                    <xsl:for-each select="tokenize($listeCorresp, ' ')">
+                        <li><xsl:value-of select="replace(replace(current(), '#', ''), '_', ' : ')"/></li>
+                    </xsl:for-each>
+                </ul>                
+            </div>
+            <div>
+                <h2>Autorités</h2>
+                <ul>
+                    <xsl:for-each select=".//author[not(@cert='high')]">
+                        <li>
+                            <xsl:value-of select="current()//text()"/>
+                            <span>
+                                <xsl:text> (</xsl:text>
+                                <xsl:value-of select="replace(current()/witDetail/@wit, '#', '')"/>
+                                <xsl:text>)</xsl:text>
+                            </span>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </div>
+            <div>
+                <h2>Musique</h2>
+                <p>
+                    <xsl:apply-templates select=".//notatedMusic/desc"/>
+                </p>
+            </div>
+            <xsl:if test="./bibl/note">
+            <div>
+                <h2>Note</h2>
+                <p>
+                    <xsl:apply-templates select="./bibl/note"/>
+                </p>
+            </div>
+        </xsl:if>
+        </div>
     </xsl:template>
     
     <xsl:template match="lg[@type='stanza']" mode="#all">
@@ -250,11 +302,19 @@
             body {
             margin-top: 150px;
             }
+            .intro {
+            margin-left: 5%;
+            margin-left: 5%;
+            margin-bottom: 3%;
+            }
+            .intro > header {
+            margin-bottom: 30px;
+            font-size: 32pt;
+            }
             .containerChanson {
             background-color:  rgb(253, 245, 245);
             margin-left: 3%;
             margin-right: 3%;
-            font
             }
             h1 {
             margin-bottom: 80px;
@@ -291,17 +351,17 @@
             let Mt = document.querySelectorAll(".Mt");
             // On écrit les fonctions pour les cacher 
             function cacherWall() {
-                Wall.forEach (span => span.style.display = "none");
+            Wall.forEach (span => span.style.display = "none");
             }; 
             function cacherMt() {
             Mt.forEach (span => span.style.display = "none");
             }; 
             // On écrit les fonctions pour les montrer
             function montrerWall() {
-                Wall.forEach (span => span.style.display = "initial");
+            Wall.forEach (span => span.style.display = "initial");
             }; 
             function montrerMt() {
-                Mt.forEach (span => span.style.display = "initial");
+            Mt.forEach (span => span.style.display = "initial");
             }; 
             
             // Au démarrage on cache tout
@@ -314,40 +374,40 @@
             
             // Si l'un des apparats est sélectionné, les span de la classe lem sont mis en gras
             function animLem() {
-                if (statutMt == true || statutWall == true ) {
-                    let lem = document.querySelectorAll(".lem");
-                    lem.forEach (span => 
-                    span.setAttribute("style", "font-weight:bold;")
-                    );
-                    } else {
-                    let lem = document.querySelectorAll(".lem");
-                    lem.forEach (span => 
-                    span.setAttribute("style", "font-weight:initial;")
-                    );
-                };
+            if (statutMt == true || statutWall == true ) {
+            let lem = document.querySelectorAll(".lem");
+            lem.forEach (span => 
+            span.setAttribute("style", "font-weight:bold;")
+            );
+            } else {
+            let lem = document.querySelectorAll(".lem");
+            lem.forEach (span => 
+            span.setAttribute("style", "font-weight:initial;")
+            );
+            };
             };
             
             function animWall() {
-                if (statutWall == false) {
-                    Wall.forEach (span => span.style.display = "initial");
-                    statutWall = true;
-                    animLem()
-                    } else {
-                    cacherWall()
-                    statutWall = false;
-                    animLem()
-                };
+            if (statutWall == false) {
+            Wall.forEach (span => span.style.display = "initial");
+            statutWall = true;
+            animLem()
+            } else {
+            cacherWall()
+            statutWall = false;
+            animLem()
+            };
             };
             function animMt() {
-                if (statutMt== false) {
-                    Mt.forEach (span => span.style.display = "initial");
-                    statutMt = true;
-                    animLem()
-                    } else {
-                    cacherMt()
-                    statutMt = false;
-                    animLem()
-                };
+            if (statutMt== false) {
+            Mt.forEach (span => span.style.display = "initial");
+            statutMt = true;
+            animLem()
+            } else {
+            cacherMt()
+            statutMt = false;
+            animLem()
+            };
             };
             
             // On définit les évènements liés au clic sur les boutons
