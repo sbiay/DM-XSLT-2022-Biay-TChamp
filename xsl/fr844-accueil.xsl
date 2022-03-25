@@ -186,7 +186,7 @@
         
     </xsl:template>
     
-    <!-- Pour la table des matières de chaque chansonnier -->
+    <!-- Pour la table des matières de chaque chansonnier, on créé une liste des chansons qu'il contient -->
     <xsl:template match="div[@type='lyrical_text']">
         <li>
             <a href="./fr844-chanson-{./@xml:id}.html">
