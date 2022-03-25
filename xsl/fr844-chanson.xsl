@@ -83,7 +83,17 @@
     </xsl:template>
     
     <xsl:template match="app" mode="graphem">
-        <xsl:value-of select="lem"/>
+        <xsl:for-each select="./lem/w">        
+            <xsl:choose>
+                <xsl:when test="position() != last()">    
+                <xsl:value-of select="current()"/>
+                <xsl:text> </xsl:text>
+            </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="current()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="app" mode="interp">
