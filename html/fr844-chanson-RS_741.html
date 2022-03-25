@@ -33,14 +33,35 @@
             p {
             margin-bottom: 0px;
             }
-        </style>
-   </head>
+        </style><script type="text/javascript">
+            function auDemarrage() {
+            // On sélectionne le bouton Wall
+            let var_boutWall = document.querySelector("#wallenskold")
+            // On sélectionne toute la classe Wall
+            let Wall = document.querySelectorAll(".Wall");
+            // On écrit la fonction pour tout cacher
+            function cacher() {
+                Wall.forEach (span => span.style.display = "none");
+            }; 
+            cacher()
+            
+            let montreWall = true;
+            function afficheWall() {
+                // On sélectionne les span de Wallenskold
+                console.log("clic")
+            };
+            var_boutWall.addEventListener('click', afficheWall);
+            };
+            // Je m'abonne à l'event 'load' 
+            window.addEventListener('load', auDemarrage);
+        </script></head>
    <body>
       <header>
          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid"><span class="navbar-brand">Corpus lyrique de Thibaut de Champagne</span><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse">
                   <ul class="navbar-nav me-auto mb-2 mb-md-0">
                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a></li>
+                     <li><input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"></li>
                   </ul>
                </div>
             </div>
@@ -88,22 +109,22 @@
             </div>
             <div class="txt">
                <div n="1" class="stanza">
-                  <p>Tuit mi desir <span style="color : rgb(000, 200, 100, 0.7)"> Mi grant desir </span><span style="color : rgb(015, 005, 230, 0.8)"> Tuit mi desir </span> et tuit mi grief tourment  </p>
-                  <p>viennen <span style="color : rgb(000, 200, 100, 0.7)"> de la </span><span style="color : rgb(015, 005, 230, 0.8)"> de la </span>u tot sunt <span style="color : rgb(000, 200, 100, 0.7)"> sont tuit </span><span style="color : rgb(015, 005, 230, 0.8)"> sunt tuit </span>mi pensé. </p>
-                  <p>Grant pao <span style="color : rgb(000, 200, 100, 0.7)"> ai </span><span style="color : rgb(015, 005, 230, 0.8)"> ai </span> pour ce que toute gent  </p>
-                  <p>qui ont <span style="color : rgb(000, 200, 100, 0.7)"> veü </span><span style="color : rgb(015, 005, 230, 0.8)"> veü </span>son gent cors esmeré <span style="color : rgb(000, 200, 100, 0.7)"> esmeré</span><span style="color : rgb(015, 005, 230, 0.8)"> acesmé</span> </p>
-                  <p>m'ont si  sopris <span style="color : rgb(000, 200, 100, 0.7)"> sont si vers li </span><span style="color : rgb(015, 005, 230, 0.8)"> sont si vers li </span>de bone volenté. </p>
+                  <p>Tuit mi desir <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Mi grant desir </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Tuit mi desir </span> et tuit mi grief tourment  </p>
+                  <p>viennen <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> de la </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> de la </span>u tot sunt <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> sont tuit </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> sunt tuit </span>mi pensé. </p>
+                  <p>Grant pao <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> ai </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> ai </span> pour ce que toute gent  </p>
+                  <p>qui ont <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> veü </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> veü </span>son gent cors esmeré <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> esmeré</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> acesmé</span> </p>
+                  <p>m'ont si  sopris <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> sont si vers li </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> sont si vers li </span>de bone volenté. </p>
                   <p>Nés Dex l'aim, jel sai a escient; </p>
                   <p>grant merveille es quant il s'en sueffre tant. </p>
                </div>
                <div n="2" class="stanza">
-                  <p>Touz esbahiz m'oubli en merveillant <span style="color : rgb(000, 200, 100, 0.7)"> en sospirant</span><span style="color : rgb(015, 005, 230, 0.8)"> en merveillant</span> </p>
+                  <p>Touz esbahiz m'oubli en merveillant <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> en sospirant</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> en merveillant</span> </p>
                   <p>u Diex trouva si estrange biaut; </p>
                   <p>quant il la mist éa jus entre la gent, </p>
                   <p>mout nous en fist grant debonaireté. </p>
-                  <p>Car tout <span style="color : rgb(000, 200, 100, 0.7)"> Trestot </span><span style="color : rgb(015, 005, 230, 0.8)"> Trestout </span>le mont en a enluminé, </p>
-                  <p>de <span style="color : rgb(000, 200, 100, 0.7)"> qu'en </span><span style="color : rgb(015, 005, 230, 0.8)"> qu'en </span>sa valour sunt tot li bien si grant; </p>
-                  <p>nus ne la voit qui ne <span style="color : rgb(000, 200, 100, 0.7)"> ne vos </span><span style="color : rgb(015, 005, 230, 0.8)"> ne vous </span>l'en die autant. </p>
+                  <p>Car tout <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Trestot </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Trestout </span>le mont en a enluminé, </p>
+                  <p>de <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> qu'en </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> qu'en </span>sa valour sunt tot li bien si grant; </p>
+                  <p>nus ne la voit qui ne <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> ne vos </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> ne vous </span>l'en die autant. </p>
                </div>
                <div n="5" class="stanza">
                   <p>Souvieigne vous, dame, del douz acueill  </p>
@@ -116,11 +137,11 @@
                </div>
                <div n="3" class="stanza">
                   <p>Bone aventure avieigne fol espoir, </p>
-                  <p>qui mainz amans fait  vivre et esjoïr <span style="color : rgb(000, 200, 100, 0.7)"> resjoïr</span><span style="color : rgb(015, 005, 230, 0.8)"> resjoïr</span>! </p>
-                  <p>Esperance <span style="color : rgb(000, 200, 100, 0.7)"> Desperance </span><span style="color : rgb(015, 005, 230, 0.8)"> Desperance </span>fait languir et doloir, </p>
-                  <p>et mes folz cuers qui pense adés guerir <span style="color : rgb(000, 200, 100, 0.7)"> me fet cuidier garir</span><span style="color : rgb(015, 005, 230, 0.8)"> me fet cuidier guerir</span>; </p>
+                  <p>qui mainz amans fait  vivre et esjoïr <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> resjoïr</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> resjoïr</span>! </p>
+                  <p>Esperance <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Desperance </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Desperance </span>fait languir et doloir, </p>
+                  <p>et mes folz cuers qui pense adés guerir <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> me fet cuidier garir</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> me fet cuidier guerir</span>; </p>
                   <p>s'il fust sages, il me feïst morir. </p>
-                  <p>Por <span style="color : rgb(000, 200, 100, 0.7)"> ce fet bien de la folie avoir </span><span style="color : rgb(015, 005, 230, 0.8)"> ce fet bon de la folie avoir,</span></p>
+                  <p>Por <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> ce fet bien de la folie avoir </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> ce fet bon de la folie avoir,</span></p>
                </div>
             </div>
          </div>

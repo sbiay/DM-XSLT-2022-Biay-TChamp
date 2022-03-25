@@ -33,14 +33,35 @@
             p {
             margin-bottom: 0px;
             }
-        </style>
-   </head>
+        </style><script type="text/javascript">
+            function auDemarrage() {
+            // On sélectionne le bouton Wall
+            let var_boutWall = document.querySelector("#wallenskold")
+            // On sélectionne toute la classe Wall
+            let Wall = document.querySelectorAll(".Wall");
+            // On écrit la fonction pour tout cacher
+            function cacher() {
+                Wall.forEach (span => span.style.display = "none");
+            }; 
+            cacher()
+            
+            let montreWall = true;
+            function afficheWall() {
+                // On sélectionne les span de Wallenskold
+                console.log("clic")
+            };
+            var_boutWall.addEventListener('click', afficheWall);
+            };
+            // Je m'abonne à l'event 'load' 
+            window.addEventListener('load', auDemarrage);
+        </script></head>
    <body>
       <header>
          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid"><span class="navbar-brand">Corpus lyrique de Thibaut de Champagne</span><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse">
                   <ul class="navbar-nav me-auto mb-2 mb-md-0">
                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a></li>
+                     <li><input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"></li>
                   </ul>
                </div>
             </div>
@@ -105,43 +126,43 @@
             <div class="txt">
                <div n="1" class="stanza">
                   <p>
-                     oustume est bien , <span style="color : rgb(000, 200, 100, 0.7)"> l'en tient un </span><span style="color : rgb(015, 005, 230, 0.8)"> quant on tient un </span>prison, </p>
+                     oustume est bien , <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> l'en tient un </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> quant on tient un </span>prison, </p>
                   <p>con ne le veut oïr ne esc, </p>
                   <p>quar nule rienz ne  fait tant cuer lon  </p>
                   <p>con granz pooirs qui mal en veut user. </p>
-                  <p>Pour ce, dame, de moi n<span style="color : rgb(015, 005, 230, 0.8)"> m</span>'estuet douter, </p>
-                  <p>quar je ne vueill <span style="color : rgb(000, 200, 100, 0.7)"> quejevueil </span><span style="color : rgb(015, 005, 230, 0.8)"> car je n'i os </span>parler de raenéon  </p>
+                  <p>Pour ce, dame, de moi n<span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> m</span>'estuet douter, </p>
+                  <p>quar je ne vueill <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> quejevueil </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> car je n'i os </span>parler de raenéon  </p>
                   <p>n'estre ostagiez  s'en bele guise non. </p>
                   <p>Aprés tout ce ne puis je eschaper . </p>
                </div>
                <div n="2" class="stanza">
-                  <p><span style="color : rgb(000, 200, 100, 0.7)"> D'une chose ai </span><span style="color : rgb(015, 005, 230, 0.8)"> D'une chose ai </span>au cuer grant souspeé  </p>
-                  <p><span style="color : rgb(000, 200, 100, 0.7)"> et c'est la </span><span style="color : rgb(015, 005, 230, 0.8)"> et c'est la </span>enz qui pluz fait a douter <span style="color : rgb(000, 200, 100, 0.7)"> me fait desuer</span><span style="color : rgb(015, 005, 230, 0.8)"> me fet douter</span>:· </p>
-                  <p><span style="color : rgb(000, 200, 100, 0.7)"> que tantes </span><span style="color : rgb(015, 005, 230, 0.8)"> que tant de </span>gent li vont tout environ. </p>
-                  <p>r voir <span style="color : rgb(000, 200, 100, 0.7)"> Mais je pans bien</span> que  c'est pour moi gre  </p>
-                  <p>s jours <span style="color : rgb(000, 200, 100, 0.7)"> Adés </span><span style="color : rgb(015, 005, 230, 0.8)"> Adés </span>dient Dame, on vous veut <span style="color : rgb(000, 200, 100, 0.7)"> giler</span><span style="color : rgb(015, 005, 230, 0.8)"> guiler</span></p>
+                  <p><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> D'une chose ai </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> D'une chose ai </span>au cuer grant souspeé  </p>
+                  <p><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> et c'est la </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> et c'est la </span>enz qui pluz fait a douter <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> me fait desuer</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> me fet douter</span>:· </p>
+                  <p><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> que tantes </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> que tant de </span>gent li vont tout environ. </p>
+                  <p>r voir <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Mais je pans bien</span> que  c'est pour moi gre  </p>
+                  <p>s jours <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Adés </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Adés </span>dient Dame, on vous veut <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> giler</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> guiler</span></p>
                   <p>ja par amours n'amera riches hom. </p>
-                  <p><span style="color : rgb(000, 200, 100, 0.7)"> Mes il </span><span style="color : rgb(015, 005, 230, 0.8)"> Mes il </span>mentent, li losengier felon, </p>
-                  <p>car <span style="color : rgb(000, 200, 100, 0.7)"> que qui </span><span style="color : rgb(015, 005, 230, 0.8)"> car qui </span>us  a, mieuz doit amours guar . </p>
+                  <p><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Mes il </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Mes il </span>mentent, li losengier felon, </p>
+                  <p>car <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> que qui </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> car qui </span>us  a, mieuz doit amours guar . </p>
                </div>
                <div n="3" class="stanza">
-                  <p><span style="color : rgb(000, 200, 100, 0.7)"> Se </span><span style="color : rgb(015, 005, 230, 0.8)"> Se </span>ma dame ne veut amer  nului, </p>
-                  <p><span style="color : rgb(000, 200, 100, 0.7)"> moi </span><span style="color : rgb(015, 005, 230, 0.8)"> moi </span>ne autrui, v  merciz l'en rent, </p>
-                  <p>as <span style="color : rgb(000, 200, 100, 0.7)"> i </span><span style="color : rgb(015, 005, 230, 0.8)"> i </span>a d'autres  que je ne sui  </p>
+                  <p><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Se </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Se </span>ma dame ne veut amer  nului, </p>
+                  <p><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> moi </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> moi </span>ne autrui, v  merciz l'en rent, </p>
+                  <p>as <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> i </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> i </span>a d'autres  que je ne sui  </p>
                   <p>qui la proi e faus cuers baudement. </p>
-                  <p>Les esbau <span style="color : rgb(000, 200, 100, 0.7)"> Esbaudise </span><span style="color : rgb(015, 005, 230, 0.8)"> Esbaudise </span>fait  guaaignier souvent, </p>
-                  <p>maiz ne <span style="color : rgb(000, 200, 100, 0.7)"> sé </span><span style="color : rgb(015, 005, 230, 0.8)"> sé </span>ienz quant  je devant li sui; </p>
-                  <p>tant <span style="color : rgb(000, 200, 100, 0.7)"> ai de </span><span style="color : rgb(015, 005, 230, 0.8)"> ai de </span>mal  et de painne  et d'anui, </p>
-                  <p>qu'il <span style="color : rgb(000, 200, 100, 0.7)"> quant </span><span style="color : rgb(015, 005, 230, 0.8)"> quant </span><span style="color : rgb(000, 200, 100, 0.7)"> me </span><span style="color : rgb(015, 005, 230, 0.8)"> me </span>convient dire A Deu vous conmant! </p>
+                  <p>Les esbau <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Esbaudise </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Esbaudise </span>fait  guaaignier souvent, </p>
+                  <p>maiz ne <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> sé </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> sé </span>ienz quant  je devant li sui; </p>
+                  <p>tant <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> ai de </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> ai de </span>mal  et de painne  et d'anui, </p>
+                  <p>qu'il <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> quant </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> quant </span><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> me </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> me </span>convient dire A Deu vous conmant! </p>
                </div>
                <div n="4" class="stanza">
-                  <p>ous savez bien c'om <span style="color : rgb(000, 200, 100, 0.7)"> qu'en </span><span style="color : rgb(015, 005, 230, 0.8)"> qu'en </span>ne connoist en <span style="color : rgb(000, 200, 100, 0.7)"> lui</span><span style="color : rgb(015, 005, 230, 0.8)"> lui</span>  </p>
+                  <p>ous savez bien c'om <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> qu'en </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> qu'en </span>ne connoist en <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> lui</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> lui</span>  </p>
                   <p>ce con connoist en autrui plainnement. </p>
-                  <p><span style="color : rgb(000, 200, 100, 0.7)"> ma </span><span style="color : rgb(015, 005, 230, 0.8)"> ma </span>grant folie onques jour ne connui, </p>
+                  <p><span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> ma </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> ma </span>grant folie onques jour ne connui, </p>
                   <p>nt ai amé de fin cuer loiaument; </p>
-                  <p>aiz une rienz me fait <span style="color : rgb(000, 200, 100, 0.7)"> me fait </span><span style="color : rgb(015, 005, 230, 0.8)"> m'i fait </span>alegement: </p>
+                  <p>aiz une rienz me fait <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> me fait </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> m'i fait </span>alegement: </p>
                   <p>que'en perance ai u&gt;n pou de refui. </p>
-                  <p>uns <span style="color : rgb(000, 200, 100, 0.7)"> Li </span><span style="color : rgb(015, 005, 230, 0.8)"> Li </span>oiselés e vait ferir el glui, </p>
+                  <p>uns <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Li </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Li </span>oiselés e vait ferir el glui, </p>
                   <p>quant il ne puet trouver autre garant.· </p>
                </div>
                <div n="5" class="stanza">
@@ -150,7 +171,7 @@
                   <p>si granz au cuer que trestouz m'entroubli, </p>
                   <p>et m'est avis qu'entre ses braz me tient; </p>
                   <p>et aprez ce, quant li sens me revient, </p>
-                  <p>et je voi bien que a tout <span style="color : rgb(000, 200, 100, 0.7)"> qu'a tot ce </span><span style="color : rgb(015, 005, 230, 0.8)"> qu'a tout ce </span>ai failli, </p>
+                  <p>et je voi bien que a tout <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> qu'a tot ce </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> qu'a tout ce </span>ai failli, </p>
                   <p>lors me courrouce  et laidenge et maudi, </p>
                   <p>quar je sai bien que il ne l'en souvient . </p>
                </div>

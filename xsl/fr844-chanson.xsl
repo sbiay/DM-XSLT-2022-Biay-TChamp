@@ -27,6 +27,7 @@
                     </xsl:element>
                     <xsl:call-template name="bootstrapCore"/>
                     <xsl:call-template name="stylePageChanson"/>
+                    <xsl:call-template name="scriptApparat"/>
                 </head>
                 <body>
                     <xsl:call-template name="navbar"/>
@@ -121,27 +122,39 @@
         <xsl:apply-templates select="lem" mode="interp"/>
         <!-- Les leçons rejetées en apparat -->
         <xsl:if test="./rdg[@wit='#Mt']">
-            <span style="color : rgb(000, 200, 100, 0.7)">
+            <span>
+                <xsl:attribute name="style">
+                    <xsl:text>color : rgb(000, 200, 100, 0.7)</xsl:text>
+                </xsl:attribute>
+                <xsl:attribute name="class">
+                    <xsl:text>Mt</xsl:text>
+                </xsl:attribute>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="./rdg[@wit='#Mt']"/>
-                    <!-- Si la leçon est suivie d'un élément "w", on ajoute une espace -->
-                    <xsl:if test="./following-sibling::w">
-                        <xsl:text> </xsl:text>
-                    </xsl:if>
+                <!-- Si la leçon est suivie d'un élément "w", on ajoute une espace -->
+                <xsl:if test="./following-sibling::w">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
             </span>
         </xsl:if>
         <xsl:if test="./rdg[@resp='#Wallenskold']">
-            <span style="color : rgb(015, 005, 230, 0.8)">
+            <span>
+                <xsl:attribute name="style">
+                    <xsl:text>color : rgb(015, 005, 230, 0.8)</xsl:text>
+                </xsl:attribute>
+                <xsl:attribute name="class">
+                    <xsl:text>Wall</xsl:text>
+                </xsl:attribute>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="./rdg[@resp='#Wallenskold']"/>
-            <xsl:choose>    
-                <xsl:when test="./following-sibling::w">
-                    <xsl:text> </xsl:text>
-                </xsl:when>
-                <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()=';|?|!']">
-                    <xsl:text> </xsl:text>
-                </xsl:when>
-            </xsl:choose>
+                <xsl:choose>    
+                    <xsl:when test="./following-sibling::w">
+                        <xsl:text> </xsl:text>
+                    </xsl:when>
+                    <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()=';|?|!']">
+                        <xsl:text> </xsl:text>
+                    </xsl:when>
+                </xsl:choose>
             </span>
         </xsl:if>
         
@@ -201,11 +214,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
                             </li>
-                            <!-- Ajouter des liens
-                                <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                                </li>
-                            -->
+                            <li>
+                                <input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"/>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -245,6 +256,30 @@
             margin-bottom: 0px;
             }
         </style>
+    </xsl:template>
+    
+    <xsl:template name="scriptApparat">
+        <script type="text/javascript">
+            function auDemarrage() {
+            // On sélectionne le bouton Wall
+            let var_boutWall = document.querySelector("#wallenskold")
+            // On sélectionne toute la classe Wall
+            let Wall = document.querySelectorAll(".Wall");
+            // On écrit la fonction pour tout cacher
+            function cacher() {
+                Wall.forEach (span => span.style.display = "none");
+            }; 
+            cacher()
+            
+            let montreWall = true;
+            function afficheWall() {
+                // On sélectionne les span de Wallenskold
+            };
+            var_boutWall.addEventListener('click', afficheWall);
+            };
+            // Je m'abonne à l'event 'load' 
+            window.addEventListener('load', auDemarrage);
+        </script>
     </xsl:template>
     
 </xsl:stylesheet>

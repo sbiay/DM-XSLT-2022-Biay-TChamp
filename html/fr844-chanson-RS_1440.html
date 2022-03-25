@@ -33,14 +33,35 @@
             p {
             margin-bottom: 0px;
             }
-        </style>
-   </head>
+        </style><script type="text/javascript">
+            function auDemarrage() {
+            // On sélectionne le bouton Wall
+            let var_boutWall = document.querySelector("#wallenskold")
+            // On sélectionne toute la classe Wall
+            let Wall = document.querySelectorAll(".Wall");
+            // On écrit la fonction pour tout cacher
+            function cacher() {
+                Wall.forEach (span => span.style.display = "none");
+            }; 
+            cacher()
+            
+            let montreWall = true;
+            function afficheWall() {
+                // On sélectionne les span de Wallenskold
+                console.log("clic")
+            };
+            var_boutWall.addEventListener('click', afficheWall);
+            };
+            // Je m'abonne à l'event 'load' 
+            window.addEventListener('load', auDemarrage);
+        </script></head>
    <body>
       <header>
          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid"><span class="navbar-brand">Corpus lyrique de Thibaut de Champagne</span><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse">
                   <ul class="navbar-nav me-auto mb-2 mb-md-0">
                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a></li>
+                     <li><input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"></li>
                   </ul>
                </div>
             </div>
@@ -109,25 +130,25 @@
             </div>
             <div class="txt">
                <div n="1" class="stanza">
-                  <p>je <span style="color : rgb(000, 200, 100, 0.7)"> Bien </span><span style="color : rgb(015, 005, 230, 0.8)"> Je </span>me quidoie partir  </p>
-                  <p>d'Amors, maiz rienz ne me <span style="color : rgb(000, 200, 100, 0.7)"> m'i </span><span style="color : rgb(015, 005, 230, 0.8)"> me </span>vaut. </p>
-                  <p>i douz mauz doit <span style="color : rgb(015, 005, 230, 0.8)"> du </span>souvenir <span style="color : rgb(000, 200, 100, 0.7)"> que li max de souvenir</span>, </p>
-                  <p>qui nuit et jour ne m'i faut <span style="color : rgb(000, 200, 100, 0.7)"> qui nule foiz ne me faut</span><span style="color : rgb(015, 005, 230, 0.8)"> qui nuit et jor ne m'i faut</span>, </p>
-                  <p>le jour me fait <span style="color : rgb(000, 200, 100, 0.7)"> me fait </span><span style="color : rgb(015, 005, 230, 0.8)"> m'i fet </span>maint assaut, </p>
+                  <p>je <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> Bien </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Je </span>me quidoie partir  </p>
+                  <p>d'Amors, maiz rienz ne me <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> m'i </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> me </span>vaut. </p>
+                  <p>i douz mauz doit <span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> du </span>souvenir <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> que li max de souvenir</span>, </p>
+                  <p>qui nuit et jour ne m'i faut <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> qui nule foiz ne me faut</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> qui nuit et jor ne m'i faut</span>, </p>
+                  <p>le jour me fait <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> me fait </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> m'i fet </span>maint assaut, </p>
                   <p>et la nuit ne puis dormir, </p>
-                  <p>ainz plaig  et plor <span style="color : rgb(000, 200, 100, 0.7)"> tor et plain </span><span style="color : rgb(015, 005, 230, 0.8)"> plain et pleur </span> et souspir. </p>
-                  <p>Dex ! tant art quant la remir <span style="color : rgb(000, 200, 100, 0.7)"> desir</span><span style="color : rgb(015, 005, 230, 0.8)"> remir</span>, </p>
-                  <p>maiz bien croi <span style="color : rgb(015, 005, 230, 0.8)"> sai </span>qu'il ne l'en chaut. <span style="color : rgb(000, 200, 100, 0.7)"> mais je cuit</span></p>
+                  <p>ainz plaig  et plor <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> tor et plain </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> plain et pleur </span> et souspir. </p>
+                  <p>Dex ! tant art quant la remir <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> desir</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> remir</span>, </p>
+                  <p>maiz bien croi <span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> sai </span>qu'il ne l'en chaut. <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> mais je cuit</span></p>
                </div>
                <div n="2" class="stanza">
                   <p>Nus ne doit Amours trahir  </p>
                   <p>fors que garéon et ribaut; </p>
-                  <p>li dous mauz me tient einsi <span style="color : rgb(015, 005, 230, 0.8)"> Et se n'est pas par son plesir</span>, </p>
-                  <p>je ne voi <span style="color : rgb(000, 200, 100, 0.7)"> ja n'en quie </span><span style="color : rgb(015, 005, 230, 0.8)"> je n'i voi </span>ne bas ne haut; </p>
+                  <p>li dous mauz me tient einsi <span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> Et se n'est pas par son plesir</span>, </p>
+                  <p>je ne voi <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> ja n'en quie </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> je n'i voi </span>ne bas ne haut; </p>
                   <p>ainz vueill qu'ele me truist baut  </p>
-                  <p>sanz ghiller et sanz mentir <span style="color : rgb(000, 200, 100, 0.7)"> et sans changier et sanz faillir</span><span style="color : rgb(015, 005, 230, 0.8)"> sanz guiler et sanz mentir</span>; </p>
+                  <p>sanz ghiller et sanz mentir <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> et sans changier et sanz faillir</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> sanz guiler et sanz mentir</span>; </p>
                   <p>maiz se je puis consivir  </p>
-                  <p>le cerf, qui tant puet <span style="color : rgb(000, 200, 100, 0.7)"> set </span><span style="color : rgb(015, 005, 230, 0.8)"> puet </span>fuir, </p>
+                  <p>le cerf, qui tant puet <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> set </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> puet </span>fuir, </p>
                   <p>nus n'est joianz a Thiebaut . </p>
                </div>
                <div n="3" class="stanza">
@@ -135,7 +156,7 @@
                      cers est aventureus  </p>
                   <p>et si est blans comme nois  </p>
                   <p>et si a les crins ansdeus  </p>
-                  <p>plus biauz qu'uns sors espanois <span style="color : rgb(000, 200, 100, 0.7)"> plus sors que or espaignois</span><span style="color : rgb(015, 005, 230, 0.8)"> plus sors que or espanois</span>. </p>
+                  <p>plus biauz qu'uns sors espanois <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> plus sors que or espaignois</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> plus sors que or espanois</span>. </p>
                   <p>Li cers est en un defois  </p>
                   <p>a l'entrer mout perilleus  </p>
                   <p>et si est guardez des leus: </p>
@@ -144,24 +165,24 @@
                </div>
                <div n="4" class="stanza">
                   <p>Ainc chevaliers angoisseus, </p>
-                  <p>qui a perdu <span style="color : rgb(000, 200, 100, 0.7)"> perdon </span><span style="color : rgb(015, 005, 230, 0.8)"> perdu </span>son harnoiz, </p>
-                  <p>ne vieille <span style="color : rgb(000, 200, 100, 0.7)"> vile </span><span style="color : rgb(015, 005, 230, 0.8)"> vielle </span>qui art li feus  </p>
-                  <p>maisons, vignes <span style="color : rgb(000, 200, 100, 0.7)"> vin </span><span style="color : rgb(015, 005, 230, 0.8)"> vignes </span>, blez  et pois, </p>
-                  <p>ne chacierres qui prent sois, <span style="color : rgb(000, 200, 100, 0.7)"> charrierres qui grans sois</span><span style="color : rgb(015, 005, 230, 0.8)"> chacierres qui prent sois</span></p>
-                  <p>ne leus qui est fameilleus, <span style="color : rgb(000, 200, 100, 0.7)"> ne nus destoriz anieus</span><span style="color : rgb(015, 005, 230, 0.8)"> ne leus qui est fameilleus</span></p>
+                  <p>qui a perdu <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> perdon </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> perdu </span>son harnoiz, </p>
+                  <p>ne vieille <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> vile </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> vielle </span>qui art li feus  </p>
+                  <p>maisons, vignes <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> vin </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> vignes </span>, blez  et pois, </p>
+                  <p>ne chacierres qui prent sois, <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> charrierres qui grans sois</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> chacierres qui prent sois</span></p>
+                  <p>ne leus qui est fameilleus, <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> ne nus destoriz anieus</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> ne leus qui est fameilleus</span></p>
                   <p>n'est avers moi dolereus, </p>
                   <p>que je ne soie de ceus </p>
-                  <p> qui aimment deseur lor <span style="color : rgb(000, 200, 100, 0.7)"> son </span><span style="color : rgb(015, 005, 230, 0.8)"> leur </span>pois. </p>
+                  <p> qui aimment deseur lor <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> son </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> leur </span>pois. </p>
                </div>
                <div n="5" class="stanza">
-                  <p>Dame, une rienz <span style="color : rgb(000, 200, 100, 0.7)"> pour Dieu </span><span style="color : rgb(015, 005, 230, 0.8)"> une rienz </span>vous demant: </p>
+                  <p>Dame, une rienz <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> pour Dieu </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> une rienz </span>vous demant: </p>
                   <p>cuidiez vous que soit pechiez  </p>
-                  <p>d'ocirre son vrai <span style="color : rgb(000, 200, 100, 0.7)"> fin </span><span style="color : rgb(015, 005, 230, 0.8)"> vrai </span>amant? </p>
+                  <p>d'ocirre son vrai <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> fin </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> vrai </span>amant? </p>
                   <p>oïl, voir! bien le sachiez! </p>
                   <p>S'il vous plaist, si mociiez, </p>
-                  <p>quar je le vueill et creant, <span style="color : rgb(000, 200, 100, 0.7)"> por acomplir vostre talant</span><span style="color : rgb(015, 005, 230, 0.8)"> que je le vueil et creant</span></p>
-                  <p>et se mieuz <span style="color : rgb(000, 200, 100, 0.7)"> vos </span><span style="color : rgb(015, 005, 230, 0.8)"> melz </span>m'amiez vivant, </p>
-                  <p>je le vous di en oiant <span style="color : rgb(000, 200, 100, 0.7)"> </span>, </p>
+                  <p>quar je le vueill et creant, <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> por acomplir vostre talant</span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> que je le vueil et creant</span></p>
+                  <p>et se mieuz <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> vos </span><span style="color : rgb(015, 005, 230, 0.8)" class="Wall"> melz </span>m'amiez vivant, </p>
+                  <p>je le vous di en oiant <span style="color : rgb(000, 200, 100, 0.7)" class="Mt"> </span>, </p>
                   <p>mout en seroie pluz liez. </p>
                </div>
             </div>
