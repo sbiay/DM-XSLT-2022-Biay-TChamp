@@ -217,6 +217,9 @@
                             <li>
                                 <input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"/>
                             </li>
+                            <li>
+                                <input id="mt" type="button" class="btn btn-success" value="Chanson. Mt"/>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -261,22 +264,59 @@
     <xsl:template name="scriptApparat">
         <script type="text/javascript">
             function auDemarrage() {
-            // On sélectionne le bouton Wall
+            // On sélectionne les boutons Wall et Mt
             let var_boutWall = document.querySelector("#wallenskold")
-            // On sélectionne toute la classe Wall
+            let var_boutMt = document.querySelector("#mt")
+            // On sélectionne toute la classe Wall et toute la classe Mt
             let Wall = document.querySelectorAll(".Wall");
-            // On écrit la fonction pour tout cacher
-            function cacher() {
+            let Mt = document.querySelectorAll(".Mt");
+            // On écrit les fonctions pour les cacher 
+            function cacherWall() {
                 Wall.forEach (span => span.style.display = "none");
             }; 
-            cacher()
+            function cacherMt() {
+            Mt.forEach (span => span.style.display = "none");
+            }; 
+            // On écrit les fonctions pour les montrer
+            function montrerWall() {
+                Wall.forEach (span => span.style.display = "initial");
+            }; 
+            function montrerMt() {
+                Mt.forEach (span => span.style.display = "initial");
+            }; 
+            // Au démarrage on cache tout
+            cacherWall()
+            cacherMt()
+            // Le statut de Wall et de Mt est alors false
+            let statutWall = false;
+            let statutMt = false;
+            // On définit les fonctions d'animation de l'apparat
+            function animWall() {
+                if (statutWall == false) {
+                    console.log("ça devrait montrer")
+                    Wall.forEach (span => span.style.display = "initial");
+                    statutWall = true;
+                    console.log(statutWall)
+                    } else {
+                    cacherWall()
+                    statutWall = false;
+                };
+            };
+            function animMt() {
+                if (statutMt== false) {
+                    Mt.forEach (span => span.style.display = "initial");
+                    statutMt = true;
+                    } else {
+                    cacherMt()
+                    statutMt = false;
+                };
+            };
             
-            let montreWall = true;
-            function afficheWall() {
-                // On sélectionne les span de Wallenskold
+            // On définit les évènements liés au clic sur les boutons
+            var_boutMt.addEventListener('click', animMt);
+            var_boutWall.addEventListener('click', animWall);
             };
-            var_boutWall.addEventListener('click', afficheWall);
-            };
+            
             // Je m'abonne à l'event 'load' 
             window.addEventListener('load', auDemarrage);
         </script>
