@@ -68,25 +68,14 @@
     
     <xsl:template match="l" mode="#all">
         <p>
-            <xsl:attribute name="title">
-                <xsl:number count="l" level="any" format="1"/>
-            </xsl:attribute>
-            <xsl:value-of select="l"/>
             <xsl:apply-templates mode="#current"/>
         </p>
     </xsl:template>
     
-    <!-- TODO mieux gérer les espaces -->
     <xsl:template match="w" mode="#all">
-        <xsl:choose>
-            <xsl:when test="position() != last()">    
-                <xsl:apply-templates mode="#current"/>
-                <xsl:text> </xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:apply-templates mode="#current"/>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:apply-templates mode="#current"/>
+        <xsl:text> </xsl:text>
+        <!-- Poser une condition si le following-sibling est une ponctuation -->
     </xsl:template>
     
     <xsl:template match="app" mode="graphem">
@@ -100,7 +89,7 @@
     <xsl:template match="lem">
         <xsl:apply-templates mode="graphem"/>
     </xsl:template>
-       
+    
     <xsl:template match="choice" mode="graphem">
         <xsl:value-of select="sic"/>
         <xsl:if test="sic[not(text())]">
