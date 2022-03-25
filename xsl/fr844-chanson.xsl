@@ -165,12 +165,18 @@
         
     </xsl:template>
     
-    <xsl:template match="lem" mode="#all">
+    <xsl:template match="lem" mode="interp">
         <!-- En mode interp, on veut baliser le lem avec un <span style="font-weight: bold;"> -->
-    <span>    
-        <!-- Dédoubler ce template -->
-        <xsl:apply-templates mode="#current"/>
-    </span>
+        <span>    
+            <xsl:attribute name="class">
+                <xsl:text>lem</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates mode="interp"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="lem" mode="graphem">
+        <xsl:apply-templates mode="graphem"/>
     </xsl:template>
     
     <xsl:template match="choice" mode="graphem">
