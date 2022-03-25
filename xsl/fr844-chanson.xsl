@@ -76,6 +76,7 @@
         </p>
     </xsl:template>
     
+    <!-- TODO mieux gérer les espaces -->
     <xsl:template match="w" mode="#all">
         <xsl:value-of select="w"/>
         <xsl:text> </xsl:text>
@@ -86,14 +87,14 @@
         <xsl:for-each select="./lem/w">        
             <xsl:choose>
                 <xsl:when test="position() != last()">    
-                <xsl:value-of select="current()"/>
+                    <xsl:apply-templates mode="graphem"/>
                 <xsl:text> </xsl:text>
             </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="current()"/>
+                    <xsl:apply-templates mode="graphem"/>
                 </xsl:otherwise>
             </xsl:choose>
-        </xsl:for-each>
+        </xsl:for-each>        
     </xsl:template>
     
     <xsl:template match="app" mode="interp">
@@ -102,6 +103,9 @@
     
     <xsl:template match="choice" mode="graphem">
         <xsl:value-of select="sic"/>
+        <xsl:if test="sic[not(text())]">
+            <xsl:text>[…]</xsl:text>
+        </xsl:if>
         <xsl:value-of select="orig"/>
         <xsl:value-of select="abbr"/>
     </xsl:template>
