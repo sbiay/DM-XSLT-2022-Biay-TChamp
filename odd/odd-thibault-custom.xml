@@ -1,0 +1,1506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?
+ <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>ODD de l'édition scribale nativement numérique du corpus lyrique de Thibaut de Champagne conservé dans le Manuscrit du Roi (Paris, BnF, français 844)</title>
+<author>
+<persName xml:id="VM"><forename>Viola </forename> <surname>Mariotti</surname></persName>
+<roleName>Docteure en philologie romane</roleName> et <roleName>ingénieure de recherche pour le programme ANR Maritem</roleName>
+</author>
+</titleStmt>
+<publicationStmt>
+<p><!--VM Unpublished (first draft)--></p>
+</publicationStmt>
+<sourceDesc>
+<p>Dérivé de <ref target="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml"><foreign xml:lang="eng">base odd</foreign></ref> d'après l'analyse du fichier <ref target="URL"><!-- VM il faudra ensuite ajouter ici l'URL de l'édition TEI --></ref>.</p> 
+</sourceDesc>
+</fileDesc>
+</teiHeader>
+<text>
+<body>
+<div type="documentation">
+<div>
+<head>Documentation de l'encodage</head>
+<p>Pour structurer la documentation de l'encodage du Manuscrit du Roi, nous nous sommes fondés sur les préconisations exposées dans :
+<list>
+<item>les <title>Guidelines</title> du Consortium TEI(<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/"/>);</item> 
+<item>le <title>Modèle ODD pour l’édition de la Chanson d’Otinel </title> (2016) de Jean-Baptiste Camps (<ref target="https://github.com/Jean-Baptiste-Camps/Geste/blob/master/odd/Modele.odd"/>) </item>
+<item>le Manuel d’encodage XML-TEI des textes de la Base de Français Médiéval (<ref target="http://bfm.ens-lsh.fr/IMG/pdf/Manuel_Encodage_TEI.pdf/"/>).</item>
+</list>
+Conçu pour l'encodage de l'édition XML du Manuscrit du Roi, ce modèle d'encodage ambitionne d'être suffisamment généraliste pour pouvoir être appliqué à d'autres chansonniers, en langue d'oïl ou d'oc.
+</p>
+<p>Notre ODD se structure sur les quatre modules de base suivants, préconisés par les <title>Guidelines</title> pour toute sorte de document édité en XML-TEI  : 
+<list>
+ <item><ref target="#DIV_INFR"/>le module <gi>tei</gi>, description de l'infrastructure du modèle ;</item>
+<item><ref target="#DIV_HEADER"/>le module <gi>teiHeader</gi>, en-tête TEI de l'édition ;</item>
+ <item><ref target="#DIV_STRUCT"/>le module <gi>textstructure</gi>, macrostructure du texte<!-- à compléter --> ;</item>
+<item><ref target="#DIV_CORE"/>le module <gi>core</gi>, microstructure du texte.</item>
+</list> 
+</p>
+<p>Pour répondre à des nécessités éditoriales spécifiques de notre édition et plus généralement des éditions de textes fondées sur des sources manuscrites, nous avons estimé utile d'ajouter des modules supplémentaires : 
+<list>
+<item><ref target="#DIV_MSDESC"/><!-- supprimer ces parenthèses -->(descr. de la source manuscrite) ;</item>   
+<item><ref target="#DIV_CERTRESP"/>(niveau de certitude de l'éditeur) ;</item>
+<!--VM supprimer peut-être ? <item><ref target="DIV_PHYS"/></item> -->
+<item><ref target="#DIV_TEXTCRIT"/>(apparat critique) ;</item>
+<!--VM supprimer probablement : <item><ref target="#DIV_LING"/></item>-->
+<item><ref target="#DIV_NAMESDATES"/>(dates, toponymes et anthroponymes).</item>
+</list>
+</p>
+</div>
+<div xml:id="DIV_INFR">
+<head>Infrastructure du modèle (module <gi>tei</gi>)</head>
+<p>L'édition du Manuscrit du Roi a pour élément-racine l'élément <gi>TEI</gi>, et se décompose en un élément <gi>teiHeader</gi>, comportant les métadonnées de l'édition du Manuscrit du Roi, et un élement <gi>text</gi> avec un sous-élément obligatoire <gi>body</gi>, contenant l'édition (interprétative, graphématique et allographétique) des pièces thibaudiennes contenues dans le Manuscrit du Roi.</p>
+</div>
+<div xml:id="DIV_HEADER">
+ <head>En-tête TEI (module <gi>teiHeader</gi>)</head>
+<p>L'ensemble des métadonnées de l'édition du Manuscrit du Roi a été décrit à l'aide de l'élément obligatoire <gi>fileDesc</gi>, dédié à la description bibliographique complète du fichier électronique et se composant des sous-éléments obligatoires suivants :
+<list>
+<item><gi>titleStmt</gi></item>
+<item><gi>publicationStmt</gi></item>
+<item><gi>sourceDesc</gi></item>
+</list>
+</p>
+<p>Nous avons fait le choix de ne pas utiliser les éléments optionnels <gi>encodingDesc</gi>, <gi>profileDesc</gi> et <gi>revisionDesc</gi>.</p>
+<div xml:id="titleStmt">
+<head>La déclaration de titre (<gi>titleStmt</gi>)</head>
+<p>L'élément <gi>titleStmt</gi> recueille les informations concernant à la fois les titres et les auteurs de l'édition. Il contient les élements : 
+<list>
+<item><gi>title</gi>, qui précise les différents niveaux du titre à l'aide de l'attribut <att>type</att> et des valeurs <val>main</val> (titre principal) et <val>sub</val>  (sous-titre) ;</item>
+<item><gi>author</gi> pour l'auteur des pièces lyriques ;</item>
+<item><gi>editor</gi> pour l'éditeur scientifique.</item>
+</list>
+</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<author>Thibaut de Champagne</author>
+<editor>
+<persName xml:id="VM"><forename>Viola </forename> <surname>Mariotti</surname></persName>
+<roleName>Docteure en philologie romane</roleName> et <roleName>ingénieure de recherche pour le programme ANR Maritem</roleName>
+ </editor>
+</egXML>
+<!-- VM Arrivée jusque-là. 07/03. -->
+<p>Les auteurs scientifiques du projet ANR Maritem sont décrits par l'élément <gi>respStmt</gi>, comportant les éléments, les attributs et les valeurs suivants :               <list>
+<item>L'élément <gi>persName</gi>, explicitant les noms et prénoms des différents intervenants du projet, avec l'<att>xml:id</att> pour leurs initiales ;</item>
+<item>L'élément obligatoire <gi>resp</gi>, qui décrit les mentions spécifiques de chaque membre de l'équipe scientifique (transcription, encodage, relecture, supervision etc.)</item>
+</list>
+</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<!-- VM Ajouter un exemple -->
+</egXML>
+</div>
+<div xml:id="publicationStmt">
+<head>La déclaration de publication (<gi>publicationStmt</gi>)</head>
+<!-- VM publicationStmt à revoir
+<p>L'élément <gi>publicationStmt</gi> contient les mentions de publication, telles l'autorité responsable de la publication, la maison d'édition et  la licence : 
+<specList>
+<specDesc key="authority"/>
+<specDesc key="publisher"/>
+<specDesc key="availability"/>
+<specDesc key="date"/>
+</specList>
+</p>
+<p>Une note complémentaire est nécessaire en ce qui concerne la disponibilité et les mentions de licence. Tant que le fichier est dans un état provisoire, celles-ci prennent une valeur restrictive.</p> 
+<egXML  xmlns="http://www.tei-c.org/ns/Examples">
+<availability status="restricted">
+<licence>Fichier de travail, à ne pas diffuser.</licence>
+</availability>
+</egXML> 
+<p> Une fois que le document est achevé, la disponibilité et les mentions de licence deviennent en revanche libres.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<availability status="free">
+<licence target="http://creativecommons.org/publicdomain/mark/1.0/">
+Les textes d'auteurs médiévaux sont dans le domaine public.</licence>
+<licence target="http://creativecommons.org/licenses/by-sa/4.0/"> Le travail d'encodage et d'annotation sont mis à disposition selon les termes de la licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International (CC BY-SA 4.0).
+</licence>
+</availability>
+</egXML>
+</div>-->
+<div xml:id="sourceDesc">
+<head>La description de la source (<gi>sourceDesc</gi>)</head>
+<p>Nous avons utilisé l'élément <gi>sourceDesc</gi> pour décrire la source de l'édition : le manuscrit Paris, BnF, fr. 844. Dans la mesure où il s'agit d'une source manuscrite, l'élément que nous avons donc utilisé pour la décrire est <gi>msDesc</gi>, avec  la cote du manuscrit comme valeur de l'<att>xml:id</att>.
+</p>
+<egXML  xmlns="http://www.tei-c.org/ns/Examples">
+<sourceDesc>
+<msDesc xml:id="Paris_BnF_fr_844">
+</msDesc>
+</sourceDesc>
+</egXML>   
+<p>Les informations concernant une notice de manuscrit étant très détaillées, elles ont été exposées dans une section à part de notre ODD (voir infra la section <ref target="#DIV_MSDESC"/>).</p>
+</div>
+</div>
+</div>
+ </div>
+<div type="schemaSpec">
+<head>schemaSpec</head>
+<schemaSpec ident="oddbyexample" start="TEI ">
+<moduleRef key="tei"/>
+<!--Checking module textcrit-->
+<classRef key="att.textCritical"/>
+<classRef key="att.witnessed"/>
+<classRef key="model.rdgLike"/>
+<classRef key="model.rdgPart"/>
+<moduleRef key="textcrit" include="app lem rdg witDetail listWit witness"/>
+<elementSpec ident="app" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="from" mode="delete"/>
+<attDef ident="to" mode="delete"/>
+<attDef ident="loc" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="lem" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="rdg" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="witDetail" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="place" mode="delete"/>
+<attDef ident="target" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="listWit" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="witness" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<classSpec ident="att.textCritical" type="atts" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="cause" mode="delete"/>
+<attDef ident="varSeq" mode="delete"/>
+<attDef ident="require" mode="delete"/>
+</attList>
+</classSpec>
+<!--Checking module msdescription-->
+<classRef key="model.physDescPart"/>
+<moduleRef key="msdescription"
+include="msDesc dimensions height width origDate origPlace msIdentifier institution repository altIdentifier physDesc objectDesc supportDesc support collation foliation layoutDesc layout handDesc scriptDesc decoDesc bindingDesc binding history origin"/>
+<elementSpec ident="msDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+<attDef ident="status" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="draft"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="dimensions" mode="change">
+<attList>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="layout"/>
+</valList>
+</attDef>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="unit" mode="delete"/>
+<attDef ident="quantity" mode="delete"/>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="layout"/>
+</valList>
+</attDef>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="height" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="unit" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="mm"/>
+</valList>
+</attDef>
+<attDef ident="quantity" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="width" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="unit" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="mm"/>
+</valList>
+</attDef>
+<attDef ident="quantity" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="origDate" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="unit" mode="delete"/>
+<attDef ident="quantity" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="origPlace" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="msIdentifier" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="institution" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="repository" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="altIdentifier" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="physDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="objectDesc" mode="change">
+<attList>
+<attDef ident="form" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="codex"/>
+</valList>
+</attDef>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="supportDesc" mode="change">
+<attList>
+<attDef ident="material" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="perg"/>
+</valList>
+</attDef>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="support" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="collation" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="foliation" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="layoutDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="layout" mode="change">
+<attList>
+<attDef ident="streams" mode="delete"/>
+<attDef ident="ruledLines" mode="delete"/>
+<attDef ident="writtenLines" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="handDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="scriptDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="decoDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="bindingDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="binding" mode="change">
+<attList>
+<attDef ident="contemporary" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="history" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="origin" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<!--Checking module namesdates-->
+<classRef key="model.persNamePart"/>
+<moduleRef key="namesdates"
+include="orgName persName surname forename roleName placeName settlement"/>
+<elementSpec ident="orgName" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+<attDef ident="full" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="yes"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="persName" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+<attDef ident="full" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="yes"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="surname" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="full" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="yes"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="forename" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="full" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="yes"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="roleName" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="full" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="yes"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="placeName" mode="change">
+<attList>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="full" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="yes"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="settlement" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<!--Checking module dictionaries-->
+<classRef key="att.lexicographic"/>
+<classRef key="model.entryLike"/>
+<classRef key="model.formPart"/>
+<classRef key="model.gramPart"/>
+<classRef key="model.lexicalRefinement"/>
+<classRef key="model.morphLike"/>
+<classRef key="model.ptrLike.form"/>
+<classSpec ident="att.lexicographic" type="atts" mode="change">
+<attList>
+<attDef ident="expand" mode="delete"/>
+<attDef ident="split" mode="delete"/>
+<attDef ident="value" mode="delete"/>
+<attDef ident="location" mode="delete"/>
+<attDef ident="mergedIn" mode="delete"/>
+<attDef ident="opt" mode="delete"/>
+</attList>
+</classSpec>
+<!--Checking module tagdocs-->
+<classRef key="att.combinable"/>
+<classRef key="att.identified"/>
+<classRef key="model.contentPart"/>
+<classSpec ident="att.combinable" type="atts" mode="change">
+<attList>
+<attDef ident="mode" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.identified" type="atts" mode="change">
+<attList>
+<attDef ident="ident" mode="delete"/>
+<attDef ident="predeclare" mode="delete"/>
+<attDef ident="module" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.anchoring" type="atts" mode="change">
+<attList>
+<attDef ident="targetEnd" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.ascribed.directed" type="atts" mode="change">
+<attList>
+<attDef ident="toWhom" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.dimensions" type="atts" mode="change">
+<attList>
+<attDef ident="extent" mode="delete"/>
+<attDef ident="precision" mode="delete"/>
+<attDef ident="scope" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.damaged" type="atts" mode="change">
+<attList>
+<attDef ident="agent" mode="delete"/>
+<attDef ident="degree" mode="delete"/>
+<attDef ident="group" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.datable.w3c" type="atts" mode="change">
+<attList>
+<attDef ident="when" mode="delete"/>
+<attDef ident="from" mode="delete"/>
+<attDef ident="to" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.datable" type="atts" mode="change">
+<attList>
+<attDef ident="calendar" mode="delete"/>
+<attDef ident="period" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.editLike" type="atts" mode="change">
+<attList>
+<attDef ident="evidence" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.media" type="atts" mode="change">
+<attList>
+<attDef ident="scale" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.interpLike" type="atts" mode="change">
+<attList>
+<attDef ident="inst" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.naming" type="atts" mode="change">
+<attList>
+<attDef ident="role" mode="delete"/>
+<attDef ident="nymRef" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.pointing" type="atts" mode="change">
+<attList>
+<attDef ident="targetLang" mode="delete"/>
+<attDef ident="evaluate" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.pointing.group" type="atts" mode="change">
+<attList>
+<attDef ident="domains" mode="delete"/>
+<attDef ident="targFunc" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.segLike" type="atts" mode="change">
+<attList>
+<attDef ident="function" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.timed" type="atts" mode="change">
+<attList>
+<attDef ident="start" mode="delete"/>
+<attDef ident="end" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.transcriptional" type="atts" mode="change">
+<attList>
+<attDef ident="status" mode="delete"/>
+<attDef ident="cause" mode="delete"/>
+<attDef ident="seq" mode="delete"/>
+</attList>
+</classSpec>
+<classSpec ident="att.personal" type="atts" mode="change">
+<attList>
+<attDef ident="sort" mode="delete"/>
+</attList>
+</classSpec>
+<!--Checking module core-->
+<moduleRef key="core"
+include="p foreign hi q desc sic corr choice reg orig gap name num date abbr expan ref list item head note graphic pb lb cb author editor respStmt resp title bibl l lg"/>
+<elementSpec ident="p" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="part" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="N"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="foreign" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="hi" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="q" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="desc" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="sic" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="corr" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="choice" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="reg" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="orig" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="gap" mode="change">
+<attList>
+<attDef ident="reason" mode="delete"/>
+<attDef ident="agent" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="unit" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="envoi"/>
+<valItem ident="letter"/>
+<valItem ident="ponctuation"/>
+<valItem ident="stanza"/>
+<valItem ident="verse"/>
+<valItem ident="word"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="name" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="full" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="yes"/>
+</valList>
+</attDef>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="num" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="value" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="date" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="unit" mode="delete"/>
+<attDef ident="quantity" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="abbr" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="expan" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="ref" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="list" mode="change">
+<attList>
+<attDef ident="type" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="item" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="head" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="rubric"/>
+</valList>
+</attDef>
+<attDef ident="subtype" mode="delete"/>
+<attDef ident="place" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="inline"/>
+<valItem ident="margin"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="note" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="place" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="[direction]"/>
+</valList>
+</attDef>
+<attDef ident="target" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="graphic" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="pb" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="lb" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="cb" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="author" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="editor" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="respStmt" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="resp" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="title" mode="change">
+<attList>
+<attDef ident="level" mode="delete"/>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="main"/>
+<valItem ident="sub"/>
+</valList>
+</attDef>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="main"/>
+<valItem ident="sub"/>
+</valList>
+</attDef>
+<attDef ident="subtype" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="bibl" mode="change">
+<attList>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="default" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="false"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+<attDef ident="status" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="draft"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="l" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="rhyme" mode="delete"/>
+<attDef ident="part" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="N"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="lg" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="org" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="uniform"/>
+</valList>
+</attDef>
+<attDef ident="sample" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="complete"/>
+</valList>
+</attDef>
+<attDef ident="met" mode="delete"/>
+<attDef ident="real" mode="delete"/>
+<attDef ident="part" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="N"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="?"/>
+<valItem ident="chanson"/>
+<valItem ident="chanson_amour"/>
+<valItem ident="chanson_d_amour"/>
+<valItem ident="chanson_mariale"/>
+<valItem ident="chanson_religieuse"/>
+<valItem ident="envoi"/>
+<valItem ident="jeu-parti"/>
+<valItem ident="pastourelle"/>
+<valItem ident="religious_lai"/>
+<valItem ident="sirventois"/>
+<valItem ident="sirventois_chanson_de_croisade"/>
+<valItem ident="stanza"/>
+</valList>
+</attDef>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<!--Checking module figures-->
+<moduleRef key="figures" include="formula"/>
+<elementSpec ident="formula" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<!--Checking module header-->
+<moduleRef key="header"
+include="teiHeader fileDesc titleStmt principal extent publicationStmt idno sourceDesc handNote"/>
+<elementSpec ident="teiHeader" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="fileDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="titleStmt" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="principal" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="extent" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="publicationStmt" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="idno" mode="change">
+<attList>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="RS"/>
+<valItem ident="RS_342"/>
+<valItem ident="RS_407"/>
+<valItem ident="RS_6"/>
+<valItem ident="VIAF"/>
+<valItem ident="ark"/>
+<valItem ident="facs"/>
+</valList>
+</attDef>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="notBefore" mode="delete"/>
+<attDef ident="notAfter" mode="delete"/>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="RS"/>
+<valItem ident="RS_342"/>
+<valItem ident="RS_407"/>
+<valItem ident="RS_6"/>
+<valItem ident="VIAF"/>
+<valItem ident="ark"/>
+<valItem ident="facs"/>
+</valList>
+</attDef>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="sourceDesc" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="default" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="false"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="handNote" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<!--Checking module gaiji-->
+<!--Checking module verse-->
+<classRef key="att.metrical"/>
+<moduleRef key="verse" include="rhyme"/>
+<elementSpec ident="rhyme" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<!--Checking module transcr-->
+<classRef key="att.coordinated"/>
+<classRef key="att.global.facs"/>
+<moduleRef key="transcr" include="facsimile surface zone ex fw handShift am"/>
+<elementSpec ident="facsimile" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="surface" mode="change">
+<attList>
+<attDef ident="attachment" mode="delete"/>
+<attDef ident="flipping" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="points" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="zone" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="ulx" mode="delete"/>
+<attDef ident="uly" mode="delete"/>
+<attDef ident="lrx" mode="delete"/>
+<attDef ident="lry" mode="delete"/>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="catch-word"/>
+<valItem ident="marginalia"/>
+<valItem ident="page-number"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="ex" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="unit" mode="delete"/>
+<attDef ident="quantity" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="fw" mode="change">
+<attList>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="catch"/>
+</valList>
+</attDef>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="catch"/>
+</valList>
+</attDef>
+<attDef ident="subtype" mode="delete"/>
+<attDef ident="place" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="bottom"/>
+</valList>
+</attDef>
+</attList>
+</elementSpec>
+<elementSpec ident="handShift" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="am" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<classSpec ident="att.coordinated" type="atts" mode="change">
+<attList>
+<attDef ident="start" mode="delete"/>
+</attList>
+</classSpec>
+<!--Checking module linking-->
+<classRef key="att.global.linking"/>
+<classSpec ident="att.global.linking" type="atts" mode="change">
+<attList>
+<attDef ident="synch" mode="delete"/>
+<attDef ident="sameAs" mode="delete"/>
+<attDef ident="copyOf" mode="delete"/>
+<attDef ident="next" mode="delete"/>
+<attDef ident="prev" mode="delete"/>
+<attDef ident="exclude" mode="delete"/>
+<attDef ident="select" mode="delete"/>
+</attList>
+</classSpec>
+<!--Checking module analysis-->
+<classRef key="att.linguistic"/>
+<moduleRef key="analysis" include="w c pc"/>
+<elementSpec ident="w" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="met" mode="delete"/>
+<attDef ident="real" mode="delete"/>
+<attDef ident="rhyme" mode="delete"/>
+<attDef ident="part" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="N"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="c" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="met" mode="delete"/>
+<attDef ident="real" mode="delete"/>
+<attDef ident="rhyme" mode="delete"/>
+<attDef ident="part" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="N"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="pc" mode="change">
+<attList>
+<attDef ident="force" mode="delete"/>
+<attDef ident="unit" mode="delete"/>
+<attDef ident="pre" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="met" mode="delete"/>
+<attDef ident="real" mode="delete"/>
+<attDef ident="rhyme" mode="delete"/>
+<attDef ident="part" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="N"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<classSpec ident="att.linguistic" type="atts" mode="change">
+<attList>
+<attDef ident="lemma" mode="delete"/>
+<attDef ident="lemmaRef" mode="delete"/>
+<attDef ident="pos" mode="delete"/>
+<attDef ident="msd" mode="delete"/>
+<attDef ident="join" mode="delete"/>
+</attList>
+</classSpec>
+<!--Checking module textstructure-->
+<moduleRef key="textstructure" include="TEI text body div"/>
+<elementSpec ident="TEI" mode="change">
+<attList>
+<attDef ident="version" mode="delete"/>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="text" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="type" mode="delete"/>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="body" mode="change">
+<attList>
+<attDef ident="corresp" mode="delete"/>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+</attList>
+</elementSpec>
+<elementSpec ident="div" mode="change">
+<attList>
+<attDef ident="facs" mode="delete"/>
+<attDef ident="cert" mode="delete"/>
+<attDef ident="resp" mode="delete"/>
+<attDef ident="org" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="uniform"/>
+</valList>
+</attDef>
+<attDef ident="sample" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="complete"/>
+</valList>
+</attDef>
+<attDef ident="met" mode="delete"/>
+<attDef ident="real" mode="delete"/>
+<attDef ident="rhyme" mode="delete"/>
+<attDef ident="part" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="N"/>
+</valList>
+</attDef>
+<attDef ident="type" mode="change">
+<valList mode="add" type="closed">
+<valItem ident="Chansonnier_M_Thibaut_de_Champagne"/>
+<valItem ident="Chansonnier_Mt_1_Thibaut_de_Champagne"/>
+<valItem ident="Chansonnier_Mt_2_Thibaut_de_Champagne"/>
+<valItem ident="lyrical_text"/>
+</valList>
+</attDef>
+<attDef ident="subtype" mode="delete"/>
+</attList>
+</elementSpec>
+</schemaSpec>
+</div>
+</body>
+</text>
+</TEI>
