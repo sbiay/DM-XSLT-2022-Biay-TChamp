@@ -47,9 +47,10 @@
                         <div class="corpsChanson">
                             <div class="img">
                                 <!-- On récupère dans le premier lb de la chanson le numéro correspondant à la page sur Gallica -->
-                                <xsl:variable name="page" select="replace(substring(./descendant::lb[1]/@facs, 7), '_line.*', '')"/>
-                                <img src="https://gallica.bnf.fr/iiif/ark:/12148/btv1b84192440/f{$page}/full/500/0/default.jpg" alt="Gallica, Paris, BNF, fr. 844, f{$page}">
-                                </img>
+                                <xsl:variable name="page" select="replace(substring(./descendant::lb[1]/@facs, 7), '_.*', '')"/>
+                                <a href="https://gallica.bnf.fr/ark:/12148/btv1b84192440/f{$page}">                                
+                                    <img src="https://gallica.bnf.fr/iiif/ark:/12148/btv1b84192440/f{$page}/full/500/0/default.jpg" alt="Gallica, Paris, BNF, fr. 844, f{$page}"/>
+                                </a>                                
                             </div>
                             <div class="txt">
                                 <xsl:apply-templates select="descendant::lg[@type='stanza']" mode="graphem"/>
@@ -76,7 +77,7 @@
                 <xsl:variable name="listeCorresp" as="item()" select="./bibl/@corresp"/>
                 <ul>
                     <xsl:if test=".//idno[@type='RS']">
-                    <li>RS : <xsl:value-of select=".//idno[@type='RS']"/></li>
+                        <li>RS : <xsl:value-of select=".//idno[@type='RS']"/></li>
                     </xsl:if>
                     <xsl:for-each select="tokenize($listeCorresp, ' ')">
                         <li><xsl:value-of select="replace(replace(current(), '#', ''), '_', ' : ')"/></li>
@@ -105,13 +106,13 @@
                 </p>
             </div>
             <xsl:if test="./bibl/note">
-            <div>
-                <h2>Note</h2>
-                <p>
-                    <xsl:apply-templates select="./bibl/note"/>
-                </p>
-            </div>
-        </xsl:if>
+                <div>
+                    <h2>Note</h2>
+                    <p>
+                        <xsl:apply-templates select="./bibl/note"/>
+                    </p>
+                </div>
+            </xsl:if>
         </div>
     </xsl:template>
     
