@@ -43,7 +43,7 @@
                             </xsl:choose>
                         </h1>
                         <div class="corpsChanson">
-                            <div class="img">mon image</div>
+                            <!-- TODO ajouter image <div class="img">mon image</div>  -->
                             <div class="txt">
                                 <xsl:apply-templates select="descendant::lg[@type='stanza']" mode="graphem"/>
                             </div>
@@ -62,6 +62,9 @@
             <xsl:attribute name="n">
                 <xsl:value-of select="@n"/>
             </xsl:attribute>
+            <xsl:attribute name="class">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
             <xsl:apply-templates select="l"  mode="#current"/>
         </div>
     </xsl:template>
@@ -72,35 +75,77 @@
         </p>
     </xsl:template>
     
-    <xsl:template match="w" mode="#all">
-        <xsl:apply-templates mode="#current"/>
-        <xsl:text> </xsl:text>
-        <!-- Poser une condition si le following-sibling est une ponctuation -->
+    <xsl:template match="w" mode="graphem">
+        <xsl:choose>  
+            <xsl:when test=".[@rend='elision']">
+                <xsl:apply-templates mode="graphem"/>
+            </xsl:when>    
+            <xsl:otherwise>
+                <xsl:apply-templates mode="graphem"/>
+                <xsl:text> </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="w" mode="interp">
+        <xsl:choose>  
+            <xsl:when test=".[@rend='elision']">
+                <xsl:apply-templates mode="interp"/>
+                <xsl:text>'</xsl:text>
+            </xsl:when>    
+            <xsl:otherwise>
+                <xsl:apply-templates mode="interp"/>
+                <xsl:text> </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="app" mode="graphem">
-        <xsl:apply-templates select="lem"/>
+        <xsl:apply-templates select="lem" mode="graphem"/>
     </xsl:template>
     
     <xsl:template match="app" mode="interp">
-        <xsl:value-of select="rdg[@resp='#Wallenskold']"/>
+        <xsl:apply-templates select="lem" mode="interp"/>
+        <!-- Les leçons rejetées en apparat -->
+            <xsl:if test="./rdg[@resp='#Wallenskold']">
+                <span style="color : rgb(015, 005, 230, 0.8)">
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="./rdg[@resp='#Wallenskold']"/>
+                </span>
+            </xsl:if>
+            <xsl:if test="./rdg[@wit='#Mt']">
+                <span style="color : rgb(000, 200, 100, 0.7)">
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="./rdg[@wit='#Mt']"/>
+                    <xsl:text> </xsl:text>
+                </span>
+            </xsl:if>
     </xsl:template>
     
-    <xsl:template match="lem">
-        <xsl:apply-templates mode="graphem"/>
+    <xsl:template match="lem" mode="#all">
+        <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
     <xsl:template match="choice" mode="graphem">
         <xsl:value-of select="sic"/>
         <xsl:if test="sic[not(text())]">
-            <xsl:text>[…]</xsl:text>
+            <xsl:choose>
+                <xsl:when test="sic/following-sibling::corr//reg">
+                    <xsl:text>[</xsl:text>
+                    <xsl:value-of select="sic/following-sibling::corr//orig"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>[…]</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:if>
         <xsl:value-of select="orig"/>
         <xsl:value-of select="abbr"/>
     </xsl:template>
     
     <xsl:template match="choice" mode="interp">
-        <xsl:value-of select="reg"/>
+        <xsl:value-of select=".//reg"/>
         <xsl:value-of select="expan"/>
     </xsl:template>
     
@@ -155,12 +200,19 @@
             .corpsChanson {
             display: flex;
             justify-content: space-between;
+            justify-content: space-around;
             }
             .img {
             }
             .txt {
             font-size: 16pt;
             font-family: "Junicode";
+            }
+            .stanza {
+            margin-bottom: 20px;
+            }
+            p {
+            margin-bottom: 0px;
             }
         </style>
     </xsl:template>
