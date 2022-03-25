@@ -138,6 +138,13 @@
         </p>
     </xsl:template>
     
+    <!-- Lettres ornées -->
+    <xsl:template match="hi[@rend='ornate_initial']" mode="#all">
+        <span class="ornate_initial">        
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
     <xsl:template match="w" mode="graphem">
         <xsl:choose>  
             <xsl:when test=".[@rend='elision']">
@@ -346,6 +353,9 @@
             }
             .stanza {
             margin-bottom: 20px;
+            }
+            .ornate_initial {
+            font-size: 40pt;
             }
             p {
             margin-bottom: 0px;
