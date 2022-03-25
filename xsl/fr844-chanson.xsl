@@ -26,19 +26,79 @@
                         </xsl:choose>    
                     </xsl:element>
                     <xsl:call-template name="bootstrapCore"/>
-                    <xsl:call-template name="stylePageContenu"/>
+                    <xsl:call-template name="stylePageChanson"/>
                 </head>
                 <body>
                     <xsl:call-template name="navbar"/>
-                    <xsl:call-template name="stylePageContenu"/>
-                    <div class="container">
+                    <div class="containerChanson">
                         <h1 class="display-4 fst-italic">
+                            <xsl:choose>
+                                <xsl:when test="./note/bibl/title/text()">
+                                    <xsl:value-of select="./note/bibl/title/text()"/>
+                                </xsl:when>
+                                <!-- Si la chanson est sans titre -->
+                                <xsl:otherwise>
+                                    <xsl:text>[Sans titre]</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </h1>
-                        <p>Hello</p>
+                        <div class="corpsChanson">
+                            <div class="img">mon image</div>
+                            <div class="txt">
+                                <xsl:apply-templates select="descendant::lg[@type='stanza']" mode="graphem"/>
+                            </div>
+                            <div class="txt">
+                                <xsl:apply-templates select="descendant::lg[@type='stanza']" mode="interp"/>
+                            </div>
+                        </div>
                     </div>
                 </body>
             </html>
         </xsl:result-document>
+    </xsl:template>
+    
+    <xsl:template match="lg[@type='stanza']" mode="#all">
+        <div>
+            <xsl:attribute name="n">
+                <xsl:value-of select="@n"/>
+            </xsl:attribute>
+            <xsl:apply-templates select="l"  mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="l" mode="#all">
+        <p>
+            <xsl:attribute name="title">
+                <xsl:number count="l" level="any" format="1"/>
+            </xsl:attribute>
+            <xsl:value-of select="l"/>
+            <xsl:apply-templates mode="#current"/>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="w" mode="#all">
+        <xsl:value-of select="w"/>
+        <xsl:text> </xsl:text>
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+    
+    <xsl:template match="app" mode="graphem">
+        <xsl:value-of select="lem"/>
+    </xsl:template>
+    
+    <xsl:template match="app" mode="interp">
+        <xsl:value-of select="rdg[@resp='#Wallenskold']"/>
+    </xsl:template>
+    
+    <xsl:template match="choice" mode="graphem">
+        <xsl:value-of select="sic"/>
+        <xsl:value-of select="orig"/>
+        <xsl:value-of select="abbr"/>
+    </xsl:template>
+    
+    <xsl:template match="choice" mode="interp">
+        <xsl:value-of select="reg"/>
+        <xsl:value-of select="expan"/>
     </xsl:template>
     
     <!-- Style -->
@@ -75,23 +135,30 @@
         </header>
     </xsl:template>
     
-    <xsl:template name="stylePageContenu">
+    <xsl:template name="stylePageChanson">
         <style>
             body {
-            margin-left: 15%;
-            margin-right: 15%;
             margin-top: 150px;
             }
-            ul {
-            margin: 0px;
-            }
-            .container {
-            padding: 80px;
+            .containerChanson {
             background-color:  rgb(253, 245, 245);
+            margin-left: 3%;
+            margin-right: 3%;
+            font
             }
             h1 {
             margin-bottom: 80px;
-            }                        
+            }
+            .corpsChanson {
+            display: flex;
+            justify-content: space-between;
+            }
+            .img {
+            }
+            .txt {
+            font-size: 16pt;
+            font-family: "Junicode";
+            }
         </style>
     </xsl:template>
     
