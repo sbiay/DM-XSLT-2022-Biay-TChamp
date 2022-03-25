@@ -12,14 +12,21 @@
             }
             .intro {
             margin-left: 5%;
-            margin-left: 5%;
+            margin-right: 5%;
             margin-bottom: 3%;
             }
             .intro > header {
             margin-bottom: 30px;
             font-size: 32pt;
             }
-            .containerChanson {
+            .introConteneur {
+            display: flex;
+            justify-content: space-between;
+            }
+            .introColonne{
+            width: 40%;
+            }
+            .chansonConteneur {
             background-color:  rgb(253, 245, 245);
             margin-left: 3%;
             margin-right: 3%;
@@ -44,7 +51,7 @@
             .ornate_initial {
             font-size: 40pt;
             }
-            p {
+            .stanza > p {
             margin-bottom: 0px;
             }
         </style><script type="text/javascript">
@@ -137,34 +144,40 @@
             </div>
          </nav>
       </header>
-      <div class="containerChanson">
+      <div class="chansonConteneur">
          <h1 class="display-4 fst-italic">Costume est bien, quant on tient un prison</h1>
          <div class="intro">
             <header>Thibaut de Champagne</header>
-            <div>
-               <h2>Références</h2>
-               <ul>
-                  <li>RS&nbsp;: 1880</li>
-                  <li>Wallenskold&nbsp;: 29</li>
-                  <li>Callahan&nbsp;: 51</li>
-               </ul>
-            </div>
-            <div>
-               <h2>Autorités</h2>
-               <ul>
-                  <li>Li rois de NavareLa rubrique manque dans M car le feuillet est mutilé à cause d'une
-                     vignette découpée. Cette pièce est attribuée à Thibaut de Champagne dans la table
-                     des matières et marque le début de la section consacrée au roi de Navarre.<span> (M TableRoi K N P R X a)</span></li>
-                  <li>anonyme<span> (B Mt O S V zeta)</span></li>
-               </ul>
-            </div>
-            <div>
-               <h2>Musique</h2>
-               <p>La musique est notée dans tous les manuscrits, sauf S et a.</p>
-            </div>
-            <div>
-               <h2>Note</h2>
-               <p>L'édition Wallensköld donne la graphie de K.</p>
+            <div class="introConteneur">
+               <div class="introColonne">
+                  <div>
+                     <h2>Références</h2>
+                     <ul>
+                        <li>RS&nbsp;: 1880</li>
+                        <li>Wallenskold&nbsp;: 29</li>
+                        <li>Callahan&nbsp;: 51</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h2>Autorités</h2>
+                     <ul>
+                        <li>Li rois de Navare<span> (M TableRoi K N P R X a)</span><span>. La rubrique manque dans M car le feuillet est mutilé à cause d'une vignette découpée.
+                              Cette pièce est attribuée à Thibaut de Champagne dans la table des matières et marque
+                              le début de la section consacrée au roi de Navarre.</span></li>
+                        <li>anonyme<span> (B Mt O S V zeta)</span></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="introColonne">
+                  <div>
+                     <h2>Musique</h2>
+                     <p>La musique est notée dans tous les manuscrits, sauf S et a.</p>
+                  </div>
+                  <div>
+                     <h2>Note</h2>
+                     <p>L'édition Wallensköld donne la graphie de K.</p>
+                  </div>
+               </div>
             </div>
          </div>
          <div class="corpsChanson">

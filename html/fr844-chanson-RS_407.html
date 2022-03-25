@@ -12,14 +12,21 @@
             }
             .intro {
             margin-left: 5%;
-            margin-left: 5%;
+            margin-right: 5%;
             margin-bottom: 3%;
             }
             .intro > header {
             margin-bottom: 30px;
             font-size: 32pt;
             }
-            .containerChanson {
+            .introConteneur {
+            display: flex;
+            justify-content: space-between;
+            }
+            .introColonne{
+            width: 40%;
+            }
+            .chansonConteneur {
             background-color:  rgb(253, 245, 245);
             margin-left: 3%;
             margin-right: 3%;
@@ -44,7 +51,7 @@
             .ornate_initial {
             font-size: 40pt;
             }
-            p {
+            .stanza > p {
             margin-bottom: 0px;
             }
         </style><script type="text/javascript">
@@ -137,32 +144,38 @@
             </div>
          </nav>
       </header>
-      <div class="containerChanson">
+      <div class="chansonConteneur">
          <h1 class="display-4 fst-italic">De bone amour vient science et biautez</h1>
          <div class="intro">
             <header>Thibaut de Champagne</header>
-            <div>
-               <h2>Références</h2>
-               <ul>
-                  <li>Callahan&nbsp;: 36</li>
-               </ul>
-            </div>
-            <div>
-               <h2>Autorités</h2>
-               <ul>
-                  <li>Li rois de Navare<span> (M TableRoi C K N P X a)</span></li>
-                  <li>Li roisLe reste de la rubrique est omis faute de place.<span> (T)</span></li>
-                  <li>Tiebaut roy de Navarre<span> (R)</span></li>
-                  <li>anonyme<span> (B I Mt O U V Z e)</span></li>
-               </ul>
-            </div>
-            <div>
-               <h2>Musique</h2>
-               <p>La musique est notée dans B, K, M, Mt, N, O, P, R, T, V, X, Z et a.</p>
-            </div>
-            <div>
-               <h2>Note</h2>
-               <p>L'édition Wallensköld donne la graphie de K.</p>
+            <div class="introConteneur">
+               <div class="introColonne">
+                  <div>
+                     <h2>Références</h2>
+                     <ul>
+                        <li>Callahan&nbsp;: 36</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h2>Autorités</h2>
+                     <ul>
+                        <li>Li rois de Navare<span> (M TableRoi C K N P X a)</span></li>
+                        <li>Li rois<span> (T)</span><span>. Le reste de la rubrique est omis faute de place.</span></li>
+                        <li>Tiebaut roy de Navarre<span> (R)</span></li>
+                        <li>anonyme<span> (B I Mt O U V Z e)</span></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="introColonne">
+                  <div>
+                     <h2>Musique</h2>
+                     <p>La musique est notée dans B, K, M, Mt, N, O, P, R, T, V, X, Z et a.</p>
+                  </div>
+                  <div>
+                     <h2>Note</h2>
+                     <p>L'édition Wallensköld donne la graphie de K.</p>
+                  </div>
+               </div>
             </div>
          </div>
          <div class="corpsChanson">

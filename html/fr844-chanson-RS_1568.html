@@ -12,14 +12,21 @@
             }
             .intro {
             margin-left: 5%;
-            margin-left: 5%;
+            margin-right: 5%;
             margin-bottom: 3%;
             }
             .intro > header {
             margin-bottom: 30px;
             font-size: 32pt;
             }
-            .containerChanson {
+            .introConteneur {
+            display: flex;
+            justify-content: space-between;
+            }
+            .introColonne{
+            width: 40%;
+            }
+            .chansonConteneur {
             background-color:  rgb(253, 245, 245);
             margin-left: 3%;
             margin-right: 3%;
@@ -44,7 +51,7 @@
             .ornate_initial {
             font-size: 40pt;
             }
-            p {
+            .stanza > p {
             margin-bottom: 0px;
             }
         </style><script type="text/javascript">
@@ -137,34 +144,40 @@
             </div>
          </nav>
       </header>
-      <div class="containerChanson">
+      <div class="chansonConteneur">
          <h1 class="display-4 fst-italic">Amors me fait conmencier</h1>
          <div class="intro">
             <header>Thibaut de Champagne</header>
-            <div>
-               <h2>Références</h2>
-               <ul>
-                  <li>RS&nbsp;: 11568</li>
-                  <li>Wallenskold&nbsp;: 15</li>
-                  <li>Callahan&nbsp;: 1</li>
-               </ul>
-            </div>
-            <div>
-               <h2>Autorités</h2>
-               <ul>
-                  <li>Li rois de Navarre<span> (K T C)</span></li>
-                  <li>Ce sont les chançonss que li rois Thiebaut de Navarre fist<span> (N)</span></li>
-                  <li>Ci comencent les chançons le roy Thiebaut de Navarre<span> (X)</span></li>
-                  <li>anonyme<span> (Mt O S V)</span></li>
-               </ul>
-            </div>
-            <div>
-               <h2>Musique</h2>
-               <p>La musique est notée dans K, M, N, O, V et X.</p>
-            </div>
-            <div>
-               <h2>Note</h2>
-               <p>L'édition Wallensköld donne la graphie de K.</p>
+            <div class="introConteneur">
+               <div class="introColonne">
+                  <div>
+                     <h2>Références</h2>
+                     <ul>
+                        <li>RS&nbsp;: 11568</li>
+                        <li>Wallenskold&nbsp;: 15</li>
+                        <li>Callahan&nbsp;: 1</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h2>Autorités</h2>
+                     <ul>
+                        <li>Li rois de Navarre<span> (K T C)</span></li>
+                        <li>Ce sont les chançonss que li rois Thiebaut de Navarre fist<span> (N)</span></li>
+                        <li>Ci comencent les chançons le roy Thiebaut de Navarre<span> (X)</span></li>
+                        <li>anonyme<span> (Mt O S V)</span></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="introColonne">
+                  <div>
+                     <h2>Musique</h2>
+                     <p>La musique est notée dans K, M, N, O, V et X.</p>
+                  </div>
+                  <div>
+                     <h2>Note</h2>
+                     <p>L'édition Wallensköld donne la graphie de K.</p>
+                  </div>
+               </div>
             </div>
          </div>
          <div class="corpsChanson">

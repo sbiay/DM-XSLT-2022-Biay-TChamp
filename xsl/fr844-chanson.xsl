@@ -32,7 +32,7 @@
                 </head>
                 <body>
                     <xsl:call-template name="navbar"/>
-                    <div class="containerChanson">
+                    <div class="chansonConteneur">
                         <h1 class="display-4 fst-italic">
                             <xsl:choose>
                                 <xsl:when test="./note/bibl/title/text()">
@@ -74,47 +74,59 @@
                 <!-- Le nom de l'auteur s'il est certain -->
                 <xsl:value-of select=".//author[@cert='high']"/>
             </header>
-            <div>
-                <h2>Références</h2>
-                <xsl:variable name="listeCorresp" as="item()" select="./bibl/@corresp"/>
-                <ul>
-                    <xsl:if test=".//idno[@type='RS']">
-                        <li>RS : <xsl:value-of select=".//idno[@type='RS']"/></li>
-                    </xsl:if>
-                    <xsl:for-each select="tokenize($listeCorresp, ' ')">
-                        <li><xsl:value-of select="replace(replace(current(), '#', ''), '_', ' : ')"/></li>
-                    </xsl:for-each>
-                </ul>                
-            </div>
-            <div>
-                <h2>Autorités</h2>
-                <ul>
-                    <xsl:for-each select=".//author[not(@cert='high')]">
-                        <li>
-                            <xsl:value-of select="current()//text()"/>
-                            <span>
-                                <xsl:text> (</xsl:text>
-                                <xsl:value-of select="replace(current()/witDetail/@wit, '#', '')"/>
-                                <xsl:text>)</xsl:text>
-                            </span>
-                        </li>
-                    </xsl:for-each>
-                </ul>
-            </div>
-            <div>
-                <h2>Musique</h2>
-                <p>
-                    <xsl:apply-templates select=".//notatedMusic/desc"/>
-                </p>
-            </div>
-            <xsl:if test="./bibl/note">
-                <div>
-                    <h2>Note</h2>
-                    <p>
-                        <xsl:apply-templates select="./bibl/note"/>
-                    </p>
+            <div class="introConteneur">
+                <div class="introColonne">
+                    <div>
+                        <h2>Références</h2>
+                        <xsl:variable name="listeCorresp" as="item()" select="./bibl/@corresp"/>
+                        <ul>
+                            <xsl:if test=".//idno[@type='RS']">
+                                <li>RS : <xsl:value-of select=".//idno[@type='RS']"/></li>
+                            </xsl:if>
+                            <xsl:for-each select="tokenize($listeCorresp, ' ')">
+                                <li><xsl:value-of select="replace(replace(current(), '#', ''), '_', ' : ')"/></li>
+                            </xsl:for-each>
+                        </ul>                
+                    </div>
+                    <div>
+                        <h2>Autorités</h2>
+                        <ul>
+                            <xsl:for-each select=".//author[not(@cert='high')]">
+                                <li>
+                                    <xsl:value-of select="current()/witDetail/text()"/>
+                                    <span>
+                                        <xsl:text> (</xsl:text>
+                                        <xsl:value-of select="replace(current()/witDetail/@wit, '#', '')"/>
+                                        <xsl:text>)</xsl:text>
+                                    </span>
+                                    <xsl:if test="current()/note">    
+                                        <span>
+                                            <xsl:text>. </xsl:text>
+                                            <xsl:apply-templates select="current()/note"/>
+                                        </span>
+                                    </xsl:if>
+                                </li>
+                            </xsl:for-each>
+                        </ul>
+                    </div>
                 </div>
-            </xsl:if>
+                <div class="introColonne">
+                    <div>
+                        <h2>Musique</h2>
+                        <p>
+                            <xsl:apply-templates select=".//notatedMusic/desc"/>
+                        </p>
+                    </div>
+                    <xsl:if test="./bibl/note">
+                        <div>
+                            <h2>Note</h2>
+                            <p>
+                                <xsl:apply-templates select="./bibl/note"/>
+                            </p>
+                        </div>
+                    </xsl:if>
+                </div>
+            </div>
         </div>
     </xsl:template>
     
@@ -325,14 +337,21 @@
             }
             .intro {
             margin-left: 5%;
-            margin-left: 5%;
+            margin-right: 5%;
             margin-bottom: 3%;
             }
             .intro > header {
             margin-bottom: 30px;
             font-size: 32pt;
             }
-            .containerChanson {
+            .introConteneur {
+            display: flex;
+            justify-content: space-between;
+            }
+            .introColonne{
+            width: 40%;
+            }
+            .chansonConteneur {
             background-color:  rgb(253, 245, 245);
             margin-left: 3%;
             margin-right: 3%;
@@ -351,13 +370,16 @@
             font-family: "Junicode";
             max-width: 700px; 
             }
+            /* Chansons */
             .stanza {
             margin-bottom: 20px;
             }
+            /* Initiales ornées */
             .ornate_initial {
             font-size: 40pt;
             }
-            p {
+            /* Vers des chansons */
+            .stanza > p {
             margin-bottom: 0px;
             }
         </style>
