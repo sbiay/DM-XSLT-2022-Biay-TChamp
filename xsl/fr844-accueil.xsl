@@ -16,25 +16,26 @@
             <html>
                 <head>
                     <xsl:element name="title">
-                        Corpus lyrique de Thibaut de Champagne|Accueil
+                        <xsl:text>Corpus lyrique de Thibaut de Champagne|Accueil</xsl:text>
+                    </xsl:element>
+                    <xsl:call-template name="bootstrapCore"/>
+                    <!-- Feuilles de style propres au carrousel -->
+                    <xsl:element name="link">
+                        <xsl:attribute name="rel">stylesheet</xsl:attribute>
+                        <xsl:attribute name="href">../static/bootstrap-5.1.3-dist/css/carousel.css</xsl:attribute>
                     </xsl:element>
                     <xsl:element name="link">
                         <xsl:attribute name="rel">canonical</xsl:attribute>
                         <xsl:attribute name="href">https://getbootstrap.com/docs/5.1/examples/carousel/</xsl:attribute>
                     </xsl:element>
-                    <xsl:call-template name="bootstrapCore"/>
+                    
                     <style>
                         img {
                         min-height: 1000px;
                         }
-                        
                     </style>
                     
-                    <!-- Feuille de style propre au carrousel -->
-                    <xsl:element name="link">
-                        <xsl:attribute name="rel">stylesheet</xsl:attribute>
-                        <xsl:attribute name="href">../static/bootstrap-5.1.3-dist/css/carousel.css</xsl:attribute>
-                    </xsl:element>
+                    
                 </head>
                 <body>
                     <xsl:call-template name="navbar"/>
@@ -93,24 +94,24 @@
                             </div><!-- /.row -->
                             <!-- START THE FEATURETTES
                                 <div class="row featurette">
-                                    <div class="col-md-7">
-                                        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-                                        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-                                    </div>
+                                <div class="col-md-7">
+                                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+                                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
                                 </div>
-                                 -->
+                                <div class="col-md-5">
+                                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                                </div>
+                                </div>
+                            -->
                         </div><!-- fin du container -->
                         
                         <!-- FOOTER 
-                        <footer class="container">
+                            <footer class="container">
                             <p class="float-end"><a href="#">Back to top</a></p>
                             <p> 2017–2021 Company, Inc.  <a href="#">Privacy</a>  <a href="#">Terms</a></p>
-                        </footer>
+                            </footer>
                         -->
-                    
+                        
                     </main>
                     <script src="../static/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"/>
                 </body>
@@ -119,6 +120,7 @@
     </xsl:template>
     
     <xsl:template match="body/div">
+        <xsl:variable name="nomChansonnier" select="./head"/>
         <xsl:choose>
             <!-- Pour le premier chansonnier, la classe du carrousel est active -->
             <xsl:when test=".[@n='1']">
@@ -130,7 +132,7 @@
                                 <xsl:value-of select="./head"/>
                             </h1>
                             <p>Du texte pour présenter le chansonnier</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Voir</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="./fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html">Voir</a></p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +152,7 @@
                                 <xsl:value-of select="./head"/>
                             </h1>
                             <p>Du texte pour présenter le chansonnier</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Voir</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="./fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html">Voir</a></p>
                         </div>
                     </div>
                 </div>
@@ -158,13 +160,55 @@
         </xsl:choose>        
         
         <!-- Pour chaque chansonnier, on génère également une table des matières dans une autre sortie -->
-        <xsl:variable name="nomChansonnier" select="./head"/>
         <xsl:result-document href="../html/fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html" method="html" indent="yes">
-            
+            <html>
+                <head>
+                    <xsl:element name="title">
+                        <xsl:text>Corpus lyrique de Thibaut de Champagne|</xsl:text>
+                        <xsl:value-of select="$nomChansonnier"/>
+                    </xsl:element>
+                    <xsl:call-template name="bootstrapCore"/>
+                </head>
+                <body>
+                    <xsl:call-template name="navbar"/>
+                    <xsl:call-template name="stylePageContenu"/>
+                    <div class="container">
+                        <h1 class="display-4 fst-italic">
+                            <xsl:value-of select="$nomChansonnier"/>
+                        </h1>
+                        <ol>
+                            <xsl:apply-templates select="./div[@type='lyrical_text']"/>
+                        </ol>
+                    </div>
+                </body>
+            </html>
         </xsl:result-document>
         
     </xsl:template>
-
+    
+    <!-- Pour la table des matières de chaque chansonnier -->
+    <xsl:template match="div[@type='lyrical_text']">
+        <li>
+            <a href="./fr844-chanson-{./@xml:id}.html">
+                <xsl:attribute name="id">
+                    <xsl:value-of select="./@xml:id"/>
+                </xsl:attribute>
+                <!-- Nom de l'auteur : uniquement si @cert est "high" -->
+                <xsl:if test="./note/bibl/author[@cert='high']">
+                    <xsl:value-of select="./note/bibl/author[@cert='high']"/>
+                    <xsl:text>, </xsl:text>
+                </xsl:if>
+                <!-- Titre de la chanson -->
+                <i>
+                    <xsl:value-of select="./note/bibl/title"/>
+                </i>
+                <xsl:if test="not(./note/bibl/title/text())">
+                    <xsl:text>[sans titre]</xsl:text>
+                </xsl:if>
+            </a>
+        </li>
+    </xsl:template>
+    
     <!-- Style -->
     <xsl:template name="bootstrapCore">
         <xsl:element name="link">
@@ -188,10 +232,10 @@
                                 <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
                             </li>
                             <!-- Ajouter des liens
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                         -->
+                                <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                                </li>
+                            -->
                         </ul>
                     </div>
                 </div>
