@@ -166,7 +166,11 @@
     </xsl:template>
     
     <xsl:template match="lem" mode="#all">
+        <!-- En mode interp, on veut baliser le lem avec un <span style="font-weight: bold;"> -->
+    <span>    
+        <!-- Dédoubler ce template -->
         <xsl:apply-templates mode="#current"/>
+    </span>
     </xsl:template>
     
     <xsl:template match="choice" mode="graphem">
@@ -220,10 +224,10 @@
                                 <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
                             </li>
                             <li>
-                                <input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"/>
+                                <input id="mt" type="button" class="btn btn-success" value="Chanson. Mt"/>
                             </li>
                             <li>
-                                <input id="mt" type="button" class="btn btn-success" value="Chanson. Mt"/>
+                                <input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"/>
                             </li>
                         </ul>
                     </div>

@@ -39,7 +39,7 @@
             <head>
                 <xsl:value-of select="replace(replace(./@type, '_Thibaut_de_Champagne', ''), '_', ' ')"/>
             </head>
-            <xsl:apply-templates select="div[@type='lyrical_text']"/>
+            <xsl:apply-templates select="./div[@type='lyrical_text']"/>
         </div>
     </xsl:template>
     
