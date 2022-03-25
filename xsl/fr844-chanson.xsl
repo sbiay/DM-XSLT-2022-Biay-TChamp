@@ -244,6 +244,9 @@
     
     <xsl:template name="stylePageChanson">
         <style>
+            input {
+            margin-left: 10px;
+            }
             body {
             margin-top: 150px;
             }
