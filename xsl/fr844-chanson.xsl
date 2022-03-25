@@ -94,8 +94,15 @@
                 <xsl:text>'</xsl:text>
             </xsl:when>    
             <xsl:otherwise>
-                <xsl:apply-templates mode="interp"/>
-                <xsl:text> </xsl:text>
+                <xsl:choose>    
+                    <xsl:when test="./following-sibling::pc[descendant::reg/text()]">
+                        <xsl:apply-templates mode="interp"/>
+                    </xsl:when>    
+                    <xsl:otherwise>    
+                        <xsl:apply-templates mode="interp"/>
+                        <xsl:text> </xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -107,19 +114,21 @@
     <xsl:template match="app" mode="interp">
         <xsl:apply-templates select="lem" mode="interp"/>
         <!-- Les leçons rejetées en apparat -->
-            <xsl:if test="./rdg[@resp='#Wallenskold']">
-                <span style="color : rgb(015, 005, 230, 0.8)">
+        <xsl:if test="./rdg[@resp='#Wallenskold']">
+            <span style="color : rgb(015, 005, 230, 0.8)">
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="./rdg[@resp='#Wallenskold']"/>
+            </span>
+        </xsl:if>
+        <xsl:if test="./rdg[@wit='#Mt']">
+            <span style="color : rgb(000, 200, 100, 0.7)">
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="./rdg[@wit='#Mt']"/>
+                <xsl:if test="./following-sibling::w">
                     <xsl:text> </xsl:text>
-                    <xsl:value-of select="./rdg[@resp='#Wallenskold']"/>
-                </span>
-            </xsl:if>
-            <xsl:if test="./rdg[@wit='#Mt']">
-                <span style="color : rgb(000, 200, 100, 0.7)">
-                    <xsl:text> </xsl:text>
-                    <xsl:value-of select="./rdg[@wit='#Mt']"/>
-                    <xsl:text> </xsl:text>
-                </span>
-            </xsl:if>
+                </xsl:if>
+            </span>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="lem" mode="#all">
