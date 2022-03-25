@@ -300,6 +300,7 @@
             function montrerMt() {
                 Mt.forEach (span => span.style.display = "initial");
             }; 
+            
             // Au démarrage on cache tout
             cacherWall()
             cacherMt()
@@ -307,24 +308,42 @@
             let statutWall = false;
             let statutMt = false;
             // On définit les fonctions d'animation de l'apparat
+            
+            // Si l'un des apparats est sélectionné, les span de la classe lem sont mis en gras
+            function animLem() {
+                if (statutMt == true || statutWall == true ) {
+                    let lem = document.querySelectorAll(".lem");
+                    lem.forEach (span => 
+                    span.setAttribute("style", "font-weight:bold;")
+                    );
+                    } else {
+                    let lem = document.querySelectorAll(".lem");
+                    lem.forEach (span => 
+                    span.setAttribute("style", "font-weight:initial;")
+                    );
+                };
+            };
+            
             function animWall() {
                 if (statutWall == false) {
-                    console.log("ça devrait montrer")
                     Wall.forEach (span => span.style.display = "initial");
                     statutWall = true;
-                    console.log(statutWall)
+                    animLem()
                     } else {
                     cacherWall()
                     statutWall = false;
+                    animLem()
                 };
             };
             function animMt() {
                 if (statutMt== false) {
                     Mt.forEach (span => span.style.display = "initial");
                     statutMt = true;
+                    animLem()
                     } else {
                     cacherMt()
                     statutMt = false;
+                    animLem()
                 };
             };
             
