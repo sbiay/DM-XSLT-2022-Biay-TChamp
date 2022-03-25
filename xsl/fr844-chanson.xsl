@@ -9,6 +9,7 @@
     <!-- Supprime les espaces non voulues-->
     <xsl:strip-space elements="*"/>
     
+    <!-- Structure du HTML -->
     <xsl:template match="div[@type='lyrical_text']">
         <xsl:result-document href="../html/fr844-chanson-{./@xml:id}.html" method="html" indent="yes">
             <html>
@@ -65,6 +66,7 @@
         </xsl:result-document>
     </xsl:template>
     
+    <!-- Introduction à la chanson -->
     <xsl:template match="div[@type='lyrical_text']/note">
         <!-- Présentation de la chançon -->
         <div class="intro">
@@ -116,6 +118,7 @@
         </div>
     </xsl:template>
     
+    <!-- Strophes -->
     <xsl:template match="lg[@type='stanza']" mode="#all">
         <div>
             <xsl:attribute name="n">
@@ -128,6 +131,7 @@
         </div>
     </xsl:template>
     
+    <!-- Vers -->
     <xsl:template match="l" mode="#all">
         <p>
             <xsl:apply-templates mode="#current"/>
@@ -283,7 +287,16 @@
                                 <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
                             </li>
                             <li>
-                                <input id="mt" type="button" class="btn btn-success" value="Chanson. Mt"/>
+                                <!-- Boutons pour l'animation de l'apparat -->
+                                <xsl:choose>
+                                    <!-- On ne montre le bouton d'un apparat que lorsque le témoin est cité dans la pièce -->
+                                    <xsl:when test=".//rdg[@wit='#Mt']">    
+                                        <input id="mt" type="button" class="btn btn-success" value="Chanson. Mt"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <input id="mt" type="hidden" class="btn btn-success" value="Chanson. Mt"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </li>
                             <li>
                                 <input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"/>
@@ -340,8 +353,9 @@
         </style>
     </xsl:template>
     
-    <!-- Javascript : Ce script permet d'afficher ou de cacher l'apparat en fonction de l'action de l'utilisateur sur les boutons de la barre de navigation -->
+    <!-- Animation de l'apparat -->
     <xsl:template name="scriptApparat">
+        <!-- Javascript : Ce script permet d'afficher ou de cacher l'apparat en fonction de l'action de l'utilisateur sur les boutons de la barre de navigation -->
         <script type="text/javascript">
             function auDemarrage() {
             // On sélectionne les boutons Wall et Mt
