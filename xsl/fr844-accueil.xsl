@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0"  
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="2.0">
@@ -155,6 +156,13 @@
                 </div>
             </xsl:otherwise>
         </xsl:choose>        
+        
+        <!-- Pour chaque chansonnier, on génère également une table des matières dans une autre sortie -->
+        <xsl:variable name="nomChansonnier" select="./head"/>
+        <xsl:result-document href="../html/fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html" method="html" indent="yes">
+            
+        </xsl:result-document>
+        
     </xsl:template>
 
     <!-- Style -->
