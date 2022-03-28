@@ -930,7 +930,7 @@
                   <attDef ident="real" mode="delete"/>
                   <attDef ident="part" mode="delete"/>
                   <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
+                     <valList mode="add" type="open">
                         <valItem ident="chanson_amour"/>
                         <valItem ident="chanson_croisade"/>
                         <valItem ident="envoi"/>
@@ -1016,7 +1016,7 @@
             <elementSpec ident="idno" mode="change">
                <attList>
                   <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
+                     <valList mode="add" type="open">
                         <valItem ident="RS"/>
                         <valItem ident="RS_407"/>
                         <valItem ident="VIAF"/>
@@ -1031,7 +1031,7 @@
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
+                     <valList mode="add" type="open">
                         <valItem ident="RS"/>
                         <valItem ident="RS_407"/>
                         <valItem ident="VIAF"/>
@@ -1214,7 +1214,7 @@
                </attList>
             </classSpec>
             <!--Checking module textstructure-->
-            <moduleRef key="textstructure" include="TEI text body div front"/>
+            <moduleRef key="textstructure" include="TEI text body div front back listPerson listPlace"/>
             <elementSpec ident="TEI" mode="change">
                <attList>
                   <attDef ident="version" mode="delete"/>
@@ -1255,7 +1255,7 @@
                   <attDef ident="rhyme" mode="delete"/>
                   <attDef ident="part" mode="delete"/>
                   <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
+                     <valList mode="add" type="open">
                         <valItem ident="Chansonnier_M_Thibaut_de_Champagne"/>
                         <valItem ident="Chansonnier_Mt"/>
                         <valItem ident="chansonnier"/>
@@ -1265,6 +1265,14 @@
                </attList>
             </elementSpec>
             <elementSpec ident="front" mode="change">
+               <attList>
+                  <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
+                  <attDef ident="cert" mode="delete"/>
+                  <attDef ident="resp" mode="delete"/>
+               </attList>
+            </elementSpec>
+            <elementSpec ident="back" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
