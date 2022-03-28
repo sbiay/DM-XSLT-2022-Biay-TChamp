@@ -67,7 +67,7 @@
                                 <xsl:text>, </xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:text>.</xsl:text>
+                                <xsl:text></xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:for-each>
@@ -78,9 +78,14 @@
                     </xsl:if>
                 </xsl:for-each>
                 <xsl:if test=".//l//persName[@ref=concat('#', $personne/@xml:id)]">    
-                    <xsl:if test="position() != last()">
+                <xsl:choose>    
+                    <xsl:when test="position() != last()">
                         <xsl:text> ‒ </xsl:text>
-                    </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>.</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
                 </xsl:if>
             </xsl:for-each>
         </li>
