@@ -47,10 +47,10 @@
             <xsl:variable name="personne" select="current()"/>
             <xsl:text> : </xsl:text>
             <!-- Pour chaque chansonnier -->
-            <xsl:for-each select="//body/descendant::div[@type='chansonnier'][descendant::l/descendant::persName[@ref=concat('#', $personne/@xml:id)]]">
+            <xsl:for-each select="//body/descendant::div[@type='chansonnier'][descendant::persName[@ref=concat('#', $personne/@xml:id)]]">
                 <xsl:variable name="chansonnier" select="current()/head"/>
                 <!-- Pour chaque chanson -->
-                <xsl:for-each select="current()/div[descendant::l/descendant::persName[@ref=concat('#', $personne/@xml:id)]]">   
+                <xsl:for-each select="current()/div[descendant::persName[@ref=concat('#', $personne/@xml:id)]]">   
                     <!-- On écrit le nom du chansonnier à partir de son identifiant -->
                     <xsl:variable name="chanson" select="current()/@xml:id"/>
                     <xsl:value-of select="replace($chansonnier, 'Chansonnier ', '')"/>
@@ -58,34 +58,47 @@
                     <a href="./fr844-{replace(fn:lower-case($chansonnier), ' ', '-')}/{$chanson}.html">
                         <xsl:value-of select="replace($chanson, '_', '')"/>
                     </a>
-                    <xsl:text> v. </xsl:text>
+                    
                     <!-- Pour chaque occurrence de l'item dans la chanson -->
                     <xsl:for-each select="current()/descendant::persName[@ref=concat('#', $personne/@xml:id)]">    
-                        <xsl:value-of select="current()/ancestor::l/@n"/>
                         <xsl:choose>    
-                            <xsl:when test="position() != last()">
-                                <xsl:text>, </xsl:text>
+                            <xsl:when test="current()/ancestor::head[@type='rubric']">
+                                <xsl:text> rubr. </xsl:text>
+                                <xsl:if test="position() != last()">
+                                    <xsl:text>, </xsl:text>
+                                </xsl:if>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:text></xsl:text>
+                                <xsl:if test="position() = 1">
+                                    <xsl:text> v. </xsl:text>
+                                </xsl:if>
+                                <xsl:value-of select="current()/ancestor::l/@n"/>
+                                <xsl:choose>    
+                                    <xsl:when test="position() != last()">
+                                        <xsl:text>, </xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text></xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:for-each>
-                    <xsl:if test=".//l//persName[@ref=concat('#', $personne/@xml:id)]">    
+                    <xsl:if test=".//persName[@ref=concat('#', $personne/@xml:id)]">    
                         <xsl:if test="position() != last()">
                             <xsl:text> ; </xsl:text>
                         </xsl:if>
                     </xsl:if>
                 </xsl:for-each>
                 <xsl:if test=".//l//persName[@ref=concat('#', $personne/@xml:id)]">    
-                <xsl:choose>    
-                    <xsl:when test="position() != last()">
-                        <xsl:text> ‒ </xsl:text>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:text>.</xsl:text>
-                    </xsl:otherwise>
-                </xsl:choose>
+                    <xsl:choose>    
+                        <xsl:when test="position() != last()">
+                            <xsl:text> ‒ </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>.</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:if>
             </xsl:for-each>
         </li>
