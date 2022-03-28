@@ -98,13 +98,14 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
+                                <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a>
                             </li>
-                            <!-- Ajouter des liens
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                         -->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./fr844-index.html">Index</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./fr844-codico.html">Manuscrit</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
