@@ -86,7 +86,20 @@
                                 <li>RS : <xsl:value-of select=".//idno[@type='RS']"/></li>
                             </xsl:if>
                             <xsl:for-each select="tokenize($listeCorresp, ' ')">
-                                <li><xsl:value-of select="replace(replace(current(), '#', ''), '_', ' : ')"/></li>
+                                <li>
+                                    <xsl:choose>
+                                        <!-- Gestion de la typographie particulière des sources -->
+                                        <xsl:when test="contains(replace(replace(current(), '#', ''), '_', ' : '), 'Wallenskold')">
+                                            <xsl:value-of select="replace(replace(replace(current(), '#', ''), '_', ' : '), 'o', 'ö')"/>
+                                        </xsl:when>
+                                        <xsl:when test="contains(replace(replace(current(), '#', ''), '_', ' : '), 'BedierAubry')">
+                                            <xsl:value-of select="replace(replace(replace(current(), '#', ''), '_', ' : '), 'BedierAubry', 'Bédier-Aubry')"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="replace(replace(current(), '#', ''), '_', ' : ')"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </li>
                             </xsl:for-each>
                         </ul>                
                     </div>
@@ -160,9 +173,10 @@
         </div>
     </xsl:template>
     
+    <!-- Notes pour la partie "Rimes et métrique" de l'introduction -->
     <xsl:template match="div/lg/note">
         <p>
-            <!-- Pour intercaler la référence de la note avant le point final de la note, on boucle sur chaque -->
+            <!-- Pour intercaler la référence de la note avant le point final de la note, on boucle sur chaque noeud -->
             <xsl:for-each select="./node()">
                 <xsl:choose>
                     <!-- Pour le dernier noeud, on remplace son éventuel point final par rien -->
@@ -182,7 +196,7 @@
                     <xsl:text>Wallensköld</xsl:text>
                 </xsl:when>
                 <xsl:when test="$auteurNote = 'BedierAubry'">
-                    <xsl:text>Bédier, Aubry</xsl:text>
+                    <xsl:text>Bédier-Aubry</xsl:text>
                 </xsl:when>
             </xsl:choose>
             <xsl:text>).</xsl:text>
@@ -267,8 +281,19 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
-                    <!-- Le mot n'est pas non plus suivi d'une espace s'il n'a pas de frère après lui -->
-                    <xsl:when test="not(./following-sibling::*)">
+                    <!-- Lorsque le mot est dans un élément app et qu'un signe de ponctuation suit cet élément, pas d'esapce -->
+                    <xsl:when test="./ancestor::app/following-sibling::*[1]/self::pc">    
+                        <xsl:apply-templates mode="interp"/>
+                    </xsl:when>
+                    <!-- Idem lorsque le mot est dans un élément choice -->
+                    <xsl:when test="./ancestor::choice/following-sibling::*[1]/self::pc">    
+                        <xsl:apply-templates mode="interp"/>
+                    </xsl:when>
+                    <!-- Idem lorsque le mot est dans un élément placeName ou persName -->
+                    <xsl:when test="./ancestor::placeName/following-sibling::*[1]/self::pc">    
+                        <xsl:apply-templates mode="interp"/>
+                    </xsl:when>
+                    <xsl:when test="./ancestor::persName/following-sibling::*[1]/self::pc">    
                         <xsl:apply-templates mode="interp"/>
                     </xsl:when>
                     <xsl:otherwise>    
@@ -434,14 +459,21 @@
         <xsl:choose>
             <xsl:when test="./preceding-sibling::*">
                 <xsl:choose>
-                    <!-- On veille à ce que l'éventuel unique élément qui précède q ne soit pas un lb -->
-                    <xsl:when test="count(./preceding-sibling::*) = 1">
-                        <xsl:if test="not(./preceding-sibling::lb)">
-                            <xsl:text>:</xsl:text>
-                        </xsl:if>
-                    </xsl:when>
+                    <!-- Lorsque le frère précédent est un signe de ponctuation : la citation n'est pas précédée de deux points -->
+                    <xsl:when test="./preceding-sibling::pc"/>
+                    <!-- Lorsque le frère n'est pas précédent est un signe de ponctuation -->
                     <xsl:otherwise>
-                        <xsl:text>:</xsl:text>
+                        <xsl:choose>
+                            <!-- Lorsqu'il n'y a qu'un seul frère qui précède q ne soit pas un lb -->
+                            <xsl:when test="count(./preceding-sibling::*) = 1">
+                                <xsl:if test="not(./preceding-sibling::lb)">
+                                    <xsl:text>:</xsl:text>
+                                </xsl:if>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>:</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
