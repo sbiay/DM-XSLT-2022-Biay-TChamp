@@ -14,7 +14,7 @@
 
 <!--Accents modernes, cédille et tréma -->
 <!ENTITY e-pour-é "<choice><reg>é</reg><orig>e</orig></choice>">
-<!ENTITY c-pour-ç "<choice><reg>é</reg><orig>e</orig></choice>">
+<!ENTITY c-pour-ç "<choice><reg>ç</reg><orig>c</orig></choice>">
 <!ENTITY i-pour-ï "<choice><reg>ï</reg><orig>i</orig></choice>">
 <!ENTITY u-pour-ü "<choice><reg>ü</reg><orig>u</orig></choice>">
 <!ENTITY e-pour-ë "<choice><reg>ë</reg><orig>e</orig></choice>">
