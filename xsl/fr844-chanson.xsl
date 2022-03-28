@@ -349,7 +349,23 @@
     </xsl:template>
     
     <xsl:template match="q" mode="#all">
-        <xsl:text>: « </xsl:text>
+        <!-- On n'ajoute deux points avant une citation que si elle n'est pas en début de vers -->
+        <xsl:choose>
+            <xsl:when test="./preceding-sibling::*">
+                <xsl:choose>
+                    <!-- On veille à ce que l'éventuel unique élément qui précède q ne soit pas un lb -->
+                    <xsl:when test="count(./preceding-sibling::*) = 1">
+                        <xsl:if test="not(./preceding-sibling::lb)">
+                            <xsl:text>:</xsl:text>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>:</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+        </xsl:choose>
+        <xsl:text> « </xsl:text>
         <xsl:apply-templates mode="#current"/>
         <xsl:text> »</xsl:text>
     </xsl:template>
