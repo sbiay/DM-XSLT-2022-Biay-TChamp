@@ -244,17 +244,23 @@
     </xsl:template>
     
     <xsl:template match="lem" mode="interp">
-        <!-- En mode interp, on veut baliser le lem avec un <span style="font-weight: bold;"> -->
+        <!-- En mode interp, on veut pouvoir baliser le lem avec un <span style="font-weight: bold;"> -->
         <span>    
             <xsl:attribute name="class">
                 <xsl:text>lem</xsl:text>
             </xsl:attribute>
+            <xsl:if test="gap">
+                <xsl:text>[…] </xsl:text>
+            </xsl:if>
             <xsl:apply-templates mode="interp"/>
         </span>
     </xsl:template>
     
     <xsl:template match="lem" mode="graphem">
         <xsl:apply-templates mode="graphem"/>
+        <xsl:if test="gap">
+            <xsl:text>[…] </xsl:text>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="choice" mode="graphem">
