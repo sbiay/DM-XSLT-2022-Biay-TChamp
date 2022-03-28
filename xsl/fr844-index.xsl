@@ -41,6 +41,15 @@
         </ul>
     </xsl:template>
     
+    <xsl:template match="div[@type='index-lieux']">
+        <h2>
+            <xsl:value-of select="./child::head"/>
+        </h2>
+        <ul>    
+            <xsl:apply-templates select="listPlace/place"/>
+        </ul>
+    </xsl:template>
+    
     <xsl:template match="listPerson/person">
         <li>
             <xsl:value-of select="current()/persName/text()"/>
@@ -58,12 +67,12 @@
                     <a href="./fr844-{replace(fn:lower-case($chansonnier), ' ', '-')}/{$chanson}.html">
                         <xsl:value-of select="replace($chanson, '_', '')"/>
                     </a>
-                    
+                    <xsl:text>, </xsl:text>
                     <!-- Pour chaque occurrence de l'item dans la chanson -->
                     <xsl:for-each select="current()/descendant::persName[@ref=concat('#', $personne/@xml:id)]">    
                         <xsl:choose>    
                             <xsl:when test="current()/ancestor::head[@type='rubric']">
-                                <xsl:text> rubr. </xsl:text>
+                                <xsl:text> rubrique</xsl:text>
                                 <xsl:if test="position() != last()">
                                     <xsl:text>, </xsl:text>
                                 </xsl:if>
@@ -90,7 +99,70 @@
                         </xsl:if>
                     </xsl:if>
                 </xsl:for-each>
-                <xsl:if test=".//l//persName[@ref=concat('#', $personne/@xml:id)]">    
+                <xsl:if test=".//persName[@ref=concat('#', $personne/@xml:id)]">    
+                    <xsl:choose>    
+                        <xsl:when test="position() != last()">
+                            <xsl:text> ‒ </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>.</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:if>
+            </xsl:for-each>
+        </li>
+    </xsl:template>
+    
+    <xsl:template match="listPlace/place">
+        <li>
+            <xsl:value-of select="current()/placeName/text()"/>
+            <xsl:variable name="lieu" select="current()"/>
+            <xsl:text> : </xsl:text>
+            <!-- Pour chaque chansonnier -->
+            <xsl:for-each select="//body/descendant::div[@type='chansonnier'][descendant::placeName[@ref=concat('#', $lieu/@xml:id)]]">
+                <xsl:variable name="chansonnier" select="current()/head"/>
+                <!-- Pour chaque chanson -->
+                <xsl:for-each select="current()/div[descendant::placeName[@ref=concat('#', $lieu/@xml:id)]]">   
+                    <!-- On écrit le nom du chansonnier à partir de son identifiant -->
+                    <xsl:variable name="chanson" select="current()/@xml:id"/>
+                    <xsl:value-of select="replace($chansonnier, 'Chansonnier ', '')"/>
+                    <xsl:text> </xsl:text>
+                    <a href="./fr844-{replace(fn:lower-case($chansonnier), ' ', '-')}/{$chanson}.html">
+                        <xsl:value-of select="replace($chanson, '_', '')"/>
+                    </a>
+                    <xsl:text>, </xsl:text>
+                    <!-- Pour chaque occurrence de l'item dans la chanson -->
+                    <xsl:for-each select="current()/descendant::placeName[@ref=concat('#', $lieu/@xml:id)]">    
+                        <xsl:choose>    
+                            <xsl:when test="current()/ancestor::head[@type='rubric']">
+                                <xsl:text> rubrique</xsl:text>
+                                <xsl:if test="position() != last()">
+                                    <xsl:text>, </xsl:text>
+                                </xsl:if>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:if test="position() = 1">
+                                    <xsl:text> v. </xsl:text>
+                                </xsl:if>
+                                <xsl:value-of select="current()/ancestor::l/@n"/>
+                                <xsl:choose>    
+                                    <xsl:when test="position() != last()">
+                                        <xsl:text>, </xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text></xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:for-each>
+                    <xsl:if test=".//placeName[@ref=concat('#', $lieu/@xml:id)]">    
+                        <xsl:if test="position() != last()">
+                            <xsl:text> ; </xsl:text>
+                        </xsl:if>
+                    </xsl:if>
+                </xsl:for-each>
+                <xsl:if test=".//placeName[@ref=concat('#', $lieu/@xml:id)]">    
                     <xsl:choose>    
                         <xsl:when test="position() != last()">
                             <xsl:text> ‒ </xsl:text>
