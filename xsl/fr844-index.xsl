@@ -65,7 +65,7 @@
                     <xsl:value-of select="replace($chansonnier, 'Chansonnier ', '')"/>
                     <xsl:text> </xsl:text>
                     <a href="./fr844-{replace(fn:lower-case($chansonnier), ' ', '-')}/{$chanson}.html">
-                        <xsl:value-of select="replace($chanson, '_', '')"/>
+                        <xsl:value-of select="replace($chanson, '_', ' ')"/>
                     </a>
                     <xsl:text>, </xsl:text>
                     <!-- Pour chaque occurrence de l'item dans la chanson -->
@@ -128,7 +128,7 @@
                     <xsl:value-of select="replace($chansonnier, 'Chansonnier ', '')"/>
                     <xsl:text> </xsl:text>
                     <a href="./fr844-{replace(fn:lower-case($chansonnier), ' ', '-')}/{$chanson}.html">
-                        <xsl:value-of select="replace($chanson, '_', '')"/>
+                        <xsl:value-of select="replace($chanson, '_', ' ')"/>
                     </a>
                     <xsl:text>, </xsl:text>
                     <!-- Pour chaque occurrence de l'item dans la chanson -->

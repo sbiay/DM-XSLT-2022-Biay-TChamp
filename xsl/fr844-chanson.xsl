@@ -281,7 +281,7 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
-                    <!-- Lorsque le mot est dans un élément app et qu'un signe de ponctuation suit cet élément, pas d'esapce -->
+                    <!-- Lorsque le mot est dans un élément app et qu'un signe de ponctuation suit cet élément, pas d'espace -->
                     <xsl:when test="./ancestor::app/following-sibling::*[1]/self::pc">    
                         <xsl:apply-templates mode="interp"/>
                     </xsl:when>
@@ -370,22 +370,16 @@
     <xsl:template match="choice" mode="graphem">
         <xsl:value-of select="sic"/>
         <xsl:if test="sic[not(text())]">
+            <!-- Si le sic indique une lacune et si une correction est proposée, on inscrit entre crochets l'éventuelle forme "orig", sinon, le noeud texte de "corr", sinon […] -->
             <xsl:choose>
-                <!-- Si une correction est proposée, on inscrit entre crochets l'éventuelle forme "orig", sinon, le noeud texte de "corr", sinon […] -->
-                <xsl:when test="sic/following-sibling::corr//reg">
+                <xsl:when test="sic/following-sibling::corr//orig">
                     <xsl:text>[</xsl:text>
                     <xsl:value-of select="sic/following-sibling::corr//orig"/>
+                    <xsl:value-of select="sic/following-sibling::corr/text()"/>
                     <xsl:text>]</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="sic/following-sibling::corr/text()">
-                            <xsl:text>[</xsl:text>
-                            <xsl:value-of select="sic/following-sibling::corr/text()"/>
-                            <xsl:text>]</xsl:text>
-                        </xsl:when>
-                        <xsl:otherwise><xsl:text>[…]</xsl:text></xsl:otherwise>
-                    </xsl:choose>
+                    <xsl:text>[…]</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
@@ -397,21 +391,14 @@
         <xsl:choose>
             <xsl:when test="sic[not(text())]">
                 <xsl:choose>
-                    <!-- Si une correction est proposée, on inscrit entre crochets l'éventuelle forme "reg", sinon, le noeud texte de "corr", sinon […] -->
                     <xsl:when test="sic/following-sibling::corr//reg">
                         <xsl:text>[</xsl:text>
                         <xsl:value-of select="sic/following-sibling::corr//reg"/>
+                        <xsl:value-of select="sic/following-sibling::corr/text()"/>
                         <xsl:text>]</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:choose>
-                            <xsl:when test="sic/following-sibling::corr/text()">
-                                <xsl:text>[</xsl:text>
-                                <xsl:value-of select="sic/following-sibling::corr/text()"/>
-                                <xsl:text>]</xsl:text>
-                            </xsl:when>
-                            <xsl:otherwise><xsl:text>[…]</xsl:text></xsl:otherwise>
-                        </xsl:choose>
+                        <xsl:text>[…]</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
