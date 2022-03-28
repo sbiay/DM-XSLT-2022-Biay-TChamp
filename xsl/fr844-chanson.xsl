@@ -210,6 +210,10 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
+                    <!-- Le mot n'est pas non plus suivi d'une espace s'il n'a pas de frère après lui -->
+                    <xsl:when test="not(./following-sibling::*)">
+                        <xsl:apply-templates mode="interp"/>
+                    </xsl:when>
                     <xsl:otherwise>    
                         <xsl:apply-templates mode="interp"/>
                         <xsl:text> </xsl:text>

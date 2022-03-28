@@ -3477,14 +3477,14 @@ oustume</w>
                         <w>
                            <rhyme label="a">ceus</rhyme>
                         </w>
-                     </l>
-                     <l n="9" met="7">
                         <pc>
                            <choice>
                               <reg instant="false"/>
                               <orig></orig>
                            </choice>
                         </pc>
+                     </l>
+                     <l n="9" met="7">
                         <w>qui</w>
                         <w>aim<lb facs="#facs_41_line_1606124902961_482" n="N021"/>ment</w>
                         <w>deseur</w>
