@@ -1635,12 +1635,12 @@ oustume</w>
                                  <orig>u</orig>
                               </choice>ient</rhyme>
                         </w>
-                        <w>
+                        <pc>   
                            <choice>
                               <reg instant="false">.</reg>
                               <orig>·</orig>
                            </choice>
-                        </w>
+                        </pc>
                      </l>
                   </lg>
                   <lg n="6" type="envoi">

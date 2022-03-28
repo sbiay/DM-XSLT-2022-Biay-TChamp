@@ -182,11 +182,18 @@
                     <!-- Si le mot est suivi d'un élément pc, il n'est pas suivi d'une espace -->
                     <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()]">
                         <xsl:apply-templates mode="interp"/>
-                    </xsl:when>    
-                    <!-- mais si le signe de ponctuation est un point-virgule, oui -->
-                    <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()=';|?|!']">
-                        <xsl:apply-templates mode="interp"/>
-                        <xsl:text> </xsl:text>
+                    </xsl:when>
+                    <!-- De même s'il est suivi d'un "lb" puis d'un "pc" -->
+                    <xsl:when test="./following-sibling::*[1][self::lb]">
+                        <xsl:choose>
+                            <xsl:when test="./following-sibling::*[2][self::pc]">    
+                                <xsl:apply-templates mode="interp"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates mode="interp"/>
+                                <xsl:text> </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>    
                         <xsl:apply-templates mode="interp"/>
@@ -234,13 +241,9 @@
                     <xsl:when test="./following-sibling::w">
                         <xsl:text> </xsl:text>
                     </xsl:when>
-                    <xsl:when test="./following-sibling::*[1]/self::pc[descendant::reg/text()=';|?|!']">
-                        <xsl:text> </xsl:text>
-                    </xsl:when>
                 </xsl:choose>
             </span>
         </xsl:if>
-        
     </xsl:template>
     
     <xsl:template match="lem" mode="interp">
@@ -267,13 +270,21 @@
         <xsl:value-of select="sic"/>
         <xsl:if test="sic[not(text())]">
             <xsl:choose>
+                <!-- Si une correction est proposée, on inscrit entre crochets l'éventuelle forme "orig", sinon, le noeud texte de "corr", sinon […] -->
                 <xsl:when test="sic/following-sibling::corr//reg">
                     <xsl:text>[</xsl:text>
                     <xsl:value-of select="sic/following-sibling::corr//orig"/>
                     <xsl:text>]</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:text>[…]</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="sic/following-sibling::corr/text()">
+                            <xsl:text>[</xsl:text>
+                            <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                            <xsl:text>]</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise><xsl:text>[…]</xsl:text></xsl:otherwise>
+                    </xsl:choose>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
@@ -282,13 +293,65 @@
     </xsl:template>
     
     <xsl:template match="choice" mode="interp">
+        <xsl:if test="sic[not(text())]">
+            <xsl:choose>
+                <!-- Si une correction est proposée, on inscrit entre crochets l'éventuelle forme "reg", sinon, le noeud texte de "corr", sinon […] -->
+                <xsl:when test="sic/following-sibling::corr//reg">
+                    <xsl:text>[</xsl:text>
+                    <xsl:value-of select="sic/following-sibling::corr//reg"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:choose>
+                        <xsl:when test="sic/following-sibling::corr/text()">
+                            <xsl:text>[</xsl:text>
+                            <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                            <xsl:text>]</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise><xsl:text>[…]</xsl:text></xsl:otherwise>
+                    </xsl:choose>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
         <xsl:value-of select=".//reg"/>
         <xsl:value-of select="expan"/>
     </xsl:template>
     
-    <xsl:template match="pc" mode="#all">
+    <xsl:template match="pc" mode="graphem">
+        <xsl:apply-templates mode="graphem"/>
+        <!-- On n'ajoute d'espace que s'il existe d'autres éléments frères consécutifs (sinon, on est en fin de vers) -->
+        <xsl:if test="./following-sibling::*">    
+            <xsl:text> </xsl:text>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="pc" mode="interp">
+        <xsl:choose>
+            <!-- Ajout d'une espace avant certains signes de ponctuation seulement -->
+            <xsl:when test="./choice/reg/text()=';'">
+                <xsl:text> </xsl:text>
+            </xsl:when>
+            <xsl:when test="./choice/reg/text()='!'">
+                <xsl:text> </xsl:text>
+            </xsl:when>
+            <xsl:when test="./choice/reg/text()='?'">
+                <xsl:text> </xsl:text>
+            </xsl:when>
+            <xsl:when test="./choice/reg/text()=':'">
+                <xsl:text> </xsl:text>
+            </xsl:when>
+        </xsl:choose>
+        <xsl:apply-templates mode="interp"/>
+        <!-- On n'ajoute d'espace que s'il existe d'autres éléments frères consécutifs (sinon, on est en fin de vers) -->
+        <xsl:if test="./following-sibling::*">    
+            <xsl:text> </xsl:text>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="q" mode="#all">
+        <xsl:text>: « </xsl:text>
         <xsl:apply-templates mode="#current"/>
-        <xsl:text> </xsl:text>
+        <xsl:text> »</xsl:text>
     </xsl:template>
     
     <!-- Style -->
