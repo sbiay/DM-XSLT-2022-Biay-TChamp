@@ -13,20 +13,20 @@
     
     <xsl:template match="TEI">
         <TEI xmlns="http://www.tei-c.org/ns/1.0">
-        <xsl:copy-of select="./teiHeader"/>
-        <!-- On ignore l'élément facsimile -->
-        <text>
-            <xsl:copy-of select="descendant::front"/>
-            <xsl:apply-templates select="descendant::body"/>
-            <xsl:copy-of select="descendant::back"/>
-        </text>
+            <xsl:copy-of select="./teiHeader"/>
+            <!-- On ignore l'élément facsimile -->
+            <text>
+                <xsl:copy-of select="descendant::front"/>
+                <xsl:apply-templates select="descendant::body"/>
+                <xsl:copy-of select="descendant::back"/>
+            </text>
         </TEI>
     </xsl:template>
     
     <xsl:template match="body">
-    <xsl:copy>    
-        <xsl:apply-templates select="child::div"/>
-    </xsl:copy>
+        <xsl:copy>    
+            <xsl:apply-templates select="child::div"/>
+        </xsl:copy>
     </xsl:template>
     
     <xsl:template match="body/div">
@@ -44,8 +44,56 @@
         </div>
     </xsl:template>
     
+    <!-- Pièce -->
     <xsl:template match="div[@type='lyrical_text']">
-        <xsl:copy-of select="."/>
+        <xsl:copy>
+            <xsl:attribute name="type">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:attribute name="xml:id">
+                <xsl:value-of select="@xml:id"/>
+            </xsl:attribute>
+            <xsl:copy-of select="note"/>
+            <xsl:apply-templates select="child::lg"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- Chanson -->
+    <xsl:template match="div/lg">
+        <xsl:copy>
+            <xsl:attribute name="type">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:attribute name="rhyme">
+                <xsl:value-of select="@rhyme"/>
+            </xsl:attribute>
+            <xsl:copy-of select="note"/>
+            <xsl:copy-of select="head"/>
+            <xsl:apply-templates select="child::lg"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!--Strophes-->
+    <xsl:template match="lg/lg">
+        <xsl:copy>
+            <xsl:attribute name="n">
+                <xsl:value-of select="@n"/>
+            </xsl:attribute>
+            <xsl:attribute name="type">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:apply-templates select="child::l"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- Vers -->
+    <xsl:template match="l">
+        <xsl:copy>
+            <xsl:attribute name="n">
+                <xsl:number count="l" level="any" format="1" from="div"/>
+            </xsl:attribute>
+            <xsl:copy-of select="./child::*"/>
+        </xsl:copy>
     </xsl:template>
     
 </xsl:stylesheet>

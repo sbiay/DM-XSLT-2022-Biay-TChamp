@@ -307,7 +307,7 @@
       <body>
          <div type="chansonnier" n="1">
             <head>Chansonnier M</head>
-            <div type="lyrical_text" xml:id="RS_1880" part="N"><!--Coustume est bien, quant on tient un prison-->
+            <div type="lyrical_text" xml:id="RS_1880">
                <note anchored="true">
                   <bibl corresp="#Wallenskold_29 #Callahan_51" default="false">
                      <author cert="high">Thibaut de Champagne</author>
@@ -326,13 +326,12 @@
                      <note anchored="true">L'édition Wallensköld donne la graphie de K.</note>
                   </bibl>
                </note>
-               <lg type="chanson_amour" rhyme="10ababbaab" part="N">
+               <lg type="chanson_amour" rhyme="10ababbaab">
                   <note corresp="#Wallenskold" anchored="true">Cinq coblas doblas avec un envoi de trois vers. Les pièces n° RS 324  <ref target="#RS_407">RS 407</ref>  présentent la même structure métrique.</note>
-                  <!-- VM ajouter le ref pour la pièce 324  -->
                   <head type="rubric" rend="brown" place="margin">
                      <handShift new="#Erudit"/>Li Rois de Navarre</head>
-                  <lg n="1" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="1" type="stanza">
+                     <l n="1">
                         <lb facs="#facs_39_r2l1" n="N001"/>
                         <pb n="10r"/>
                         <cb n="a"/>
@@ -370,7 +369,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="2">
                         <w part="N">
                            <choice>
                               <expan instant="false">
@@ -379,19 +378,6 @@ oustume</w>
                               <abbr>ꝯ</abbr>
                            </choice>
                         </w>
-                        <!-- VM revoir avec  JBC  :  abréviation à résoudre en c'on 
-<choice>
-<abbr xml:id="abbr_quil_1">
-&#x0365;</abbr>
-<expan><ex>u</ex>
-</expan>
-</choice>
-</w>
-<w>
-
-
-
--->
                         <w part="N">ne</w>
                         <w part="N">le</w>
                         <w part="N">
@@ -418,7 +404,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="3">
                         <lb facs="#facs_39_r2l6" n="N003"/>
                         <w part="N">quar</w>
                         <w part="N">nule</w>
@@ -444,7 +430,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="4">
                         <w part="N">
                            <choice>
                               <expan instant="false">
@@ -472,7 +458,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="5">
                         <w part="N">
                            <choice>
                               <reg instant="false">P</reg>
@@ -514,7 +500,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="6">
                         <app>
                            <lem wit="#M">
                               <w part="N">quar</w>
@@ -549,7 +535,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="7">
                         <w rend="elision" part="N">n</w>
                         <w part="N">estre</w>
                         <w part="N">ostagiez</w>
@@ -573,7 +559,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="8">
                         <w part="N">
                            <choice>
                               <reg instant="false">A</reg>
@@ -600,8 +586,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="2" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="2" type="stanza">
+                     <l n="9">
                         <pb n="10r"/>
                         <cb n="b"/>
                         <lb facs="#facs_39_r3l1" n="N001"/>
@@ -633,7 +619,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="10">
                         <lb facs="#facs_39_r3l2" n="N002"/>
                         <app>
                            <lem wit="#M">
@@ -667,7 +653,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="11">
                         <lb facs="#facs_39_r3l3" n="N003"/>
                         <app>
                            <lem wit="#M">
@@ -693,7 +679,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="12">
                         <lb facs="#facs_39_r3l4" n="N004"/>
                         <w part="N">
                            <app>
@@ -729,7 +715,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="13">
                         <lb facs="#facs_39_r3l5" n="N005"/>
                         <app>
                            <lem wit="#M">
@@ -772,7 +758,7 @@ oustume</w>
                            </app>
                         </q>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="14">
                         <lb facs="#facs_39_r3l6" n="N006"/>
                         <q>
                            <w part="N">
@@ -805,7 +791,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="15">
                         <lb facs="#facs_39_r3l7" n="N007"/>
                         <app>
                            <lem wit="#M">
@@ -833,7 +819,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="16">
                         <app>
                            <lem>
                               <w part="N">car</w>
@@ -874,8 +860,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="3" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="3" type="stanza">
+                     <l n="17">
                         <lb facs="#facs_39_r3l11" n="N010"/>
                         <app>
                            <lem wit="#M">
@@ -899,7 +885,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="9" part="N">
+                     <l n="18">
                         <lb facs="#facs_39_r3l12" n="N011"/>
                         <app>
                            <lem wit="#M">
@@ -917,7 +903,6 @@ oustume</w>
                            </choice>
                         </pc>
                         <w part="N">v</w>
-                        <!-- VM revoir avec  JBC : entité vͦ  pour cinq cenz-->
                         <pc part="N">
                            <choice>
                               <reg instant="false"/>
@@ -935,7 +920,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="19">
                         <w part="N">as<lb facs="#facs_39_r3l13" n="N012"/>
                            <choice>
                               <sic/>
@@ -975,7 +960,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="20">
                         <w part="N">qui</w>
                         <w part="N">la</w>
                         <w part="N">proi<choice>
@@ -1001,7 +986,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" real="11" part="N">
+                     <l n="21">
                         <app>
                            <lem wit="#M">
                               <w part="N">
@@ -1040,7 +1025,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="22">
                         <w part="N">maiz</w>
                         <w part="N">ne</w>
                         <lb facs="#facs_39_r3l16" n="N015"/>
@@ -1075,7 +1060,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="23">
                         <w part="N">tant</w>
                         <lb facs="#facs_39_r3l17" n="N016"/>
                         <app>
@@ -1111,7 +1096,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="24">
                         <app>
                            <lem wit="#M">
                               <w rend="elision" part="N">qu</w>
@@ -1160,8 +1145,8 @@ oustume</w>
                         </q>
                      </l>
                   </lg>
-                  <lg n="4" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="4" type="stanza">
+                     <l n="25">
                         <lb facs="#facs_39_r3l19" n="N018"/>
                         <w part="N">
                            <choice>
@@ -1209,7 +1194,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="26">
                         <w part="N">ce</w>
                         <w part="N">
                            <choice>
@@ -1219,7 +1204,6 @@ oustume</w>
                               <abbr>ꝯ</abbr>
                            </choice>
                         </w>
-                        <!-- VM revoir  entité ꝯ >  c'on -->
                         <w part="N">connoist</w>
                         <w part="N">en</w>
                         <w part="N">autrui</w>
@@ -1238,7 +1222,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="9" part="N">
+                     <l n="27">
                         <lb facs="#facs_39_r3l21" n="N020"/>
                         <app>
                            <lem wit="#M">
@@ -1272,7 +1256,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="28">
                         <lb facs="#facs_39_r3l22" n="N021"/>
                         <w part="N">
                            <choice>
@@ -1298,7 +1282,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="29">
                         <lb facs="#facs_39_r3l23" n="N022"/>
                         <w part="N">
                            <choice>
@@ -1325,7 +1309,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="30">
                         <w rend="elision" part="N">
                            <choice>
                               <expan instant="false">q<ex instant="false">ue</ex>
@@ -1358,7 +1342,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="31">
                         <app>
                            <lem wit="#M">
                               <w part="N">
@@ -1393,7 +1377,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="32">
                         <w part="N">quant</w>
                         <w part="N">il</w>
                         <w part="N">ne</w>
@@ -1415,8 +1399,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="5" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="5" type="stanza">
+                     <l n="33">
                         <lb facs="#facs_39_r3l27" n="N026"/>
                         <w part="N">
                            <hi rend="drop_capital">S</hi>ou<choice>
@@ -1460,7 +1444,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="34">
                         <w rend="elision" part="N">qu</w>
                         <w part="N">a</w>
                         <w part="N">mes</w>
@@ -1486,7 +1470,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="35">
                         <w part="N">si</w>
                         <w part="N">granz</w>
                         <w part="N">au</w>
@@ -1510,7 +1494,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" part="N">
+                     <l n="36">
                         <w part="N">et</w>
                         <w rend="elision" part="N">m</w>
                         <w part="N">est</w>
@@ -1534,7 +1518,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="37">
                         <w part="N">et</w>
                         <w part="N">aprez</w>
                         <w part="N">ce</w>
@@ -1562,7 +1546,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="38">
                         <w part="N">et</w>
                         <w part="N">
                            <choice>
@@ -1591,7 +1575,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="39">
                         <w part="N">lors</w>
                         <w part="N">me</w>
                         <w part="N">courrouce</w>
@@ -1615,7 +1599,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="40">
                         <w part="N">quar</w>
                         <w part="N">
                            <choice>
@@ -1644,8 +1628,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="6" type="envoi" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="6" type="envoi">
+                     <l n="41">
                         <lb facs="#facs_39_r3l36" n="N035"/>
                         <w part="N">
                            <hi rend="drop_capital">B</hi>ele</w>
@@ -1670,7 +1654,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="42">
                         <w part="N">se</w>
                         <w part="N">mi</w>
                         <lb facs="#facs_39_r3l37" n="N036"/>
@@ -1689,7 +1673,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="43">
                         <w part="N">mout</w>
                         <lb facs="#facs_39_r3l39" n="N037"/>
                         <w part="N">vi<choice>
@@ -1731,7 +1715,7 @@ oustume</w>
                   </lg>
                </lg>
             </div>
-            <div type="lyrical_text" xml:id="RS_741" part="N"><!--Tuit mi desir et tuit mi grief tormant -->
+            <div type="lyrical_text" xml:id="RS_741">
                <note anchored="true">
                   <bibl corresp="#Wallenskold_11 #Callahan_29" default="false">
                      <author cert="high">Thibaut de Champagne</author>
@@ -1752,7 +1736,7 @@ oustume</w>
                      <note anchored="true">L'édition Wallensköld donne la graphie de <ref target="#K">K</ref>.</note>
                   </bibl>
                </note>
-               <lg type="chanson_amour" rhyme="10ababbaa" part="N">
+               <lg type="chanson_amour" rhyme="10ababbaa">
                   <note corresp="#Wallenskold" anchored="true">Cinq coblas doblas avec deux envois de trois vers chacun. Jacques d'Amiens s'est servi de la structure strophique et mélodieuse de cette chanson pour sa pièce n°<num xml:id="RS_1858">1858</num>.</note>
                   <head type="rubric" rend="red" place="margin">
                      <lb facs="#facs_39_line_1601367837916_599" n="N001"/>
@@ -1771,8 +1755,8 @@ oustume</w>
                      <handShift new="#Erudit"/>
                      <w part="N">2</w>
                   </head>
-                  <lg n="1" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="1" type="stanza">
+                     <l n="1">
                         <handShift new="#Copiste1"/>
                         <lb facs="#facs_39_r3l43" n="N038"/>
                         <app>
@@ -1812,7 +1796,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="2">
                         <w part="N">viennen<choice>
                               <sic/>
                               <corr resp="#VM" instant="false">t</corr>
@@ -1855,7 +1839,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="3">
                         <w part="N">
                            <choice>
                               <reg instant="false">G</reg>
@@ -1894,7 +1878,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="4">
                         <w part="N">qui</w>
                         <w part="N">ont</w>
                         <app>
@@ -1928,7 +1912,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="5">
                         <app>
                            <lem wit="#M">
                               <w rend="elision" part="N">m</w>
@@ -1959,7 +1943,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="6">
                         <w part="N">
                            <choice>
                               <reg instant="false">N</reg>
@@ -2006,7 +1990,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="7">
                         <w part="N">grant</w>
                         <w part="N">mer<choice>
                               <reg instant="false">v</reg>
@@ -2034,8 +2018,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="2" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="2" type="stanza">
+                     <l n="8">
                         <lb facs="#facs_40_r1l21" n="N008"/>
                         <w part="N">
                            <hi rend="drop_capital">T</hi>ouz</w>
@@ -2062,7 +2046,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="9">
                         <w part="N">
                            <choice>
                               <reg instant="false">u</reg>
@@ -2096,7 +2080,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="10">
                         <lb facs="#facs_40_r1l23" n="N010"/>
                         <w part="N">quant</w>
                         <w part="N">il</w>
@@ -2124,7 +2108,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="11">
                         <lb facs="#facs_40_r1l24" n="N011"/>
                         <w part="N">mout</w>
                         <w part="N">nous</w>
@@ -2145,7 +2129,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="12">
                         <lb facs="#facs_40_r1l25" n="N012"/>
                         <app>
                            <lem wit="#M">
@@ -2177,7 +2161,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="13">
                         <app>
                            <lem wit="#M">
                               <w part="N">de</w>
@@ -2203,7 +2187,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="14">
                         <lb facs="#facs_40_r1l27" n="N014"/>
                         <w part="N">nus</w>
                         <w part="N">ne</w>
@@ -2231,9 +2215,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="5" type="stanza" part="N">
-                     <lb facs="#facs_40_r1l28" n="N015"/>
-                     <l n="1" met="10" part="N">
+                  <lg n="5" type="stanza">
+                     <l n="15">
                         <w part="N">
                            <hi rend="drop_capital">S</hi>ou<choice>
                               <reg instant="false">v</reg>
@@ -2265,7 +2248,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="16">
                         <w part="N">qui</w>
                         <w part="N">
                            <choice>
@@ -2287,7 +2270,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="17">
                         <w part="N">que</w>
                         <w rend="elision" part="N">n</w>
                         <w part="N">orent</w>
@@ -2307,7 +2290,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="18">
                         <w part="N">que</w>
                         <w part="N">
                            <choice>
@@ -2329,7 +2312,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="19">
                         <w part="N">de</w>
                         <w part="N">ma</w>
                         <w part="N">bouche</w>
@@ -2346,7 +2329,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="20">
                         <w part="N">ne</w>
                         <w part="N">peu</w>
                         <w part="N">dire</w>
@@ -2380,7 +2363,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="21">
                         <lb facs="#facs_40_r1l34" n="N021"/>
                         <w part="N">tant</w>
                         <w part="N">fui</w>
@@ -2421,8 +2404,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="3" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="3" type="stanza">
+                     <l n="22">
                         <lb facs="#facs_40_r1l36" n="N023"/>
                         <w part="N">
                            <hi rend="drop_capital">B</hi>one</w>
@@ -2445,7 +2428,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="23">
                         <lb facs="#facs_40_r1l37" n="N024"/>
                         <w part="N">qui</w>
                         <w part="N">mainz</w>
@@ -2479,7 +2462,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="24">
                         <app>
                            <lem wit="#M">
                               <w part="N">
@@ -2506,7 +2489,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="25">
                         <lb facs="#facs_40_r1l39" n="N026"/>
                         <w part="N">et</w>
                         <w part="N">mes</w>
@@ -2534,7 +2517,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="26">
                         <w rend="elision" part="N">s</w>
                         <w part="N">il</w>
                         <w part="N">fust</w>
@@ -2561,7 +2544,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="27">
                         <w part="N">
                            <choice>
                               <reg instant="false">P</reg>
@@ -2577,32 +2560,10 @@ oustume</w>
                            <rdg resp="#Wallenskold">ce fet bon de la folie avoir,</rdg>
                         </app>
                      </l>
-                     <app>
-                        <lem wit="#M">
-                           <gap unit="verse" quantity="1" instant="false"/>
-                        </lem>
-                        <witDetail wit="#M">Le dernier vers de la strophe III était copié sur la colonne b, mutilée pour couper la vignette située au recto du même feuillet.</witDetail>
-                        <rdg resp="#Erudit">
-                           <lb facs="#facs_40_line_1603180541884_239" n="N002"/>qu'en trop grant sens peut il bien mescheoir</rdg>
-                        <rdg wit="#Mt">qu'en trop grant sen puet il bien mescheoir</rdg>
-                        <rdg resp="#Wallenskold">qu'en trop grant sens puet il bien mescheoir</rdg>
-                     </app>
                   </lg>
-                  <app>
-                     <lem wit="#M">
-                        <gap unit="stanza" quantity="1" instant="false"/>
-                     </lem>
-                     <witDetail wit="#M">La strophe IV occupait la colonne b du feuillet, mutilée.</witDetail>
-                  </app>
-                  <app>
-                     <lem wit="#M">
-                        <gap unit="envoi" quantity="2" instant="false"/>
-                     </lem>
-                     <witDetail wit="#M">M om. les deux envois, conservés par Mt. Dans la portion de la colonne b mutilée il n'y avait pas suffisamment de lignes pour accueillir la fin de la strophe III, la strophe IV et les deux envois. Les envois sont omis pour toutes les pièces de Thibaut copiées par M, à la seule exception de <ref target="#RS_1880">Coustume est bien</ref>.</witDetail>
-                  </app>
                </lg>
             </div>
-            <div type="lyrical_text" xml:id="RS_1440" part="N"><!--Je me cuidoie partir -->
+            <div type="lyrical_text" xml:id="RS_1440">
                <note anchored="true">
                   <bibl corresp="#Wallenskold_17 #Callahan_35" default="false">
                      <author cert="high">Thibaut de Champagne</author>
@@ -2620,14 +2581,12 @@ oustume</w>
                      <note anchored="true">L'édition Wallensköld donne la graphie de <ref target="#K">K</ref>.</note>
                   </bibl>
                </note>
-               <lg type="chanson_amour" rhyme="ababbaaab" part="N">
+               <lg type="chanson_amour" rhyme="ababbaaab">
                   <note corresp="#Wallenskold" anchored="true">Cinq coblas doblas avec deux envois de trois vers chacun.</note>
-                  <pb n="10v"/>
-                  <cb n="d"/>
                   <head type="rubric" rend="brown" place="margin">
                      <handShift new="#Erudit"/>3 Je me quid</head>
-                  <lg n="1" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="1" type="stanza">
+                     <l n="1">
                         <lb facs="#facs_40_line_1603180438511_150" n="N001"/>
                         <handShift new="#Copiste1"/>
                         <app>
@@ -2660,7 +2619,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="7" part="N">
+                     <l n="2">
                         <w rend="elision" part="N">d</w>
                         <w part="N">
                            <choice>
@@ -2694,7 +2653,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="3">
                         <lb facs="#facs_40_line_1603180483677_198" n="N003"/>
                         <app>
                            <lem wit="#M">
@@ -2727,7 +2686,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" part="N">
+                     <l n="4">
                         <app>
                            <lem wit="#M">
                               <w part="N">qui</w>
@@ -2756,7 +2715,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="5">
                         <w part="N">le</w>
                         <w part="N">
                            <choice>
@@ -2783,7 +2742,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="7" part="N">
+                     <l n="6">
                         <w part="N">et</w>
                         <w part="N">la</w>
                         <w part="N">nuit</w>
@@ -2800,7 +2759,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="7">
                         <w part="N">ainz</w>
                         <app>
                            <lem wit="#M">
@@ -2835,7 +2794,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="7" part="N">
+                     <l n="8">
                         <persName ref="#dieu" instant="false" full="yes">
                            <w part="N">
                               <choice>
@@ -2870,7 +2829,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="9">
                         <app>
                            <lem wit="#M">
                               <w part="N">maiz</w>
@@ -2902,8 +2861,8 @@ oustume</w>
                         </app>
                      </l>
                   </lg>
-                  <lg n="2" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="2" type="stanza">
+                     <l n="10">
                         <pb n="12r"/>
                         <cb n="a"/>
                         <lb facs="#facs_41_r3l1" n="N001"/>
@@ -2926,7 +2885,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="7" part="N">
+                     <l n="11">
                         <w part="N">fors</w>
                         <lb facs="#facs_41_r3l2" n="N002"/>
                         <w part="N">que</w>
@@ -2945,7 +2904,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="12">
                         <app>
                            <lem wit="#M">
                               <w part="N">li</w>
@@ -2969,7 +2928,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="7" part="N">
+                     <l n="13">
                         <app>
                            <lem wit="#M">
                               <w part="N">
@@ -2997,7 +2956,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="14">
                         <w part="N">ainz</w>
                         <w part="N">vueill</w>
                         <w rend="elision" part="N">qu</w>
@@ -3014,7 +2973,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="7" part="N">
+                     <l n="15">
                         <lb facs="#facs_41_r3l5" n="N005"/>
                         <app>
                            <lem wit="#M">
@@ -3036,7 +2995,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="16">
                         <w part="N">maiz</w>
                         <w part="N">se</w>
                         <lb facs="#facs_41_r3l6" n="N006"/>
@@ -3059,7 +3018,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="7" part="N">
+                     <l n="17">
                         <w part="N">le</w>
                         <w part="N">cerf</w>
                         <pc part="N">
@@ -3088,7 +3047,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="18">
                         <w part="N">nus</w>
                         <w rend="elision" part="N">n</w>
                         <w part="N">est</w>
@@ -3115,11 +3074,11 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="3" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="3" type="stanza">
+                     <l n="19">
                         <lb facs="#facs_41_r3l8" n="N008"/>
-                        <hi rend="drop_capital">L</hi>i 
-<w part="N">cers</w>
+                        <hi rend="drop_capital">L</hi>
+                        <w part="N">cers</w>
                         <w part="N">est</w>
                         <w part="N">
                            <rhyme label="a">a<choice>
@@ -3134,7 +3093,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="7" part="N">
+                     <l n="20">
                         <w part="N">et</w>
                         <w part="N">si</w>
                         <w part="N">est</w>
@@ -3162,7 +3121,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="21">
                         <w part="N">et</w>
                         <w part="N">si</w>
                         <w rend="aggl" part="N">a</w>
@@ -3178,7 +3137,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="7" part="N">
+                     <l n="22">
                         <lb facs="#facs_41_r3l10" n="N010"/>
                         <app>
                            <lem wit="#M">
@@ -3201,7 +3160,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="23">
                         <w part="N">
                            <choice>
                               <reg instant="false">L</reg>
@@ -3226,7 +3185,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="7" part="N">
+                     <l n="24">
                         <w rend="aggl" part="N">a</w>
                         <w rend="elision" part="N">l</w>
                         <w part="N">entrer</w>
@@ -3241,7 +3200,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="25">
                         <w part="N">et</w>
                         <w part="N">si</w>
                         <w part="N">est</w>
@@ -3257,7 +3216,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="7" part="N">
+                     <l n="26">
                         <w part="N">ce</w>
                         <w part="N">sunt</w>
                         <lb facs="#facs_41_r3l13" n="N013"/>
@@ -3279,7 +3238,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l part="N">
+                     <l n="27">
                         <w part="N">qui</w>
                         <w part="N">trop</w>
                         <w part="N">grie<choice>
@@ -3299,9 +3258,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="4" type="stanza" part="N">
-                     <lb facs="#facs_41_r3l15" n="N015"/>
-                     <l n="1" met="7" part="N">
+                  <lg n="4" type="stanza">
+                     <l n="28">
                         <w part="N">
                            <hi rend="drop_capital">A</hi>inc</w>
                         <w part="N">
@@ -3319,7 +3277,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="7" part="N">
+                     <l n="29">
                         <w part="N">qui</w>
                         <w part="N">a</w>
                         <app>
@@ -3341,7 +3299,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="30">
                         <w part="N">ne</w>
                         <app>
                            <lem wit="#M">
@@ -3363,7 +3321,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="7" part="N">
+                     <l n="31">
                         <lb facs="#facs_41_r3l17" n="N017"/>
                         <w part="N">maisons</w>
                         <pc part="N">
@@ -3403,7 +3361,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="32">
                         <w part="N">ne</w>
                         <lb facs="#facs_41_r3l18" n="N018"/>
                         <app>
@@ -3425,7 +3383,7 @@ oustume</w>
                            <rdg resp="#Wallenskold">chacierres qui prent sois</rdg>
                         </app>
                      </l>
-                     <l n="6" met="7" part="N">
+                     <l n="33">
                         <app>
                            <lem wit="#M">
                               <w part="N">ne</w>
@@ -3447,7 +3405,7 @@ oustume</w>
                            <rdg resp="#Wallenskold">ne leus qui est fameilleus</rdg>
                         </app>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="34">
                         <w rend="elision" part="N">n</w>
                         <w part="N">est</w>
                         <w part="N">a<choice>
@@ -3465,7 +3423,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="7" part="N">
+                     <l n="35">
                         <w part="N">que</w>
                         <w part="N">
                            <choice>
@@ -3485,7 +3443,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="36">
                         <w part="N">qui</w>
                         <w part="N">aim<lb facs="#facs_41_line_1606124902961_482" n="N021"/>ment</w>
                         <w part="N">deseur</w>
@@ -3507,8 +3465,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="5" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="5" type="stanza">
+                     <l n="37">
                         <lb facs="#facs_41_r3l22" n="N022"/>
                         <w part="N">
                            <hi rend="drop_capital">D</hi>ame</w>
@@ -3541,7 +3499,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="7" part="N">
+                     <l n="38">
                         <lb facs="#facs_41_r3l23" n="N023"/>
                         <w part="N">cuidiez</w>
                         <w part="N">vous</w>
@@ -3557,7 +3515,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="39">
                         <w rend="elision" part="N">d</w>
                         <w part="N">ocirre</w>
                         <lb facs="#facs_41_r3l24" n="N024"/>
@@ -3579,7 +3537,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="7" part="N">
+                     <l n="40">
                         <w part="N">o<choice>
                               <reg instant="false">ï</reg>
                               <orig>i</orig>
@@ -3609,7 +3567,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="41">
                         <w rend="elision" part="N">
                            <choice>
                               <reg instant="false">S</reg>
@@ -3639,7 +3597,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="7" part="N">
+                     <l n="42">
                         <app>
                            <lem wit="#M">
                               <w part="N">quar</w>
@@ -3667,7 +3625,7 @@ oustume</w>
                            <rdg resp="#Wallenskold">que je le vueil et creant</rdg>
                         </app>
                      </l>
-                     <l n="8" met="7" part="N">
+                     <l n="43">
                         <w part="N">et</w>
                         <w part="N">se</w>
                         <app>
@@ -3693,7 +3651,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="7" part="N">
+                     <l n="44">
                         <app>
                            <lem wit="#Mt">
                               <w part="N">
@@ -3720,7 +3678,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="45">
                         <w part="N">mout</w>
                         <w part="N">en</w>
                         <w part="N">seroie</w>
@@ -3736,16 +3694,9 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <app>
-                     <lem wit="#M">
-                        <gap unit="envoi" quantity="2" instant="false"/>
-                        <witDetail wit="#M">M om. les deux envois, conservés par <ref target="#Mt">Mt</ref>
-                        </witDetail>
-                     </lem>
-                  </app>
                </lg>
             </div>
-            <div type="lyrical_text" xml:id="RS_407" part="N"><!-- De bone amour vient science et biautez -->
+            <div type="lyrical_text" xml:id="RS_407">
                <note anchored="true">
                   <bibl corresp="#Callahan_36" default="false">
                      <author cert="high">Thibaut de Champagne</author>
@@ -3770,7 +3721,7 @@ oustume</w>
                      <note anchored="true">L'édition Wallensköld donne la graphie de <ref target="#K">K</ref>.</note>
                   </bibl>
                </note>
-               <lg type="chanson_amour" rhyme="ababbaaab" part="N">
+               <lg type="chanson_amour" rhyme="ababbaaab">
                   <note corresp="#Wallenskold" anchored="true">Cinq coblas doblas avec un envoi de trois vers.</note>
                   <head type="rubric" rend="red" place="inline">
                      <persName ref="#thiChamp" instant="false" full="yes">
@@ -3794,24 +3745,8 @@ oustume</w>
                         </placeName>
                      </persName>
                   </head>
-                  <!-- VM notes érudit illisibles
-<note facs="#facs_40_region_1603180230563_21" place="[direction]">
-<lb facs="#facs_41_line_1612285580924_2255" n="N001"/>4
-<lb facs="#facs_41_r1l1" n="N002"/>chançon
-<lb facs="#facs_41_r1l2" n="N003"/>?
-<lb facs="#facs_41_line_1606208143650_37" n="N004"/>Dante
-<lb facs="#facs_41_r1l3" n="N005"/>la v. me
-<lb facs="#facs_41_r1l4" n="N006"/>? 
-<lb facs="#facs_41_r1l5" n="N007"/> ?
-<lb facs="#facs_41_r1l6" n="N008"/>Roissy
-<lb facs="#facs_41_r1l7" n="N009"/>?
-<lb facs="#facs_41_r1l8" n="N010"/>?</note><note facs="#facs_41_r2" place="[direction]">
-<lb facs="#facs_41_r2l1" n="N001"/> 
-<lb facs="#facs_41_r2l2" n="N002"/> ?
-<lb facs="#facs_41_r2l3" n="N003"/>?
-<lb facs="#facs_41_r2l4" n="N004"/>?</note>-->
-                  <lg n="1" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="1" type="stanza">
+                     <l n="1">
                         <lb facs="#facs_41_r3l31" n="N030"/>
                         <w part="N">
                            <hi rend="ornate_initial" rendition="4l">D</hi>e</w>
@@ -3836,7 +3771,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="2">
                         <w part="N">et</w>
                         <w part="N">amours</w>
                         <w part="N">vient</w>
@@ -3853,7 +3788,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="3">
                         <lb facs="#facs_41_r3l40" n="N033"/>
                         <app>
                            <lem wit="#M">
@@ -3897,7 +3832,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="4">
                         <pb n="12r"/>
                         <cb n="b"/>
                         <lb facs="#facs_41_r5l3" n="N001"/>
@@ -3931,7 +3866,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="5">
                         <w part="N">
                            <choice>
                               <reg instant="false">P</reg>
@@ -3961,7 +3896,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="6">
                         <app>
                            <lem wit="#M">
                               <w part="N">li</w>
@@ -4003,7 +3938,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="7">
                         <app>
                            <lem wit="#M">
                               <w part="N">de</w>
@@ -4037,7 +3972,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="8">
                         <w part="N">tant</w>
                         <w rend="elision" part="N">l</w>
                         <w part="N">ont</w>
@@ -4075,8 +4010,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="2" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="2" type="stanza">
+                     <l n="9">
                         <lb facs="#facs_41_r5l21" n="N007"/>
                         <w part="N">
                            <hi rend="drop_capital">L</hi>i </w>
@@ -4099,7 +4034,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="10">
                         <lb facs="#facs_41_r5l22" n="N008"/>
                         <w part="N">et</w>
                         <w part="N">le</w>
@@ -4122,7 +4057,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="11">
                         <lb facs="#facs_41_r5l23" n="N009"/>
                         <w part="N">li</w>
                         <w part="N">douz</w>
@@ -4152,7 +4087,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="12">
                         <lb facs="#facs_41_r5l24" n="N010"/>
                         <w part="N">la</w>
                         <w part="N">granz</w>
@@ -4179,7 +4114,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="13">
                         <lb facs="#facs_41_r5l25" n="N011"/>
                         <app>
                            <lem wit="#M">
@@ -4224,7 +4159,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="14">
                         <w part="N">de</w>
                         <lb facs="#facs_41_r5l26" n="N012"/>
                         <w part="N">li</w>
@@ -4258,7 +4193,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="15">
                         <w part="N">quar</w>
                         <w part="N">qui</w>
                         <lb facs="#facs_41_r5l27" n="N013"/>
@@ -4286,7 +4221,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="16">
                         <app>
                            <lem wit="#M">
                               <w part="N">vers</w>
@@ -4311,9 +4246,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="3" type="stanza" part="N">
-                     <lb facs="#facs_41_r5l29" n="N015"/>
-                     <l n="1" met="10" part="N">
+                  <lg n="3" type="stanza">
+                     <l n="17">
                         <w part="N">
                            <hi rend="drop_capital">E</hi>n</w>
                         <w part="N">amour </w>
@@ -4330,7 +4264,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="18">
                         <lb facs="#facs_41_r5l30" n="N016"/>
                         <w part="N">li</w>
                         <w part="N">dui</w>
@@ -4358,7 +4292,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="19">
                         <w part="N">et</w>
                         <w part="N">granz</w>
                         <w part="N">valours</w>
@@ -4381,7 +4315,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="20">
                         <w part="N">
                            <choice>
                               <reg instant="false">u</reg>
@@ -4415,7 +4349,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="21">
                         <w part="N">
                            <choice>
                               <reg instant="false">P</reg>
@@ -4442,7 +4376,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="22">
                         <w part="N">que</w>
                         <w part="N">nus</w>
                         <w rend="elision" part="N">n</w>
@@ -4464,7 +4398,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="23">
                         <app>
                            <lem wit="#M">
                               <w part="N">
@@ -4510,7 +4444,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="24">
                         <w part="N">a</w>
                         <w part="N">vostre</w>
                         <w part="N">hostel</w>
@@ -4547,8 +4481,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="4" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="4" type="stanza">
+                     <l n="25">
                         <lb facs="#facs_41_r5l38" n="N024"/>
                         <app>
                            <lem wit="#M">
@@ -4583,7 +4517,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="26">
                         <app>
                            <lem wit="#M">
                               <w part="N">quar</w>
@@ -4607,7 +4541,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="27">
                         <w part="N">ma</w>
                         <w part="N">bele</w>
                         <app>
@@ -4643,7 +4577,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="28">
                         <w part="N">ne</w>
                         <w part="N">sai</w>
                         <choice>
@@ -4685,7 +4619,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="29">
                         <w part="N">
                            <choice>
                               <reg instant="false">N</reg>
@@ -4715,7 +4649,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="30">
                         <app>
                            <lem wit="#M">
                               <w part="N">il </w>
@@ -4750,7 +4684,7 @@ oustume</w>
                            <rdg resp="#Wallenskold">ainz me vindrent ferir si doucement</rdg>
                         </app>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="31">
                         <app>
                            <lem wit="#M">
                               <w rend="elision" part="N">d</w>
@@ -4778,7 +4712,7 @@ oustume</w>
                            <rdg resp="#Wallenskold">par mi le cuer d'un amoureus talent ;</rdg>
                         </app>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="32">
                         <app>
                            <lem wit="#M">
                               <w part="N">encore</w>
@@ -4813,8 +4747,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="5" type="stanza" part="N">
-                     <l part="N">
+                  <lg n="5" type="stanza">
+                     <l n="33">
                         <lb facs="#facs_42_r1l4" n="N004"/>
                         <w part="N">
                            <hi rend="drop_capital">L</hi>i</w>
@@ -4841,7 +4775,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l part="N">
+                     <l n="34">
                         <w part="N">ne</w>
                         <w part="N">nuls</w>
                         <w part="N">mires</w>
@@ -4858,7 +4792,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="35">
                         <w part="N">se</w>
                         <w part="N">cele</w>
                         <w part="N">non</w>
@@ -4876,7 +4810,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="36">
                         <lb facs="#facs_42_r1l7" n="N007"/>
                         <w part="N">se</w>
                         <w part="N">de</w>
@@ -4898,7 +4832,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="37">
                         <app>
                            <lem wit="#M">
                               <w part="N">tost</w>
@@ -4920,7 +4854,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="38">
                         <w rend="aggl" part="N">a</w>
                         <w part="N">tout</w>
                         <w part="N">le</w>
@@ -4949,7 +4883,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="39">
                         <w part="N">maiz</w>
                         <lb facs="#facs_42_r1l10" n="N010"/>
                         <w part="N">la</w>
@@ -4967,7 +4901,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="10" part="N">
+                     <l n="40">
                         <w rend="elision" part="N">qu</w>
                         <lb facs="#facs_42_r1l11" n="N011"/>
                         <w part="N">ele</w>
@@ -4984,18 +4918,12 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <app>
-                     <lem wit="#M">
-                        <gap unit="envoi" quantity="1" instant="false"/>
-                     </lem>
-                     <witDetail wit="#M">M om. l'envoi, conservé par Mt.</witDetail>
-                  </app>
                </lg>
             </div>
          </div>
          <div type="chansonnier" n="2">
             <head>Chansonnier Mt</head>
-            <div type="lyrical_text" xml:id="RS_1568" part="N"><!--Amors me fait commencier-->
+            <div type="lyrical_text" xml:id="RS_1568">
                <note anchored="true">
                   <bibl corresp="#Wallenskold_15 #Callahan_1" default="false">
                      <author cert="high">Thibaut de Champagne</author>
@@ -5019,10 +4947,8 @@ oustume</w>
                      <note anchored="true">L'édition Wallensköld donne la graphie de <ref target="#K">K</ref>.</note>
                   </bibl>
                </note>
-               <lg type="chanson_amour" rhyme="7a6b7a6b6c6c6c6b6c6c6b" part="N">
+               <lg type="chanson_amour" rhyme="7a6b7a6b6c6c6c6b6c6c6b">
                   <note corresp="#Wallenskold" anchored="true">Quatre coblas doblas avec un envoi de cinq vers.</note>
-                  <pb n="13r"/>
-                  <cb n="a"/>
                   <head type="rubric" rend="brown" place="margin">
                      <handShift new="#Erudit"/>
                      <lb facs="#facs_43_line_1606125510577_975" n="N001"/>
@@ -5033,8 +4959,8 @@ oustume</w>
                      <w part="N">Navarre</w>
                      <lb facs="#facs_44_r2l1" n="N001"/>
                   </head>
-                  <lg n="1" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="1" type="stanza">
+                     <l n="1">
                         <pb n="13r"/>
                         <cb n="b"/>
                         <handShift new="#Copiste3"/>
@@ -5057,7 +4983,7 @@ oustume</w>
                               </choice>mencier</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="6" part="N">
+                     <l n="2">
                         <w part="N">u<lb facs="#facs_43_r6l2" n="N002"/>ne</w>
                         <w part="N">chan<choice>
                               <reg instant="false">ç</reg>
@@ -5076,7 +5002,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="3">
                         <w rend="elision" part="N">qu</w>
                         <w part="N">ele</w>
                         <lb facs="#facs_43_r6l4" n="N003"/>
@@ -5090,7 +5016,7 @@ oustume</w>
                            <rhyme label="a">enseignier</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="4">
                         <w part="N">a</w>
                         <w part="N">amer</w>
                         <w part="N">la</w>
@@ -5100,7 +5026,7 @@ oustume</w>
                            <rhyme label="b">bele</rhyme>
                         </w>
                      </l>
-                     <l n="5" met="6" part="N">
+                     <l n="5">
                         <w part="N">qui</w>
                         <w part="N">soit</w>
                         <w part="N">ou</w>
@@ -5122,7 +5048,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="6" part="N">
+                     <l n="6">
                         <w rend="elision" part="N">c</w>
                         <w part="N">est</w>
                         <w part="N">la</w>
@@ -5140,7 +5066,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="6" part="N">
+                     <l n="7">
                         <w rend="elision" part="N">c</w>
                         <w part="N">est</w>
                         <w part="N">cele</w>
@@ -5161,7 +5087,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="8">
                         <persName ref="#dieu" instant="false" full="yes">
                            <w part="N">
                               <choice>
@@ -5180,7 +5106,7 @@ oustume</w>
                               </choice>ele</rhyme>
                         </w>
                      </l>
-                     <l n="9" met="6" part="N">
+                     <l n="9">
                         <w part="N">qui</w>
                         <lb facs="#facs_43_r6l16" n="N007"/>
                         <w part="N">soit</w>
@@ -5196,7 +5122,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="10" met="6" part="N">
+                     <l n="10">
                         <w part="N">
                            <choice>
                               <reg instant="false">Q</reg>
@@ -5223,7 +5149,7 @@ oustume</w>
                               </choice>̃t</rhyme>
                         </w>
                      </l>
-                     <l n="11" met="6" part="N">
+                     <l n="11">
                         <lb facs="#facs_43_r6l19" n="N010"/>
                         <w part="N">mes</w>
                         <w part="N">cuers</w>
@@ -5240,8 +5166,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="2" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="2" type="stanza">
+                     <l n="12">
                         <lb facs="#facs_43_r6l17" n="N008"/>
                         <w part="N">
                            <hi rend="drop_capital">B</hi>ien</w>
@@ -5254,7 +5180,7 @@ oustume</w>
                               </choice>ancier</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="6" part="N">
+                     <l n="13">
                         <w part="N">ma</w>
                         <w part="N">douce</w>
                         <w part="N">da<lb facs="#facs_43_r6l20" n="N011"/>me</w>
@@ -5268,7 +5194,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="14">
                         <w rend="elision" part="N">s</w>
                         <w part="N">ele</w>
                         <w part="N">me</w>
@@ -5281,7 +5207,7 @@ oustume</w>
                            <rhyme label="a">aidier</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="15">
                         <w part="N">a</w>
                         <w part="N">ceste</w>
                         <lb facs="#facs_43_r6l21" n="N012"/>
@@ -5298,7 +5224,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="6" part="N">
+                     <l n="16">
                         <w part="N">
                            <choice>
                               <reg instant="false">J</reg>
@@ -5312,7 +5238,7 @@ oustume</w>
                            <rhyme label="c">tant</rhyme>
                         </w>
                      </l>
-                     <l n="6" met="6" part="N">
+                     <l n="17">
                         <lb facs="#facs_43_r6l22" n="N013"/>
                         <w part="N">
                            <choice>
@@ -5332,7 +5258,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="6" part="N">
+                     <l n="18">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -5346,7 +5272,7 @@ oustume</w>
                            <rhyme label="c">afaitement</rhyme>
                         </w>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="19">
                         <w part="N">q<choice>
                               <expan instant="false">
                                  <ex instant="false">u</ex>i</expan>
@@ -5369,7 +5295,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="6" part="N">
+                     <l n="20">
                         <w part="N">
                            <choice>
                               <reg instant="false">A</reg>
@@ -5390,7 +5316,7 @@ oustume</w>
                            <rhyme label="c">prent</rhyme>
                         </w>
                      </l>
-                     <l n="10" met="6" part="N">
+                     <l n="21">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -5428,7 +5354,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="11" met="6" part="N">
+                     <l n="22">
                         <w part="N">por</w>
                         <w part="N">ce</w>
                         <w rend="elision" part="N">qu</w>
@@ -5447,8 +5373,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="3" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="3" type="stanza">
+                     <l n="23">
                         <w part="N">
                            <hi rend="drop_capital">Q</hi>uant</w>
                         <w part="N">fine</w>
@@ -5469,7 +5395,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="6" part="N">
+                     <l n="24">
                         <lb facs="#facs_43_r6l26" n="N017"/>
                         <w part="N">
                            <choice>
@@ -5498,7 +5424,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="25">
                         <w part="N">que</w>
                         <w rend="elision" part="N">c</w>
                         <w part="N">est</w>
@@ -5511,7 +5437,7 @@ oustume</w>
                            <rhyme label="a">mont</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="26">
                         <w part="N">que</w>
                         <w rend="elision" part="N">
                            <choice>
@@ -5531,7 +5457,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="6" part="N">
+                     <l n="27">
                         <w part="N">
                            <choice>
                               <reg instant="false">O</reg>
@@ -5554,7 +5480,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="6" part="N">
+                     <l n="28">
                         <w part="N">ne</w>
                         <w rend="elision" part="N">m</w>
                         <w part="N">en</w>
@@ -5576,7 +5502,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="6" part="N">
+                     <l n="29">
                         <lb facs="#facs_43_r6l29" n="N020"/>
                         <w part="N">
                            <choice>
@@ -5595,7 +5521,7 @@ oustume</w>
                               </choice>r</rhyme>
                         </w>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="30">
                         <w part="N">plus</w>
                         <w part="N">que</w>
                         <w part="N">riens</w>
@@ -5612,7 +5538,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="6" part="N">
+                     <l n="31">
                         <w rend="elision" part="N">
                            <choice>
                               <reg instant="false">S</reg>
@@ -5632,7 +5558,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="10" met="6" part="N">
+                     <l n="32">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -5657,7 +5583,7 @@ oustume</w>
                            <rhyme label="c">morir</rhyme>
                         </w>
                      </l>
-                     <l n="11" met="6" part="N">
+                     <l n="33">
                         <w rend="elision" part="N">m</w>
                         <w part="N">ame</w>
                         <w rend="aggl" part="N">en</w>
@@ -5676,8 +5602,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="4" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="4" type="stanza">
+                     <l n="34">
                         <w part="N">
                            <hi rend="drop_capital">S</hi>e</w>
                         <w part="N">la</w>
@@ -5688,7 +5614,7 @@ oustume</w>
                            <rhyme label="a">mont</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="6" part="N">
+                     <l n="35">
                         <w part="N">ne</w>
                         <w rend="elision" part="N">m</w>
                         <w part="N">a</w>
@@ -5704,7 +5630,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="36">
                         <w part="N">tuit</w>
                         <lb facs="#facs_43_r6l33" n="N024"/>
                         <w part="N">li</w>
@@ -5713,7 +5639,7 @@ oustume</w>
                            <rhyme label="a">diront</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="37">
                         <w rend="aggl" part="N">ci</w>
                         <w part="N">a</w>
                         <w part="N">fort</w>
@@ -5727,7 +5653,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="6" part="N">
+                     <l n="38">
                         <w rend="elision" part="N">
                            <choice>
                               <reg instant="false">S</reg>
@@ -5751,7 +5677,7 @@ oustume</w>
                               </choice>enir</rhyme>
                         </w>
                      </l>
-                     <l n="6" met="6" part="N">
+                     <l n="39">
                         <w part="N">que</w>
                         <app>
                            <lem wit="#Mt">
@@ -5774,7 +5700,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="6" part="N">
+                     <l n="40">
                         <w rend="aggl" part="N">ma</w>
                         <w part="N">
                            <choice>
@@ -5795,7 +5721,7 @@ oustume</w>
                            <rhyme label="c">plaisir</rhyme>
                         </w>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="41">
                         <w rend="aggl" part="N">de</w>
                         <w part="N">li</w>
                         <pc part="N">
@@ -5817,7 +5743,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="6" part="N">
+                     <l n="42">
                         <w part="N">lors</w>
                         <pb n="13v"/>
                         <cb n="c"/>
@@ -5839,7 +5765,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="10" met="6" part="N">
+                     <l n="43">
                         <w rend="elision" part="N">qu</w>
                         <w part="N">a<choice>
                               <reg instant="false">v</reg>
@@ -5851,7 +5777,7 @@ oustume</w>
                            <rhyme label="c">de<lb facs="#facs_44_r2l2" n="N002"/>sir</rhyme>
                         </w>
                      </l>
-                     <l n="11" met="6" part="N">
+                     <l n="44">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -5881,10 +5807,10 @@ oustume</w>
                         </app>
                      </l>
                   </lg>
-                  <lg n="5" type="envoi" part="N">
-                     <l n="1" met="6" part="N">
-                        <hi rend="drop_capital">C</hi>ele 
-<w part="N">por</w>
+                  <lg n="5" type="envoi">
+                     <l n="45">
+                        <hi rend="drop_capital">C</hi>
+                        <w part="N">por</w>
                         <w part="N">qui</w>
                         <w part="N">
                            <rhyme label="c">so<lb facs="#facs_44_r2l3" n="N003"/>spir</rhyme>
@@ -5896,7 +5822,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="6" part="N">
+                     <l n="46">
                         <w part="N">la</w>
                         <w part="N">blonde</w>
                         <w part="N">
@@ -5909,7 +5835,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="6" part="N">
+                     <l n="47">
                         <w part="N">puet</w>
                         <w part="N">bien</w>
                         <w part="N">dire</w>
@@ -5930,7 +5856,7 @@ oustume</w>
                               </choice>ehir</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="48">
                         <w part="N">que</w>
                         <w part="N">por</w>
                         <w part="N">lui</w>
@@ -5951,7 +5877,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="6" part="N">
+                     <l n="49">
                         <w rend="elision" part="N">s</w>
                         <w part="N">est</w>
                         <w part="N">
@@ -5980,7 +5906,7 @@ oustume</w>
                   </lg>
                </lg>
             </div>
-            <div type="lyrical_text" xml:id="RS_6" part="N"><!--Seignor saichiés qui or ne s'en ira-->
+            <div type="lyrical_text" xml:id="RS_6">
                <note anchored="true">
                   <bibl corresp="#Wallenskold_53 #Callahan_2 #BedierAubry_15" default="false">
                      <author cert="high">Thibaut de Champagne</author>
@@ -5998,11 +5924,11 @@ oustume</w>
                      <note anchored="true">L'édition Wallensköld donne la graphie de <ref target="#K">K</ref>.</note>
                   </bibl>
                </note>
-               <lg type="chanson_croisade" rhyme="10ababccb" part="N">
+               <lg type="chanson_croisade" rhyme="10ababccb">
                   <note corresp="#Wallenskold" anchored="true">Cinq coblas doblas avec un envoi de trois vers.</note>
                   <note corresp="#BedierAubry" anchored="true">Les rimes changent de deux en deux strophes. Le même mot <foreign xml:lang="fro">mont</foreign> se trouve deux fois aux rimes de la même strophe.</note>
-                  <lg n="1" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="1" type="stanza">
+                     <l n="1">
                         <lb facs="#facs_44_r2l9 n=N006"/>
                         <w part="N">
                            <hi rend="ornate_initial" rendition="4l">S</hi>
@@ -6034,7 +5960,7 @@ oustume</w>
                            <rhyme label="a">ira</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="2">
                         <lb facs="#facs_44_r2l12 n=N007"/>
                         <w rend="aggl" part="N">en</w>
                         <w part="N">cele</w>
@@ -6076,7 +6002,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="3">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6108,7 +6034,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="4">
                         <w rend="aggl" part="N">a</w>
                         <w part="N">paines</w>
                         <lb facs="#facs_44_r2l20 n=N009"/>
@@ -6129,7 +6055,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="5">
                         <w rend="aggl" part="N">
                            <choice>
                               <reg instant="false">Q</reg>
@@ -6149,7 +6075,7 @@ oustume</w>
                            <rhyme label="c">ramembrance</rhyme>
                         </w>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="6">
                         <w part="N">au</w>
                         <w part="N">haut</w>
                         <w part="N">
@@ -6171,7 +6097,7 @@ oustume</w>
                               </choice>ance</rhyme>
                         </w>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="7">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6210,8 +6136,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="2" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="2" type="stanza">
+                     <l n="8">
                         <lb facs="#facs_44_r2l30 n=N012"/>
                         <w part="N">
                            <hi rend="drop_capital">T</hi>uit</w>
@@ -6240,7 +6166,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="9">
                         <w part="N">qui</w>
                         <w rend="elision" part="N">n</w>
                         <w part="N">aiment</w>
@@ -6277,7 +6203,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="10">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6320,7 +6246,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="11">
                         <q>
                            <w part="N">
                               <choice>
@@ -6345,7 +6271,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="12">
                         <w part="N">
                            <choice>
                               <orig>C</orig>
@@ -6367,7 +6293,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="13">
                         <w rend="elision" part="N">qu</w>
                         <w part="N">il</w>
                         <w rend="elision" part="N">n</w>
@@ -6388,7 +6314,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="14">
                         <w part="N">qui</w>
                         <w part="N">por</w>
                         <w part="N">nos</w>
@@ -6412,8 +6338,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="3" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="3" type="stanza">
+                     <l n="15">
                         <w part="N">
                            <hi rend="drop_capital">O</hi>r</w>
                         <w rend="elision" part="N">s</w>
@@ -6430,7 +6356,7 @@ oustume</w>
                            <rhyme label="a">bacheler</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="16">
                         <w part="N">qui</w>
                         <w part="N">aiment</w>
                         <w part="N">
@@ -6461,7 +6387,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="17">
                         <w part="N">qui</w>
                         <w part="N">sagement</w>
                         <w part="N">
@@ -6488,7 +6414,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="18">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6525,7 +6451,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="19">
                         <lb facs="#facs_44_r2l41 n=N023"/>
                         <w part="N">a<choice>
                               <reg instant="false">v</reg>
@@ -6565,9 +6491,8 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="20">
                         <w part="N">qui</w>
-                        <!-- VM revoir avec  JBC : chiffres <w>·j·</w>-->
                         <lb facs="#facs_44_r2l42 n=N024"/>
                         <w part="N">secors</w>
                         <w part="N">ne</w>
@@ -6595,7 +6520,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="21">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6623,8 +6548,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="4" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="4" type="stanza">
+                     <l n="22">
                         <persName ref="#dieu" instant="false" full="yes">
                            <w part="N">
                               <hi rend="drop_capital">D</hi>iex</w>
@@ -6645,7 +6570,7 @@ oustume</w>
                            <rdg resp="#Wallenskold">por nos en crois pener</rdg>
                         </app>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="23">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6680,7 +6605,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="24">
                         <q>
                            <w part="N">
                               <choice>
@@ -6705,7 +6630,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="25">
                         <w part="N">
                            <choice>
                               <reg instant="false">V</reg>
@@ -6728,7 +6653,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="26">
                         <w part="N">la</w>
                         <w part="N">me</w>
                         <w part="N">
@@ -6764,7 +6689,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="27">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6805,7 +6730,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="28">
                         <q>
                            <w part="N">des<lb facs="#facs_44_r3l6 n=N002"/>cendr<choice>
                                  <reg instant="false">é</reg>
@@ -6831,8 +6756,8 @@ oustume</w>
                         </q>
                      </l>
                   </lg>
-                  <lg n="5" type="stanza" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="5" type="stanza">
+                     <l n="29">
                         <w part="N">
                            <hi rend="drop_capital">C</hi>has<lb facs="#facs_44_r3l8 n=N003"/>cuns</w>
                         <w part="N">cuide</w>
@@ -6842,7 +6767,7 @@ oustume</w>
                            <rhyme label="a">haitiez</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="30">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6877,7 +6802,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="31">
                         <w part="N">ainsi</w>
                         <w part="N">les</w>
                         <w part="N">tie<choice>
@@ -6910,7 +6835,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="10" part="N">
+                     <l n="32">
                         <w part="N">que</w>
                         <w part="N">il</w>
                         <w rend="elision" part="N">n</w>
@@ -6934,7 +6859,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="10" part="N">
+                     <l n="33">
                         <w part="N">
                            <choice>
                               <reg instant="false">B</reg>
@@ -6965,7 +6890,7 @@ oustume</w>
                            <rhyme label="c">pensee</rhyme>
                         </w>
                      </l>
-                     <l n="6" met="10" part="N">
+                     <l n="34">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -6987,7 +6912,7 @@ oustume</w>
                            <rhyme label="c">contree</rhyme>
                         </w>
                      </l>
-                     <l n="7" met="10" part="N">
+                     <l n="35">
                         <w part="N">si</w>
                         <w part="N">saintement</w>
                         <w part="N">que</w>
@@ -7012,8 +6937,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="6" type="envoi" part="N">
-                     <l n="1" met="10" part="N">
+                  <lg n="6" type="envoi">
+                     <l n="36">
                         <w part="N">
                            <hi rend="drop_capital">D</hi>ouce</w>
                         <w part="N">dame</w>
@@ -7037,7 +6962,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="10" part="N">
+                     <l n="37">
                         <w part="N">proiez</w>
                         <w part="N">por</w>
                         <w part="N">nos</w>
@@ -7063,7 +6988,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="10" part="N">
+                     <l n="38">
                         <lb facs="#facs_44_r3l16 n=N011"/>
                         <w part="N">
                            <choice>
@@ -7094,7 +7019,7 @@ oustume</w>
                   </lg>
                </lg>
             </div>
-            <div type="lyrical_text" xml:id="RS_342" part="N"><!--J'aloie l'autrier errant -->
+            <div type="lyrical_text" xml:id="RS_342">
                <note anchored="true">
                   <bibl corresp="#Wallenskold_51 #Callahan_3" default="false">
                      <author cert="high">Thibaut de Champagne</author>
@@ -7112,16 +7037,15 @@ oustume</w>
                      <note anchored="true">L'édition Wallensköld donne la graphie de <ref target="#K">K</ref>.</note>
                   </bibl>
                </note>
-               <lg type="pastourelle" rhyme="7a4b7a6b7a4b7a6b7c7c7c6b" part="N">
+               <lg type="pastourelle" rhyme="7a4b7a6b7a4b7a6b7c7c7c6b">
                   <note corresp="#Wallenskold" anchored="true">Cinq coblas doblas sans envoi. Les vers IV 46-47 présentent des rimes imparfaites.</note>
-                  <lb facs="#facs_44_line_1612282650284_1682" n="N012"/>
                   <head type="rubric" rend="brown" place="inline">
                      <handShift new="#Erudit"/>
-                     <persName ref="#thiChamp" instant="false" full="yes">Le Roy de<placeName ref="#navarre" instant="false" full="yes">Navarre</placeName>
+                     <persName ref="#thiChamp" instant="false" full="yes">Le Roy de <placeName ref="#navarre" instant="false" full="yes">Navarre</placeName>
                      </persName>
                   </head>
-                  <lg n="1" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="1" type="stanza">
+                     <l n="1">
                         <handShift new="#Copiste3"/>
                         <lb facs="#facs_44_r3l19" n="N013"/>
                         <w part="N">
@@ -7132,7 +7056,6 @@ oustume</w>
                               </choice>
                            </hi>
                         </w>
-                        <!-- VM revoir entité -->
                         <w part="N">aloie</w>
                         <w rend="elision" part="N">l</w>
                         <w part="N">autrier</w>
@@ -7151,7 +7074,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="4" part="N">
+                     <l n="2">
                         <w part="N">sa<choice>
                               <expan instant="false">
                                  <ex instant="false">n</ex>
@@ -7180,7 +7103,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="3">
                         <w part="N">sor</w>
                         <w part="N">mo<choice>
                               <expan instant="false">
@@ -7200,7 +7123,7 @@ oustume</w>
                            <rhyme label="a">pensant</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="4">
                         <w part="N">a</w>
                         <lb facs="#facs_44_r3l28" n="N015"/>
                         <w part="N">faire</w>
@@ -7218,7 +7141,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="5">
                         <w part="N">quant</w>
                         <w rend="elision" part="N">
                            <choice>
@@ -7256,7 +7179,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="4" part="N">
+                     <l n="6">
                         <w part="N">lez</w>
                         <w part="N">un</w>
                         <w part="N">
@@ -7269,7 +7192,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="7">
                         <w part="N">la</w>
                         <w part="N">
                            <choice>
@@ -7284,7 +7207,7 @@ oustume</w>
                            <rhyme label="a">enfant</rhyme>
                         </w>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="8">
                         <w rend="elision" part="N">c</w>
                         <w part="N">onques</w>
                         <w part="N">
@@ -7306,7 +7229,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="9">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -7324,7 +7247,7 @@ oustume</w>
                            <rhyme label="c">si</rhyme>
                         </w>
                      </l>
-                     <l n="10" met="7" part="N">
+                     <l n="10">
                         <w rend="elision" part="N"/>
                         <w part="N">e<choice>
                               <reg instant="false">ü</reg>
@@ -7351,7 +7274,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="11" met="7" part="N">
+                     <l n="11">
                         <w rend="elision" part="N">
                            <choice>
                               <reg instant="false">N</reg>
@@ -7374,7 +7297,7 @@ oustume</w>
                               </choice>i</rhyme>
                         </w>
                      </l>
-                     <l n="12" met="6" part="N">
+                     <l n="12">
                         <w part="N">de</w>
                         <w part="N">si</w>
                         <w part="N">gen<lb facs="#facs_44_r3l44" n="N022"/>te</w>
@@ -7392,8 +7315,8 @@ oustume</w>
                         </pc>
                      </l>
                   </lg>
-                  <lg n="2" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="2" type="stanza">
+                     <l n="13">
                         <lb facs="#facs_44_r3l42" n="N020"/>
                         <w part="N">
                            <hi rend="drop_capital">V</hi>ers</w>
@@ -7420,7 +7343,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="2" met="4" real="5" part="N">
+                     <l n="14">
                         <lb facs="#facs_44_r3l43" n="N021"/>
                         <w part="N">mis</w>
                         <w rend="elision" part="N">l</w>
@@ -7441,7 +7364,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="15">
                         <q>
                            <w part="N">
                               <choice>
@@ -7473,7 +7396,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="16">
                         <q>
                            <w part="N">por</w>
                            <persName ref="#dieu" instant="false" full="yes">
@@ -7509,7 +7432,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="17">
                         <lb facs="#facs_44_r3l45" n="N023"/>
                         <w part="N">
                            <choice>
@@ -7525,7 +7448,7 @@ oustume</w>
                            <rhyme label="a">maintenant</rhyme>
                         </w>
                      </l>
-                     <l n="6" met="4" part="N">
+                     <l n="18">
                         <w part="N">a</w>
                         <w part="N">son</w>
                         <w part="N">
@@ -7538,7 +7461,7 @@ oustume</w>
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="19">
                         <q>
                            <w part="N">
                               <choice>
@@ -7565,7 +7488,7 @@ oustume</w>
                            </w>
                         </q>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="20">
                         <q>
                            <w part="N">
                               <choice>
@@ -7592,7 +7515,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="21">
                         <q>
                            <w part="N">
                               <choice>
@@ -7623,7 +7546,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="10" met="7" part="N">
+                     <l n="22">
                         <q>
                            <w rend="elision" part="N">
                               <choice>
@@ -7647,7 +7570,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="11" met="7" part="N">
+                     <l n="23">
                         <q>
                            <w part="N">que</w>
                            <w rend="elision" part="N">
@@ -7677,7 +7600,7 @@ oustume</w>
                            </pc>
                         </q>
                      </l>
-                     <l n="12" met="6" part="N">
+                     <l n="24">
                         <q>
                            <w rend="elision" part="N">qu</w>
                            <w part="N">en</w>
@@ -7701,8 +7624,8 @@ oustume</w>
                         </q>
                      </l>
                   </lg>
-                  <lg n="3" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="3" type="stanza">
+                     <l n="25">
                         <w part="N">
                            <hi rend="drop_capital">Q</hi>uant</w>
                         <w part="N">
@@ -7720,18 +7643,15 @@ oustume</w>
                            <rhyme label="a">esfraer</rhyme>
                         </w>
                         <handShift new="#Erudit"/>
-voir la suite f. 49
-</l>
-                     <pb n="59r"/>
-                     <cb n="a"/>
-                     <l n="2" met="4" part="N">
+                     </l>
+                     <l n="26">
                         <lb facs="#facs_135_r1l1" n="N001"/>
                         <w part="N">si</w>
                         <w part="N">
                            <rhyme label="b">durement</rhyme>
                         </w>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="27">
                         <w part="N">que</w>
                         <w part="N">ne</w>
                         <w part="N">me</w>
@@ -7746,7 +7666,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="28">
                         <w part="N">ne</w>
                         <w part="N">fere</w>
                         <w part="N">autre</w>
@@ -7760,7 +7680,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="29">
                         <w part="N">lors</w>
                         <w part="N">
                            <choice>
@@ -7775,7 +7695,7 @@ voir la suite f. 49
                            <rhyme label="a">porpenser</rhyme>
                         </w>
                      </l>
-                     <l n="6" met="4" part="N">
+                     <l n="30">
                         <w part="N">
                            <rhyme label="b">
                               <choice>
@@ -7791,7 +7711,7 @@ voir la suite f. 49
                               </choice>t</rhyme>
                         </w>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="31">
                         <w part="N">ele</w>
                         <w part="N">me</w>
                         <w part="N">porroit</w>
@@ -7799,7 +7719,7 @@ voir la suite f. 49
                            <rhyme label="a">amer</rhyme>
                         </w>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="32">
                         <lb facs="#facs_135_r1l4" n="N004"/>
                         <w part="N">
                            <choice>
@@ -7821,7 +7741,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="33">
                         <w part="N">
                            <choice>
                               <reg instant="false">A</reg>
@@ -7845,7 +7765,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="10" met="7" part="N">
+                     <l n="34">
                         <w part="N">
                            <choice>
                               <reg instant="false">Q</reg>
@@ -7869,7 +7789,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="11" met="7" part="N">
+                     <l n="35">
                         <w part="N">tant</w>
                         <lb facs="#facs_135_r1l6" n="N006"/>
                         <w part="N">est</w>
@@ -7886,7 +7806,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="12" met="6" part="N">
+                     <l n="36">
                         <w part="N">qui</w>
                         <w part="N">double</w>
                         <lb facs="#facs_135_r1l7" n="N007"/>
@@ -7902,8 +7822,8 @@ voir la suite f. 49
                         </pc>
                      </l>
                   </lg>
-                  <lg n="4" type="stanza" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="4" type="stanza">
+                     <l n="37">
                         <w part="N">
                            <hi rend="drop_capital">L</hi>or</w>
                         <w part="N">li</w>
@@ -7913,7 +7833,7 @@ voir la suite f. 49
                            <rhyme label="a">demander</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="4" part="N">
+                     <l n="38">
                         <w part="N">
                            <choice>
                               <expan instant="false">m<ex instant="false">out</ex>
@@ -7926,7 +7846,7 @@ voir la suite f. 49
                            <rhyme label="b">belement</rhyme>
                         </w>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="39">
                         <w part="N">que</w>
                         <w part="N">me</w>
                         <w part="N">degnast</w>
@@ -7934,7 +7854,7 @@ voir la suite f. 49
                            <rhyme label="a">esgarder</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="40">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -7956,7 +7876,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="41">
                         <w part="N">
                            <choice>
                               <reg instant="false">E</reg>
@@ -7980,7 +7900,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="4" part="N">
+                     <l n="42">
                         <lb facs="#facs_135_r1l10" n="N010"/>
                         <w part="N">
                            <choice>
@@ -8001,7 +7921,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="7" met="7" part="N">
+                     <l n="43">
                         <q>
                            <w part="N">
                               <choice>
@@ -8026,7 +7946,7 @@ voir la suite f. 49
                            </pc>
                         </q>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="44">
                         <q>
                            <w part="N">ne</w>
                            <lb facs="#facs_135_r1l11" n="N011"/>
@@ -8047,7 +7967,7 @@ voir la suite f. 49
                            </pc>
                         </q>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="45">
                         <w part="N">
                            <choice>
                               <reg instant="false">v</reg>
@@ -8075,7 +7995,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="10" met="7" part="N">
+                     <l n="46">
                         <q>
                            <w part="N">
                               <choice>
@@ -8108,7 +8028,7 @@ voir la suite f. 49
                            </pc>
                         </q>
                      </l>
-                     <l n="11" met="7" part="N">
+                     <l n="47">
                         <w part="N">
                            <choice>
                               <reg instant="false">E</reg>
@@ -8132,7 +8052,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="12" met="6" part="N">
+                     <l n="48">
                         <q>
                            <w part="N">
                               <choice>
@@ -8154,8 +8074,8 @@ voir la suite f. 49
                         </q>
                      </l>
                   </lg>
-                  <lg n="5" part="N">
-                     <l n="1" met="7" part="N">
+                  <lg n="5" type="">
+                     <l n="49">
                         <w part="N">
                            <hi>D</hi>e<choice>
                               <reg instant="false">v</reg>
@@ -8169,13 +8089,13 @@ voir la suite f. 49
                            <rhyme label="a">montai</rhyme>
                         </w>
                      </l>
-                     <l n="2" met="4" part="N">
+                     <l n="50">
                         <w part="N">de</w>
                         <w part="N">
                            <rhyme label="b">maintenant</rhyme>
                         </w>
                      </l>
-                     <l n="3" met="7" part="N">
+                     <l n="51">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -8193,13 +8113,12 @@ voir la suite f. 49
                            <rhyme label="a">alai</rhyme>
                         </w>
                      </l>
-                     <l n="4" met="6" part="N">
+                     <l n="52">
                         <w part="N">
                            <choice>
                               <reg instant="false">v</reg>
                               <orig>u</orig>
                            </choice>ers</w>
-                        <!-- VM revoir chiffres <w>·i·</w>-->
                         <w part="N">bois</w>
                         <w part="N">
                            <rhyme label="b">
@@ -8215,7 +8134,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="5" met="7" part="N">
+                     <l n="53">
                         <lb facs="#facs_135_r1l16" n="N016"/>
                         <w part="N">
                            <choice>
@@ -8238,7 +8157,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="6" met="4" part="N">
+                     <l n="54">
                         <w rend="elision" part="N">s</w>
                         <w part="N">o<choice>
                               <choice>
@@ -8251,12 +8170,11 @@ voir la suite f. 49
                            <rhyme label="b">criant</rhyme>
                         </w>
                      </l>
-                     <l n="7" met="7" part="N"><!-- VM revoir  <w>·ij·</w>-->
+                     <l n="55">
                         <lb facs="#facs_135_r1l17" n="N017"/>
                         <w part="N">pastors</w>
                         <w rend="aggl" part="N">par</w>
                         <w part="N">mi</w>
-                        <!-- VM  revoir   <w>·i·</w>-->
                         <w part="N">
                            <rhyme label="a">bl<choice>
                                  <reg instant="false">é</reg>
@@ -8271,7 +8189,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="8" met="6" part="N">
+                     <l n="56">
                         <w part="N">qui</w>
                         <w part="N">
                            <choice>
@@ -8292,7 +8210,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="9" met="7" part="N">
+                     <l n="57">
                         <w part="N">
                            <choice>
                               <expan instant="false">et</expan>
@@ -8305,7 +8223,6 @@ voir la suite f. 49
                               <reg instant="false">v</reg>
                               <orig>u</orig>
                            </choice>erent</w>
-                        <!-- VM revoir  <w>·i·</w>-->
                         <w part="N">grant</w>
                         <w part="N">
                            <rhyme label="c">cri</rhyme>
@@ -8317,7 +8234,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="10" met="7" part="N">
+                     <l n="58">
                         <w part="N">
                            <choice>
                               <reg instant="false">A</reg>
@@ -8338,7 +8255,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="11" met="7" part="N">
+                     <l n="59">
                         <w part="N">
                            <choice>
                               <reg instant="false">j</reg>
@@ -8365,7 +8282,7 @@ voir la suite f. 49
                            </choice>
                         </pc>
                      </l>
-                     <l n="12" met="6" part="N">
+                     <l n="60">
                         <w rend="elision" part="N">n</w>
                         <w part="N">oi</w>
                         <lb facs="#facs_135_line_1605516282495_56" n="N020"/>
@@ -8389,7 +8306,7 @@ voir la suite f. 49
       </body>
       <back>
          <div type="index-pers" part="N">
-            <head>Index des noms de personnes</head>
+            <head>Noms de personnes</head>
             <listPerson default="false">
                <person xml:id="thiChamp">
                   <persName instant="false" full="yes">Thibaut de Champagne</persName>
@@ -8406,7 +8323,7 @@ voir la suite f. 49
             </listPerson>
          </div>
          <div type="index-lieux" part="N">
-            <head>Index des noms de lieux</head>
+            <head>Noms de lieux</head>
             <listPlace default="false">
                <place xml:id="navarre">
                   <placeName instant="false" full="yes">
