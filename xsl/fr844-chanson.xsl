@@ -148,6 +148,10 @@
     <!-- Vers -->
     <xsl:template match="l" mode="#all">
         <p>
+            <xsl:attribute name="title">
+                <!-- On compte les l en continu à l'intérieur de chaque div -->
+                <xsl:number count="l" level="any" format="1" from="div"/>
+            </xsl:attribute>
             <xsl:apply-templates mode="#current"/>
         </p>
     </xsl:template>
