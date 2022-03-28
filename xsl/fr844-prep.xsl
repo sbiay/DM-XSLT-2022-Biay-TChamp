@@ -86,7 +86,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- Vers -->
+    <!-- Vers : on modifie leur numérotation afin de disposer d'une numérotation ceontnue des vers pour chaque chansons -->
     <xsl:template match="l">
         <xsl:copy>
             <xsl:attribute name="n">

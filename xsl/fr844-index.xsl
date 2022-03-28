@@ -49,17 +49,19 @@
             <!-- Pour chaque chansonnier -->
             <xsl:for-each select="//body/descendant::div[@type='chansonnier'][descendant::l/descendant::persName[@ref=concat('#', $personne/@xml:id)]]">
                 <xsl:variable name="chansonnier" select="current()/head"/>
+                <!-- Pour chaque chanson -->
                 <xsl:for-each select="current()/div[descendant::l/descendant::persName[@ref=concat('#', $personne/@xml:id)]]">   
+                    <!-- On écrit le nom du chansonnier à partir de son identifiant -->
                     <xsl:variable name="chanson" select="current()/@xml:id"/>
-                    <xsl:if test=".//l//persName[@ref=concat('#', $personne/@xml:id)]">
-                        <xsl:value-of select="replace($chansonnier, 'Chansonnier ', '')"/>
-                        <xsl:text> </xsl:text>
-                        <a href="./fr844-{replace(fn:lower-case($chansonnier), ' ', '-')}/{$chanson}.html">
-                            <xsl:value-of select="replace($chanson, '_', '')"/>
-                        </a>
-                        <xsl:text> v. </xsl:text>
-                        <xsl:for-each select="current()/descendant::persName[@ref=concat('#', $personne/@xml:id)]">    
-                            <xsl:value-of select="current()/ancestor::l/@n"/>
+                    <xsl:value-of select="replace($chansonnier, 'Chansonnier ', '')"/>
+                    <xsl:text> </xsl:text>
+                    <a href="./fr844-{replace(fn:lower-case($chansonnier), ' ', '-')}/{$chanson}.html">
+                        <xsl:value-of select="replace($chanson, '_', '')"/>
+                    </a>
+                    <xsl:text> v. </xsl:text>
+                    <!-- Pour chaque occurrence de l'item dans la chanson -->
+                    <xsl:for-each select="current()/descendant::persName[@ref=concat('#', $personne/@xml:id)]">    
+                        <xsl:value-of select="current()/ancestor::l/@n"/>
                         <xsl:choose>    
                             <xsl:when test="position() != last()">
                                 <xsl:text>, </xsl:text>
@@ -68,8 +70,7 @@
                                 <xsl:text>.</xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
-                        </xsl:for-each>
-                    </xsl:if>
+                    </xsl:for-each>
                     <xsl:if test=".//l//persName[@ref=concat('#', $personne/@xml:id)]">    
                         <xsl:if test="position() != last()">
                             <xsl:text> ; </xsl:text>
