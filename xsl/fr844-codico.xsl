@@ -21,41 +21,81 @@
                 </head>
                 <body>
                     <xsl:call-template name="navbar"/>
-                    <xsl:apply-templates select="descendant::front"/>
+                    <xsl:apply-templates select="descendant::sourceDesc"/>
                 </body>
             </html>
         </xsl:result-document>
     </xsl:template>
     
-    <xsl:template match="front">
+    <xsl:template match="sourceDesc">
         <div class="container">
-            <h1 class="display-4 fst-italic">
-                <xsl:value-of select="./child::head"/>
+            <h1 class="display-5 fst-italic">
+                <xsl:value-of select="./msDesc/head"/>
             </h1>
-            <xsl:apply-templates select="div"/>
+            <h2>Description matérielle</h2>
+            <h3>Support</h3>
+            <p><xsl:apply-templates select="descendant::support"/></p>
+            <h3>Importance matérielle</h3>
+            <p><xsl:apply-templates select="descendant::extent"/></p>
+            <h3>Foliotation</h3>
+            <p><xsl:apply-templates select="descendant::foliation"/></p>
+            <h3>Collation des cahiers</h3>
+            <xsl:apply-templates select="descendant::collation"/>
+            <h2>Mise en pages</h2>
+            <p><xsl:apply-templates select="descendant::layoutDesc/layout/text()"/></p>
+            <p>
+                <xsl:text>Dimensions : </xsl:text>
+                <xsl:value-of select="descendant::layoutDesc//height"/>
+                <xsl:text> 𐄂 </xsl:text>
+                <xsl:value-of select="descendant::layoutDesc//width"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="descendant::layoutDesc//height/@unit"/>
+                <xsl:text>.</xsl:text>
+            </p>
+            <h2>Description des mains</h2>
+            <p>Les mains sont au nombre de <xsl:value-of select="descendant::handDesc/@hands"/>.</p>
+            <h3>Mains médiévales</h3>
+            <xsl:apply-templates select="descendant::handNote[1]"/>
+            <h3>Main érudite</h3>
+            <xsl:apply-templates select="descendant::handNote[@xml:id='Erudit']"/>
+            <h3>Pièces thibaudiennes</h3>
+            <xsl:apply-templates select="descendant::handNote[last()]"/>
+            <h2>Décoration</h2>
+            <xsl:apply-templates select="descendant::decoDesc"/>
+            <h2>Reliure</h2>
+            <xsl:apply-templates select="descendant::bindingDesc"/>
+            <h2>Histoire</h2>
+            <h3>Origine</h3>
+            <xsl:apply-templates select="descendant::origPlace"/>
+            <h3>Date</h3>
+            <xsl:apply-templates select="descendant::origDate"/>
         </div>
     </xsl:template>
     
-    <xsl:template match="div">
-        <h2>
-            <xsl:value-of select="./child::head"/>
-        </h2>
-        <xsl:apply-templates select="p"/>
-    </xsl:template>
-    
     <xsl:template match="p">
-        <p>
-            <xsl:apply-templates/>
-        </p>
+        <xsl:copy>
+        <xsl:apply-templates/>
+        </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="foreign">
-        <i>
-            <xsl:apply-templates/>
-        </i>
+    <xsl:template match="hi">
+        <xsl:if test="@rend='sup'">
+            <sup>
+                <xsl:apply-templates/>
+            </sup>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="formula">
+        <h4>Formule</h4>
+        <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="list">
+        <!-- Dans le cas de la liste qui suit immédiatement la formula (collation des cahiers) -->
+        <xsl:if test="./ancestor::p/preceding-sibling::p[1]/child::formula">
+            <head>Description détaillée</head>
+        </xsl:if>
         <ul>
             <xsl:apply-templates/>
         </ul>
@@ -67,15 +107,22 @@
         </li>
     </xsl:template>
     
-    <!-- En l'état du projet, tous les liens des principes d'édition renvoient à la description codicologique du ms. -->
-    <xsl:template match="ref">
-        <xsl:element name="a">
-            <xsl:attribute name="href">
-                <xsl:text>./fr844-codico.html</xsl:text>
-                <xsl:value-of select="./@target"/>
-            </xsl:attribute>
-            <xsl:value-of select="."/>
-        </xsl:element>
+    <xsl:template match="foreign">
+        <i>
+            <xsl:apply-templates/>
+        </i>
+    </xsl:template>
+    
+    <xsl:template match="title">
+        <i>
+            <xsl:apply-templates/>
+        </i>
+    </xsl:template>
+    
+    <xsl:template match="origDate">
+        <p>
+            <xsl:apply-templates/>
+        </p>
     </xsl:template>
     
     <!-- Style -->

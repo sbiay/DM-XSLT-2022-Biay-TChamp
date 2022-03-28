@@ -6,22 +6,22 @@
                     </title>
       <link rel="stylesheet" href="../static/bootstrap-5.1.3-dist/css/bootstrap.min.css">
       <style>
-                        body {
-                        margin-left: 15%;
-                        margin-right: 15%;
-                        margin-top: 150px;
-                        }
-                        ul {
-                        margin: 0px;
-                        }
-                        .container {
-                        padding: 80px;
-                        background-color:  rgb(253, 245, 245);
-                        }
-h1 {
-margin-bottom: 80px;
-}                        
-                    </style>
+            body {
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 150px;
+            }
+            ul {
+            margin: 0px;
+            }
+            .container {
+            padding: 80px;
+            background-color:  rgb(253, 245, 245);
+            }
+            h1 {
+            margin-bottom: 80px;
+            }                        
+        </style>
    </head>
    <body>
       <header>
@@ -29,54 +29,232 @@ margin-bottom: 80px;
             <div class="container-fluid"><span class="navbar-brand">Corpus lyrique de Thibaut de Champagne</span><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarCollapse">
                   <ul class="navbar-nav me-auto mb-2 mb-md-0">
                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a></li>
+                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="./fr844-index.html">Index</a></li>
+                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="./fr844-codico.html">Manuscrit</a></li>
                   </ul>
                </div>
             </div>
          </nav>
       </header>
       <div class="container">
-         <h1 class="display-4 fst-italic">Principes d'édition</h1>
-         <h2>Objectifs éditoriaux de l'ANR Maritem</h2>
-         <p>L'objectif éditorial de l'ANR Maritem est de réaliser une édition scribale du Manuscrit
-            du Roi, centrée à la fois sur le processus de copie des pièces lyriques conservées
-            par le célèbre codex, qui comporte une double adaptation, à la fois scriptologique
-            (d'une scripta oïlique à l'autre mais également d'une langue à l'autre ) et mélodique,
-            dans l'enjeux de correspondre aux attentes du public. Le point de vue de l'édition
-            scribale ne sera donc pas focalisé sur la production de la part de l'auteur, mais
-            sur le moment de leur réception, par les scribes, tout premiers lecteurs des pièces,
-            mais surtout par les publics courtois artésien et napolitain. </p>
-         <p>Travaillant d’après un point de vue qui se propose d'apprehénder le Manuscrit du Roi
-            d'après une perspective synchronique, l'emploi des critères éditoriaux rigoureusement
-            conservateurs s'est avéré nécessaire, afin de reproduire de manière fidèle l’<i>usus scribendi</i> et <i>copiandi</i> des différents scribes médiévaux, textuels et musicaux. Ce type d'édition implique
-            une attention particulière aux éléments paléographiques de la page manuscrite dans
-            sa totalité  et surtout aux signes de ponctuation médiévaux, censés sans doute aller
-            de pair avec la structure métrique de ces textes et également avec leurs mélodies.
+         <h1 class="display-5 fst-italic">Le Manuscrit du Roi (Paris BnF fr. 844)
+            1260-1325</h1>
+         <h2>Description matérielle</h2>
+         <h3>Support</h3>
+         <p>Parchemin de bonne qualité, malgré quelques signes d'usure. Plusieurs feuillets présentent
+            des enluminures coupées, ils ont  été restaurés en 1980 par l'ajout de mouches en
+            parchemin moderne. Feuillets de garde en papier datant du XIXe siècle.</p>
+         <h3>Importance matérielle</h3>
+         <p>213 feuillets (en parchemin), 8 feuillets de garde (en papier) et 4 feuillets contenant une table de matières (parchemin). 
             </p>
-         <p>D’après ces critères très conservateurs, nous avons fait le choix d'éditer les pièces
-            lyriques du Manuscrit du Roi sous un triple format, comportant à la fois :
-            
-            <ul>
-               <li>un niveau d'édition normalisée, réalisée pour la totalité des pièces lyriques conservées
-                  dans le codex ;</li>
-               <li>un niveau de transcription graphématique, réalisée également pour toutes les pièces
-                  avec le logiciel Transkribus (une partie des transcription a été exécutée manuellement
-                  ; une autre par post-correction de l'algorithme d'HTR kraken) ;</li>
-               <li>un niveau de transcription allographétique, réalisée manuellement avec Transkribus,
-                  à partir d'un échantillon de 24 feuillets du Manuscrit du Roi, à savoir un feuillet
-                  par main textuelle.</li>
+         <h3>Foliotation</h3>
+         <p>Foliotation moderne  en chiffres romains à l'encre brune du début du XIXe siècle (vers
+            1800-1815). La numérotation moderne du manuscrit compte fautivement 215 feuillets
+            alors qu'il y en a que 213. L'érudit qui a numéroté le manuscrit a sauté le numéro
+            11 (on passe du f. 10v au  f. 12r) et fusionné les ff. 153 et 154. La numérotation
+            continue sur les feuillets de garde jusqu'au numéro 223. Les feuillets de garde 222
+            et 223 ont été biffés par la même main. La table des matières a été numérotée de B
+            à E. Le dernier feuillet de garde a été numéroté A et comporte une liste des auteurs
+            avec des renvois précis aux ff. du manuscrit, rédigée sans doute par le même érudit
+            qui a ajouté la numérotation et des commentaires dans les pièces. </p>
+         <h3>Collation des cahiers</h3>
+         <p xmlns="http://www.tei-c.org/ns/1.0">La collation du Manuscrit du Roi est un sujet particulièrement épineux. La difficulté
+            réside dans l'organisation codicologique exetrêmement complexe d'un manuscrit qui
+            a été assemblé très tardivement après avoir été remanié  sur un laps de temps long,
+            qui a comporté la perte de certains feuillets plus anciens  d'une part, et l'ajouts
+            de feuillets avec des nouvelles pièces lyriques et des nouvelles mélodies de l'autre.
+            La phase d'augmentation textuelle et musicale du chansonnier  a comporté également
+            l'ajout  d'un cahier entier pour le chansonnier Mt de Thibaut de Champagne (c. X) ou pour les motets (c. XII), qui ont contribué à en
+            alterer profondement la structure d'origine. La table de matière exprime le clivage
+            profond entre le projet originaire (correspondant en partie, mais pas totalement au
+            chansonnier M, comme si déjà dans la phase de rédaction des pièces lyrique de M certains changement avaient déjà eu lieu) et la version actuelle du codex.</p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">Sans tenir en considération l'état codicologique actuel du manuscrit, dans son édition
+            phototypique de 1938, J. Beck en proposait une collation "idéale"correspondant à la version originaire du manuscrit
+            au moment de l'assemblage des différents cahiers. Comme le solignait déjà H. Spanke dans un article de 1943, cette collation idéale présente toutefois des problèmes
+            d'ordre intellectuel (est-il vraiment sensé de remonter à l'archétype codicologique
+            d'un manuscrit qui a été travaillé pendant plus d'un demi-siècle et qui déjà au moment
+            de sa toute première composition présente un clivage entre la structure idéale des
+            pièces de la table des matières et la présence et disposition des pièces dans M ?) et d'ordre codicologique (la disposition idéale des cahiers présente des imprécisions
+            d'ordre matériel).</p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">En 1991, C. M. Battelli a repris en main le dossier codicologique complexe du Manuscrit du Roi, qualifié
+            de canzoniere disordinato, en proposant de mener à bien une collation  "factuelle" du codex dans l'état dans
+            lequel il nous est parvenu. Il en résulte une étude matérielle détaillée, qui a été
+            publiée en 1993. La collation que nous décrivons ci-dessous est celle proposée par
+            C. M. Battelli (un schéma reproduisant l'odre des cahiers se trouve notamment aux
+            pp. 307-308).</p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">En 2017, A. M. Hatzikiriakos est en partie revenu sur l'étude de C. M. Battelli, en formulant l'hypothèse que la table des matières n'aurait pas été copiée par le
+            même scribe que M (Copiste 1). </p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">
+            <h4 xmlns="">Formule</h4>Table<sup xmlns="">4</sup>, I<sup xmlns="">8(-2)</sup>-II<sup xmlns="">8(-1)</sup>, III<sup xmlns="">4(-1)</sup>, IV<sup xmlns="">8(-2)</sup>-V<sup xmlns="">8</sup>-VI<sup xmlns="">8</sup>-VII<sup xmlns="">8(-3)</sup>-VIII<sup xmlns="">8</sup>-IX<sup xmlns="">8(-2)</sup>, f. 58<sup xmlns="">1</sup>, X<sup xmlns="">8</sup>-XI<sup xmlns="">8</sup>-XII<sup xmlns="">8</sup>, XIII<sup xmlns="">10(+1)</sup>, XIV<sup xmlns="">8</sup>, XV<sup xmlns="">6</sup>, XVI<sup xmlns="">8</sup>-XVII<sup xmlns="">8</sup>-XVIII<sup xmlns="">8(-1)</sup>-XIX<sup xmlns="">8(+1)</sup>-XX<sup xmlns="">8</sup>-XXI<sup xmlns="">8</sup>-XXII<sup xmlns="">8</sup>-XXIII<sup xmlns="">8(-1)</sup>-XXIV<sup xmlns="">8</sup>-XXV<sup xmlns="">8</sup>, f. 185<sup xmlns="">1</sup>, ff. 186-187<sup xmlns="">2</sup>,XXVI<sup xmlns="">8(-2 ?)</sup>, XXVII<sup xmlns="">10(+1)</sup>, XXVIII<sup xmlns="">8(-1)</sup>, XXIX<sup xmlns="">6(-2)</sup>, index moderne en papier 1<sup xmlns="">10(+1)</sup>.</p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">
+            <head xmlns="">Description détaillée</head>
+            <ul xmlns="">
+               <li>Cahier I : manquent les feuillets 1 et 2 ;</li>
+               <li>Cahier II : manque le feuillet 5 ;</li>
+               <li>Cahier III : manque le feuillet 1;</li>
+               <li>Cahier IV : manquent les feuillets 1 et 3 ;</li>
+               <li>Cahier VII : manquent les feuillets 5, 6 et 7 ;</li>
+               <li>Cahier II : manque le feuillet 9 ;</li>
+               <li>Cahier IX : manque les feuillets 7 et 8 ;</li>
+               <li>Cahier II : manque le feuillet 9 ;</li>
+               <li>Cahier XII :  feuillet ajouté entre les ff. 6 et 7 ;</li>
+               <li>Entre les cahiers XIV et XV : manque un feuillet ajouté ;</li>
+               <li>Cahier XVIII : manque le feuillet 3 ;</li>
+               <li>Cahier XIX: feuillet ajouté entre les ff. 3 et 4 ;</li>
+               <li>Cahier XXIII : manque le feuillet 1 ;</li>
+               <li>Cahier XXVI : manque (peut-être) le bifeuillet 4-5 ;</li>
+               <li>Cahier XXVII : feuillet ajouté après le f. 10 ;</li>
+               <li>Cahier XXVIII : manque le feuillet 2 ;</li>
+               <li>Cahier XXIX : manquent les feuillets 1-2.</li>
             </ul>
          </p>
-         <p>Ce choix éditorial conservateur s’est aligné sur les critères proposés par Robinson et Solopova (1993), Stutzmann (2011)  et la Base de Français Médiéval de l’ENS de Lyon.</p>
-         <h2>Le corpus thibaudien</h2>
-         <p>Les pièces de Thibaut de Champagne se trouvent dans deux unités codicologiques distinctes
-            du Manuscrit du Roi, voir infra la <a href="./fr844-codico.html#Temoins_Thibaut_Champagne">liste complète des témoins de Thibaut de Champagne</a>.</p>
-         <p>D'après les critères généraux décrits au paragraphe précédent, les deux chansonniers
-            de Thibaut de Champagne ont été édités dans leur totalité de manière d'abord graphématique
-            (avec Transkribus), puis interprétative (en XML-TEI). Un seul feuillet a été traité
-            de manière allographétique : le feuillet 13r, que nous avons considéré particulièrement
-            intéressant car situé à la charnière entre le chansonnier M et le chansonnier Mt,
-            permettant ainsi de voir de manière synoptique les deux mains du Copiste 1 (colonne
-            a) et du Copiste 3 (colonne b).</p>
+         <h2>Mise en pages</h2>
+         <p>Réglure à la mine de plomb. Copié sur deux colonnes, le manuscrit compte le plus souvent
+            25 lignes par page pour les textes accompagnés de la mélodie et 65 lignes par page
+            pour les textes où la mélodie est attestée seulement pour les premiers vers de la
+            pièce.
+            </p>
+         <p>Dimensions : 320 𐄂 220 mm.</p>
+         <h2>Description des mains</h2>
+         <p>Les mains sont au nombre de 25.</p>
+         <h3>Mains médiévales</h3>
+         <p xmlns="http://www.tei-c.org/ns/1.0">
+            Le Manuscrit du Roi comporte un nombre impressionant de mains, textuelles, musicales
+            ou hybrides, se différenciant par époque, origine géographique et scriptologique,
+            type d'écriture, qualité de la copie et compétences musicales. Un premier relevé des
+            mains a été effectué par H. Spanke en 1943, mais on doit à J. Haines l'identification exacte de tous les scribes et leur description.
+            </p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">
+            Pour les sections les plus anciennes du Manuscrit du Roi, datant des années 1260 et
+            d'origine picarde (chansonnier oïlique M, chansonnier occitan W,  les motets de R et les deux lais dans les derniers feuillets du codex), J. Haines a identifié deux copistes textuels :
+            
+            <ul xmlns="">
+               <li>Copiste 1 : on lui attribue la copie de la partie la plus ancienne du Manuscrit du
+                  Roi, le chansonnier M. Ce copiste est originaire du Nord de la France : il emploie une écriture <i>textualis</i> septentrionale et présente des traits scriptologiques picards. Il fait office de
+                  rubricateur et on lui attribue également la rédaction de la table des matières.</li>
+               <li>Copiste 2 : ff. 50-51 (section en langue d'oc) ; ff. 199-202 (section en langue d'oc).</li>
+            </ul>
+         </p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">
+            Du côté des mélodies, pour les mêmes sections J. Haines a identifié quatre copistes musicaux, dont deux sans doute non professionnels :
+            
+            <ul xmlns="">
+               <li>Copiste A : notation carrée ;</li>
+               <li>Copiste B : notation carrée et notation franconienne ;</li>
+               <li>Copiste C : notation carrée avec des imprécisions (copiste non profesionnel) ;</li>
+               <li>Copiste D : notation carrée avec des imprécisions, il s'agit sans doute d'un copiste
+                  non professionnel. Il intervient seuelement aux ff. 34v, 40v et 55r.</li>
+            </ul>
+         </p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">Pour le chansonnier Mt (<i xmlns="">Liederbuch</i> de Thibaut de Champagne), J. Haines a identifié une seule main textuelle et peut-être
+            deux mains musicales : 
+            
+            <ul xmlns="">
+               <li>Copiste 3 : on lui attribue la rédaction de la section interpolée de Thibaut de Champagne,
+                  le chansonnier Mt (f. 13rb et ff. 59r-78v). D'après J. Haines, l'écriture <i>rotunda</i> est d'origine italienne : il pourrait s'agir d'un copiste travaillant pour la cour
+                  angevine de Naples.</li>
+               <li>Copiste T : notation carrée, chansonnier Mt;</li>
+               <li>Copiste E : f. 72v, notations mesurales avec des imprécisions (copiste non professionnel)
+                  ;</li>
+            </ul>
+         </p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">Pour les 44 ajouts napolitains du début du XIVe siècle, J. Haines a identifié vingt et un hybrides qui copient à la fois le texte et la musique :
+            
+            <ul xmlns="">
+               <li>Copiste A1 : ff. 117, 185 et 186 ; trois descortz en langue d'oc (<i>Qui la ve en ditz</i> BEdT 10, 45, <i>Sens alegrage</i> BEdT 205,5 et <i>Bella donna cara</i> BEdT 461, 37) et la dansa <i>Ben volgra s'esser pogues</i> (BEdT 244, 1a) avec les mélodies.</li>
+               <li>Copiste A2 : f. 44r et 215r, ajouts 17 et 44 (lais). J. Beck considérait que ces ajouts
+                  avaient été copiés par Charles d'Ajou lui-même, mais il n'y a aucune évidence paléographique
+                  qui permette de l'affirmer. </li>
+               <li>Copiste A3 : 77r et 78r, ajouts 18-22 et 41. Seul copiste à écrire dans deux langues
+                  différentes. Copie une série de conductus latins (contrafactum d'Adam de Givenchi)
+                  et une chanson de Pierrekin de la Coupele.</li>
+               <li>Copiste A4 : f. 78v, dansa <i>Tant es gay'es avinent</i> et une cobla de la canson de Blacasset <i>Ben volgra quem vengues</i> (BEdT 96,2). </li>
+               <li>Copiste A5 : f. 187v, dernière strophe de la dansa Amor m'art con fuoc am flama (BEdT
+                  461, 20a).</li>
+               <li>Copiste A6 : ff. 103v-104r, ajouts 25-28, estampies. J. Haines a remarqué que c'est
+                  un cas très intéressant de <i>littera bononiensis</i>, fréquemment employée à la cour de Naples.</li>
+               <li>Copiste A7 : f. 104v ajouts 29-33. Copiste qui complète la série des estampies.</li>
+               <li>Copiste A8 : f. 1v, ajout 2 (dansa provençale <i>Donna pos vos ay chausida</i>, BEdT 461,92).</li>
+               <li>Copiste A9 : f. 1v, ajout 3. </li>
+               <li>Copiste A10 : f. 135r, ajout 35. </li>
+               <li>Copiste A11 : ff. 2v et 3r, ajouts 4-7. Une série de <i>motets entés</i> et une pastourelle.</li>
+               <li>Copiste A12 : f. 159v, ajout 36.</li>
+               <li>Copiste A13 : ff. 3v et 161v, ajouts 8 et 36a. </li>
+               <li>Copiste A14 : f. 211v, ajout 42.</li>
+               <li>Copiste A15 : f. 211v, ajout 43.</li>
+               <li>Copiste A16 : f. 4v, ajouts 10 et 11.</li>
+               <li>Copiste A17 : f. 5r, ajouts 12 et 13. Danses instrumentales.</li>
+               <li>Copiste A18 : f. 5v, ajout 14. </li>
+               <li>Copiste A19 : f. 5v ajouts 15. </li>
+               <li>Copiste A20 : f. 3v, ajout 9. C'est l'une des mains les plus proches de l'écriture
+                  cursive typiquement employée par la chancellerie angevine.</li>
+               <li>Copiste A21 : f. 1r et 5v. Deux rondeaux <i>U despit des envieus</i> (vdB 156) et <i>Se je chant et sui envoisiés</i> (vdB 153). C'est également, comme déjà A21,  l'une des mains les plus proches de
+                  l'écriture cursive typiquement employée par la chancellerie angevine.</li>
+            </ul>
+         </p>
+         <h3>Main érudite</h3>
+         <p xmlns="http://www.tei-c.org/ns/1.0">
+            Au-delà des deux mains textuelles et musicales médiévales, il est important de signaler
+            une dernière main, cette fois moderne, qui intervient à plusieurs reprises dans le
+            codex : un érudit, écrivant dans une cursive moderne,  dont l'activité a été située
+            aux alentours des années 1800-1815, qui s'occupe avec vif intérêt des pièces lyriques
+            contenue par le Manuscrit du Roi, en les annotant, complétant ou corrigeant. Nous
+            avons regroupé sous cet identifiant toutes les interventions graphiques  modernes
+            :  commentaires marginaux ou interlinéaires, restitutions dues à un ou plusieurs feuillets
+            mutilés (notamment en correspondance des initiales ornées ou historiées coupées),
+            corrections interlinéaires, etc. Nous ne pouvons pas exlure l'idée qu'il y ait plusieurs
+            mains modernes et qu'il faille, suite à une analyse plus approfondie, multiplier les
+            identifiants des érudits. Cela n'est qu'une solution provisoire, dans l'attente qu'un
+            paléographe prenne la rèleve.
+            </p>
+         <h3>Pièces thibaudiennes</h3>
+         <p xmlns="http://www.tei-c.org/ns/1.0">Les pièces thibaudiennes conservées par M et Mt, elles ont été copiées respectivement par les mains textuelles et musicales suivantes
+            : 
+            
+            <ul xmlns="">
+               <li>Copiste 1 (M, ff. 10ra-13ra) : textes ;</li>
+               <li>Copiste A (M, ff. 10ra-13ra) : mélodies (notation mensurale) ;</li>
+               <li>Copiste 3(Mt, f. 13rb et  ff. 59-78) : textes ;</li>
+               <li>Copiste T (Mt, f. 13rb et  ff. 59-78) : mélodies (notation  carrée) ;</li>
+            </ul>
+         </p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">
+            Aux mains textuelles et musicales médiévales s'ajoute la main moderne de l'érudit du XIXe siècle, qui complète plusieurs pièces dans M et rédige des commentaires dans Mt.</p>
+         <h2>Décoration</h2>
+         <p xmlns="http://www.tei-c.org/ns/1.0">Le Manuscrit du Roi présente une décoration très riche, notamment pour sa partie la
+            plus ancienne (M).</p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">55 sections d'auteur du chansonnier M présentent de très grandes initiales historiées représentant les trouvères. Ces initiales
+            ont été en partie découpées : c'est bien le cas pour la section de Thibaut, le f.
+            10r présente une mouche en parchemin moderne. Le style iconographique des initiales
+            historiées est, d'après A. Stones, typique du Nord de la France et plus précisément de la ville d'Arras, se rapprochant
+            particulièrement des chasonniers A et a. Comme dans les deux chansonniers arlésiens,
+            les trouvères sont représentés de manière plutôt figée et conventionelle, afin de
+            mettre en avant de manière claire leurs origines sociales : les trouvères de haut
+            lignage sont représentés en armure et à cheval, avec des écus ou des drapeaux montrant
+            leurs symboles héraldiques. Les trouvères qui n'ont pas d'origine noble sont en revanche
+            représentés habillés en bourgeois et se tenant début. Au-delà des initiales historiées,
+            M présente des lettres ornées à antennes, colorées en bleu, rouge et or, ainsi que
+            des lettrines à antennes, alternant les couleurs bleu, rouge et or.</p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">La décoration de Mt ne comporte pas de lettre historiée. Nous trouvons en revanche des initiales ornées,
+            parfois à antenne, colorées en bleu, rouge et orange (sans doute dans le souci d'imiter
+            l'or de la décoration de M), ainsi que des lettrines colorées de manière anlternée en bleu et rouge très clair.</p>
+         <h2>Reliure</h2>
+         <p xmlns="http://www.tei-c.org/ns/1.0">Reliure moderne en maroquin brun avec plats de carton.</p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">Pièce de titre estampée à chaud au dos : <i xmlns="">Chansondes poetesprovinciaux</i></p>
+         <p xmlns="http://www.tei-c.org/ns/1.0">8  feuillets de garde en papier.</p>
+         <h2>Histoire</h2>
+         <h3>Origine</h3>La section la plus ancienne du Manuscrit du Roi a été composée dans le Nord de la
+         France, vraisemblablement à Arras ou dans l'Artois. Cette localisation est proposée
+         à la fois pour des raisons iconographiques (M se rapprochant des chansonniers arlésiens A et a, cf. A. Stones), textuelles (la
+         plupart des trouvères conservés par M sont d'origines arlésienne, cf. S. Asperti), scriptologiques (le Copiste 1 présentent
+         des traits grapho-phonétiques picards). Le chansonnier Mt et les autres ajouts ont été en revanche composés en Italie, probablement à la cour
+         angevine de Naples. D'après S. Asperti, le vecteur entre le Nord de la France et le
+         Royaume de Naples serait le comte Robert II d'Artois, neveu de Charles d'Anjou : le
+         précieux codex était peut-être un cadeau pour le roi de Naples.
+         <h3>Date</h3>
+         <p>1260-1325</p>
+         <p>D'après S. Asperti, M a été composé entre les années 1260 et 1282 alors que Mt et les autres ajouts en langue d'oïl, d'oc et en latin sont datables entre 1282 et
+            le premier quart du XIVe siècle.</p>
       </div>
    </body>
 </html>
