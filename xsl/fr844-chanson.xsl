@@ -293,27 +293,32 @@
     </xsl:template>
     
     <xsl:template match="choice" mode="interp">
-        <xsl:if test="sic[not(text())]">
-            <xsl:choose>
-                <!-- Si une correction est proposée, on inscrit entre crochets l'éventuelle forme "reg", sinon, le noeud texte de "corr", sinon […] -->
-                <xsl:when test="sic/following-sibling::corr//reg">
-                    <xsl:text>[</xsl:text>
-                    <xsl:value-of select="sic/following-sibling::corr//reg"/>
-                    <xsl:text>]</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="sic/following-sibling::corr/text()">
-                            <xsl:text>[</xsl:text>
-                            <xsl:value-of select="sic/following-sibling::corr/text()"/>
-                            <xsl:text>]</xsl:text>
-                        </xsl:when>
-                        <xsl:otherwise><xsl:text>[…]</xsl:text></xsl:otherwise>
-                    </xsl:choose>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
-        <xsl:value-of select=".//reg"/>
+        <xsl:choose>
+            <xsl:when test="sic[not(text())]">
+                <xsl:choose>
+                    <!-- Si une correction est proposée, on inscrit entre crochets l'éventuelle forme "reg", sinon, le noeud texte de "corr", sinon […] -->
+                    <xsl:when test="sic/following-sibling::corr//reg">
+                        <xsl:text>[</xsl:text>
+                        <xsl:value-of select="sic/following-sibling::corr//reg"/>
+                        <xsl:text>]</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:choose>
+                            <xsl:when test="sic/following-sibling::corr/text()">
+                                <xsl:text>[</xsl:text>
+                                <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                                <xsl:text>]</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise><xsl:text>[…]</xsl:text></xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- En l'absence d'élément sic, on copie la valeur de reg -->
+                <xsl:value-of select=".//reg"/>
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:value-of select="expan"/>
     </xsl:template>
     
