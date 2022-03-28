@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0"  
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="2.0">
@@ -11,7 +12,8 @@
     
     <!-- Structure du HTML -->
     <xsl:template match="div[@type='lyrical_text']">
-        <xsl:result-document href="../html/fr844-chanson-{./@xml:id}.html" method="html" indent="yes">
+        <xsl:variable name="chansonnierParent" select="fn:lower-case(replace(./preceding-sibling::head/text(), ' ', '-'))"/>
+        <xsl:result-document href="../html/fr844-{$chansonnierParent}/{./@xml:id}.html" method="html" indent="yes">
             <html>
                 <head>
                     <xsl:element name="title">
@@ -287,7 +289,7 @@
     <xsl:template name="bootstrapCore">
         <xsl:element name="link">
             <xsl:attribute name="rel">stylesheet</xsl:attribute>
-            <xsl:attribute name="href">../static/bootstrap-5.1.3-dist/css/bootstrap.min.css</xsl:attribute>
+            <xsl:attribute name="href">../../static/bootstrap-5.1.3-dist/css/bootstrap.min.css</xsl:attribute>
         </xsl:element>
     </xsl:template>
     
@@ -303,7 +305,7 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a><!-- MAJ lien vers page d'accueil -->
+                                <a class="nav-link active" aria-current="page" href="../fr844-accueil.html">Accueil</a>
                             </li>
                             <li>
                                 <!-- Boutons pour l'animation de l'apparat -->

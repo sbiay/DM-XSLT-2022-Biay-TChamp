@@ -187,9 +187,11 @@
     </xsl:template>
     
     <!-- Pour la table des matières de chaque chansonnier, on créé une liste des chansons qu'il contient -->
+    <!--./fr844-{$chansonnierParent}/{./@xml:id}.html-->
     <xsl:template match="div[@type='lyrical_text']">
+        <xsl:variable name="chansonnierParent" select="fn:lower-case(replace(./preceding-sibling::head/text(), ' ', '-'))"/>
         <li>
-            <a href="./fr844-chanson-{./@xml:id}.html">
+            <a href="./fr844-{$chansonnierParent}/{./@xml:id}.html">
                 <xsl:attribute name="id">
                     <xsl:value-of select="./@xml:id"/>
                 </xsl:attribute>
