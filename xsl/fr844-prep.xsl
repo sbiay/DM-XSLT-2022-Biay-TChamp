@@ -18,6 +18,7 @@
         <text>
             <xsl:copy-of select="descendant::front"/>
             <xsl:apply-templates select="descendant::body"/>
+            <xsl:copy-of select="descendant::back"/>
         </text>
         </TEI>
     </xsl:template>
