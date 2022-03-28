@@ -111,14 +111,6 @@
                             </xsl:for-each>
                         </ul>
                     </div>
-                </div>
-                <div class="introColonne">
-                    <div>
-                        <h2>Musique</h2>
-                        <p>
-                            <xsl:apply-templates select=".//notatedMusic/desc"/>
-                        </p>
-                    </div>
                     <xsl:if test="./bibl/note">
                         <div>
                             <h2>Note</h2>
@@ -128,8 +120,73 @@
                         </div>
                     </xsl:if>
                 </div>
+                <div class="introColonne">
+                    <div>
+                        <h2>Genre</h2>
+                        <p>
+                            <xsl:variable name="genre" select="following-sibling::lg/@type"/>
+                            <xsl:choose>
+                                <xsl:when test="$genre = 'chanson_amour'">
+                                    <xsl:text>Chanson d'amour.</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="$genre = 'chanson_croisade'">
+                                    <xsl:text>Chanson de croisade.</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="$genre = 'pastourelle'">
+                                    <xsl:text>Pastourelle.</xsl:text>
+                                </xsl:when>
+                            </xsl:choose>
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Rimes et métrique</h2>
+                        <p>
+                            <xsl:text>Schéma rimique : </xsl:text>
+                            <xsl:value-of select="following-sibling::lg/@rhyme"/>
+                            <xsl:text>.</xsl:text>
+                        </p>
+                        <xsl:if test="following-sibling::lg/note">
+                            <xsl:apply-templates select="following-sibling::lg/note"/>
+                        </xsl:if>
+                    </div>
+                    <div>
+                        <h2>Musique</h2>
+                        <p>
+                            <xsl:apply-templates select=".//notatedMusic/desc"/>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="div/lg/note">
+        <p>
+            <!-- Pour intercaler la référence de la note avant le point final de la note, on boucle sur chaque -->
+            <xsl:for-each select="./node()">
+                <xsl:choose>
+                    <!-- Pour le dernier noeud, on remplace son éventuel point final par rien -->
+                    <xsl:when test="position() = last()">    
+                        <xsl:apply-templates select="replace(current(), '\.$', '')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="current()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each>
+            <!-- On inscrit l'auteur de la note entre parenthèses d'après l'attribut corresp -->
+            <xsl:text> (</xsl:text>
+            <xsl:variable name="auteurNote" select="replace(./@corresp, '#', '')"/>
+            <xsl:choose>
+                <xsl:when test="$auteurNote = 'Wallenskold'">
+                    <xsl:text>Wallensköld</xsl:text>
+                </xsl:when>
+                <xsl:when test="$auteurNote = 'BedierAubry'">
+                    <xsl:text>Bédier, Aubry</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:text>).</xsl:text>
+        </p>
     </xsl:template>
     
     <!-- Strophes -->
@@ -392,6 +449,10 @@
         <xsl:text> « </xsl:text>
         <xsl:apply-templates mode="#current"/>
         <xsl:text> »</xsl:text>
+    </xsl:template>
+    
+    <xsl:template match="foreign">
+        <i><xsl:value-of select="."/></i>
     </xsl:template>
     
     <!-- Style -->
