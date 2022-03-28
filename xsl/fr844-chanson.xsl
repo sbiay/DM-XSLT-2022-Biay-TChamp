@@ -163,11 +163,17 @@
         </span>
     </xsl:template>
     
+    <!-- Mots -->
     <xsl:template match="w" mode="graphem">
         <xsl:choose>  
+            <!-- Le mot n'est pas suivi d'une espace en cas d'élision -->
             <xsl:when test=".[@rend='elision']">
                 <xsl:apply-templates mode="graphem"/>
-            </xsl:when>    
+            </xsl:when>
+            <!-- Le mot n'est pas suivi d'une espace en cas d'agglutination -->
+            <xsl:when test=".[@rend='aggl']">
+                <xsl:apply-templates mode="graphem"/>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates mode="graphem"/>
                 <xsl:text> </xsl:text>
@@ -180,7 +186,12 @@
             <xsl:when test=".[@rend='elision']">
                 <xsl:apply-templates mode="interp"/>
                 <xsl:text>'</xsl:text>
-            </xsl:when>    
+            </xsl:when>
+            <!-- Le mot est  suivi d'une espace en cas d'agglutination -->
+            <xsl:when test=".[@rend='aggl']">
+                <xsl:apply-templates mode="interp"/>
+                <xsl:text> </xsl:text>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
                     <!-- Si le mot est suivi d'un élément pc, il n'est pas suivi d'une espace -->

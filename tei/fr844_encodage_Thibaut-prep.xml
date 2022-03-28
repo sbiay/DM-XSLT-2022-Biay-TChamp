@@ -537,8 +537,8 @@ oustume</w>
                         <lb facs="#facs_39_r2l22" n="N007"/>
                         <w>
                            <rhyme label="a">raen<choice>
-                                 <reg instant="false">é</reg>
-                                 <orig>e</orig>
+                                 <reg instant="false">ç</reg>
+                                 <orig>c</orig>
                               </choice>on</rhyme>
                         </w>
                         <pc>
@@ -619,8 +619,8 @@ oustume</w>
                                  <sic/>
                                  <corr resp="#VM" instant="false">
                                     <choice>
-                                       <reg instant="false">é</reg>
-                                       <orig>e</orig>
+                                       <reg instant="false">ç</reg>
+                                       <orig>c</orig>
                                     </choice>on</corr>
                               </choice>
                            </rhyme>
@@ -1470,8 +1470,8 @@ oustume</w>
                               <orig>v</orig>
                            </choice>ne</w>
                         <w>dou<choice>
-                              <reg instant="false">é</reg>
-                              <orig>e</orig>
+                              <reg instant="false">ç</reg>
+                              <orig>c</orig>
                            </choice>ours</w>
                         <w>me</w>
                         <lb facs="#facs_39_r3l29" n="N028"/>
@@ -1635,7 +1635,7 @@ oustume</w>
                                  <orig>u</orig>
                               </choice>ient</rhyme>
                         </w>
-                        <pc>   
+                        <pc>
                            <choice>
                               <reg instant="false">.</reg>
                               <orig>·</orig>
@@ -2103,8 +2103,8 @@ oustume</w>
                         <w>mist</w>
                         <w>
                            <choice>
-                              <reg instant="false">é</reg>
-                              <orig>e</orig>
+                              <reg instant="false">ç</reg>
+                              <orig>c</orig>
                            </choice>a</w>
                         <w>
                            <choice>
@@ -2930,8 +2930,8 @@ oustume</w>
                         <lb facs="#facs_41_r3l2" n="N002"/>
                         <w>que</w>
                         <w>gar<choice>
-                              <reg instant="false">é</reg>
-                              <orig>e</orig>
+                              <reg instant="false">ç</reg>
+                              <orig>c</orig>
                            </choice>on</w>
                         <w>et</w>
                         <w>
@@ -4800,8 +4800,8 @@ oustume</w>
                         <w>en</w>
                         <w>
                            <rhyme label="b">re<choice>
-                                 <reg instant="false">é</reg>
-                                 <orig>e</orig>
+                                 <reg instant="false">ç</reg>
+                                 <orig>c</orig>
                               </choice>ui</rhyme>
                         </w>
                         <pc>
@@ -5059,8 +5059,8 @@ oustume</w>
                      <l n="2" met="6">
                         <w>u<lb facs="#facs_43_r6l2" n="N002"/>ne</w>
                         <w>chan<choice>
-                              <reg instant="false">é</reg>
-                              <orig>e</orig>
+                              <reg instant="false">ç</reg>
+                              <orig>c</orig>
                            </choice>on</w>
                         <w>
                            <rhyme label="b">no<choice>
@@ -5286,8 +5286,8 @@ oustume</w>
                         <lb facs="#facs_43_r6l21" n="N012"/>
                         <w>
                            <rhyme label="b">chan<choice>
-                                 <reg instant="false">é</reg>
-                                 <orig>e</orig>
+                                 <reg instant="false">ç</reg>
+                                 <orig>c</orig>
                               </choice>onele</rhyme>
                         </w>
                         <pc>
@@ -6228,8 +6228,8 @@ oustume</w>
                         <lb facs="#facs_44_r2l31 n=N013"/>
                         <w>
                            <rhyme label="a">de<choice>
-                                 <reg instant="false">é</reg>
-                                 <orig>e</orig>
+                                 <reg instant="false">ç</reg>
+                                 <orig>c</orig>
                               </choice>a</rhyme>
                         </w>
                         <pc>
@@ -7206,8 +7206,8 @@ oustume</w>
                         <w>une</w>
                         <w>
                            <rhyme label="b">chan<choice>
-                                 <reg instant="false">é</reg>
-                                 <orig>e</orig>
+                                 <reg instant="false">ç</reg>
+                                 <orig>c</orig>
                               </choice>on</rhyme>
                         </w>
                         <pc>
@@ -7379,8 +7379,8 @@ oustume</w>
                         <w>gen<lb facs="#facs_44_r3l44" n="N022"/>te</w>
                         <w>
                            <rhyme label="b">fa<choice>
-                                 <reg instant="false">é</reg>
-                                 <orig>e</orig>
+                                 <reg instant="false">ç</reg>
+                                 <orig>c</orig>
                               </choice>on</rhyme>
                         </w>
                         <pc>
@@ -7579,8 +7579,8 @@ oustume</w>
                            <w>
                               <rhyme label="b">ten<lb facs="#facs_44_r3l47" n="N025"/>
                                  <choice>
-                                    <reg instant="false">é</reg>
-                                    <orig>e</orig>
+                                    <reg instant="false">ç</reg>
+                                    <orig>c</orig>
                                  </choice>on</rhyme>
                            </w>
                            <pc>
