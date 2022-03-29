@@ -182,8 +182,19 @@
     
     <xsl:template match="origDate">
         <p>
+            <!-- En cas de date incertaine -->
+            <xsl:if test="./date[@cert != 'high']">
+                <xsl:text>Vers </xsl:text>
+            </xsl:if>
             <xsl:apply-templates/>
+            <xsl:text>.</xsl:text>
         </p>
+    </xsl:template>
+    
+    <xsl:template match="q">
+        <xsl:text>« </xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text> »</xsl:text>
     </xsl:template>
     
     <!-- Style -->
