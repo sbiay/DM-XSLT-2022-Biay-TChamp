@@ -92,18 +92,8 @@
         </ul>
     </xsl:template>
     
-    <xsl:template match="witness">
-        <li><xsl:apply-templates/></li>
-    </xsl:template>
-    
     <xsl:template match="desc">
         <p><xsl:apply-templates/></p>
-    </xsl:template>
-    
-    <xsl:template match="p">
-        <xsl:copy>
-            <xsl:apply-templates/>
-        </xsl:copy>
     </xsl:template>
     
     <xsl:template match="hi">
@@ -114,21 +104,17 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="foreign">
+        <i>
+            <xsl:apply-templates/>
+        </i>
+    </xsl:template>
+
     <xsl:template match="formula">
         <h4>Formule</h4>
         <xsl:apply-templates/>
     </xsl:template>
-    
-    <xsl:template match="list">
-        <!-- Dans le cas de la liste qui suit immédiatement la formula (collation des cahiers) -->
-        <xsl:if test="./ancestor::p/preceding-sibling::p[1]/child::formula">
-            <head>Description détaillée</head>
-        </xsl:if>
-        <ul>
-            <xsl:apply-templates/>
-        </ul>
-    </xsl:template>
-    
+
     <xsl:template match="item">
         <xsl:choose>    
             <!-- Pour les liste relatives à un témoin manuscrit spécifiquement traité -->
@@ -154,6 +140,16 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="list">
+        <!-- Dans le cas de la liste qui suit immédiatement la formula (collation des cahiers) -->
+        <xsl:if test="./ancestor::p/preceding-sibling::p[1]/child::formula">
+            <head>Description détaillée</head>
+        </xsl:if>
+        <ul>
+            <xsl:apply-templates/>
+        </ul>
+    </xsl:template>
+    
     <!-- Liste de pièces déjà éditées avec le lien vers la page dédiée -->
     <xsl:template name="listeChansons">
         <li>
@@ -168,18 +164,6 @@
         </li>
     </xsl:template>
     
-    <xsl:template match="foreign">
-        <i>
-            <xsl:apply-templates/>
-        </i>
-    </xsl:template>
-    
-    <xsl:template match="title">
-        <i>
-            <xsl:apply-templates/>
-        </i>
-    </xsl:template>
-    
     <xsl:template match="origDate">
         <p>
             <!-- En cas de date incertaine -->
@@ -191,10 +175,51 @@
         </p>
     </xsl:template>
     
+    <xsl:template match="p">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="q">
         <xsl:text>« </xsl:text>
         <xsl:apply-templates/>
         <xsl:text> »</xsl:text>
+    </xsl:template>
+    
+    <xsl:template match="ref">
+        <xsl:choose>
+            <!-- On crée des liens hypertextes pour les témoins déjà édités -->
+            <xsl:when test="./@target = '#Mt'">
+                <a>
+                    <xsl:attribute name="href">
+                        <xsl:text>./fr844-tdm-chansonnier-mt.html</xsl:text>
+                    </xsl:attribute>
+                    <xsl:value-of select="."/>
+                </a>
+            </xsl:when>
+            <xsl:when test="./@target = '#M'">
+                <a>
+                    <xsl:attribute name="href">
+                        <xsl:text>./fr844-tdm-chansonnier-m.html</xsl:text>
+                    </xsl:attribute>
+                    <xsl:value-of select="."/>
+                </a>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="title">
+        <i>
+            <xsl:apply-templates/>
+        </i>
+    </xsl:template>
+    
+    <xsl:template match="witness">
+        <li><xsl:apply-templates/></li>
     </xsl:template>
     
     <!-- Style -->
