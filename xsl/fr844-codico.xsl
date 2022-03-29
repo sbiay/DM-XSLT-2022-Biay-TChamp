@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0"  
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="2.0">
@@ -32,6 +33,7 @@
             <h1 class="display-5 fst-italic">
                 <xsl:value-of select="./msDesc/head"/>
             </h1>
+            
             <h2>Description matérielle</h2>
             <h3>Support</h3>
             <p><xsl:apply-templates select="descendant::support"/></p>
@@ -41,7 +43,8 @@
             <p><xsl:apply-templates select="descendant::foliation"/></p>
             <h3>Collation des cahiers</h3>
             <xsl:apply-templates select="descendant::collation"/>
-            <h2>Mise en pages</h2>
+            
+            <h2>Mise en page</h2>
             <p><xsl:apply-templates select="descendant::layoutDesc/layout/text()"/></p>
             <p>
                 <xsl:text>Dimensions : </xsl:text>
@@ -52,6 +55,7 @@
                 <xsl:value-of select="descendant::layoutDesc//height/@unit"/>
                 <xsl:text>.</xsl:text>
             </p>
+            
             <h2>Description des mains</h2>
             <p>Les mains sont au nombre de <xsl:value-of select="descendant::handDesc/@hands"/>.</p>
             <h3>Mains médiévales</h3>
@@ -60,21 +64,42 @@
             <xsl:apply-templates select="descendant::handNote[@xml:id='Erudit']"/>
             <h3>Pièces thibaudiennes</h3>
             <xsl:apply-templates select="descendant::handNote[last()]"/>
+            
             <h2>Décoration</h2>
             <xsl:apply-templates select="descendant::decoDesc"/>
+            
             <h2>Reliure</h2>
             <xsl:apply-templates select="descendant::bindingDesc"/>
+            
             <h2>Histoire</h2>
             <h3>Origine</h3>
             <xsl:apply-templates select="descendant::origPlace"/>
             <h3>Date</h3>
             <xsl:apply-templates select="descendant::origDate"/>
+            
+            <h2>Liste des témoins</h2>
+            <p><xsl:value-of select="descendant::listWit[@xml:id='Temoins_Thibaut_Champagne']/head"/></p>
+            <xsl:apply-templates select="listWit/listWit"/>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="listWit/listWit">
+        <h3><xsl:value-of select="./head"/></h3>
+        <p><xsl:apply-templates select="./desc"/></p>
+        <xsl:apply-templates select="./witness"/>
+    </xsl:template>
+    
+    <xsl:template match="witness">
+        <p><xsl:apply-templates/></p>
+    </xsl:template>
+    
+    <xsl:template match="desc">
+        <p><xsl:apply-templates/></p>
     </xsl:template>
     
     <xsl:template match="p">
         <xsl:copy>
-        <xsl:apply-templates/>
+            <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
     
@@ -102,8 +127,41 @@
     </xsl:template>
     
     <xsl:template match="item">
+        <xsl:choose>    
+            <!-- Pour les liste relatives à un témoin manuscrit spécifiquement traité -->
+            <xsl:when test="./ancestor::witness[@xml:id = 'M']">
+                <!-- On pose comme condition que la liste possède bien des éléments numérotés (ces listes sont en cours de consitution) -->
+                <xsl:if test=".[@n]">
+                    <xsl:call-template name="listeChansons"/>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test="./ancestor::witness[@xml:id = 'Mt']">
+                <!-- On pose comme condition que la liste possède bien des éléments numérotés (ces listes sont en cours de consitution) -->
+                <xsl:if test=".[@n]">
+                    <xsl:call-template name="listeChansons"/>
+                </xsl:if>
+            </xsl:when>
+            
+            <!-- Pour tous les autres types de listes -->
+            <xsl:otherwise>
+                <li>
+                    <xsl:apply-templates/>
+                </li>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Liste de pièces déjà éditées avec le lien vers la page dédiée -->
+    <xsl:template name="listeChansons">
         <li>
             <xsl:apply-templates/>
+            <xsl:text> (</xsl:text>
+            <xsl:value-of select="replace(replace(./@corresp, '#', ''), '_', ' ')"/>
+            <xsl:text>, </xsl:text>
+            <a href="./fr844-chansonnier-{fn:lower-case(ancestor::witness/@xml:id)}/{replace(./@corresp, '#', '')}.html">
+                <xsl:text>lien</xsl:text> 
+            </a>
+            <xsl:text>).</xsl:text>
         </li>
     </xsl:template>
     
