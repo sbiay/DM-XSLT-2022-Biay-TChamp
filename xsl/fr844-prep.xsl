@@ -7,7 +7,8 @@
     
     <!-- Cette feuille effectue des transformations du fichier source vers une sortie TEI afin de préparer la transformation XML vers HTML -->
     
-    <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+    <xsl:output method="xml" indent="no" encoding="UTF-8"/>
+    
     <!-- Supprime les espaces non voulues-->
     <xsl:strip-space elements="*"/>
     
@@ -31,12 +32,15 @@
     
     <xsl:template match="body/div">
         <div>
+            <!-- On crée un @type pour les chansonniers -->
             <xsl:attribute name="type">
                 <xsl:text>chansonnier</xsl:text>
             </xsl:attribute>
+            <!-- On ajoute une numérotation des chansonniers -->
             <xsl:attribute name="n">
                 <xsl:number count="." level="single"></xsl:number>
             </xsl:attribute>
+            <!-- On écrit le nom du chansonnier courant dans un head -->
             <head>
                 <xsl:value-of select="replace(replace(./@type, '_Thibaut_de_Champagne', ''), '_', ' ')"/>
             </head>
@@ -44,7 +48,7 @@
         </div>
     </xsl:template>
     
-    <!-- Pièce -->
+    <!-- Chanson : on reproduit la structure d'origine -->
     <xsl:template match="div[@type='lyrical_text']">
         <xsl:copy>
             <xsl:attribute name="type">
@@ -58,7 +62,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- Chanson -->
+    <!-- Tous les vers d'une chanson : on reproduit la structure d'origine -->
     <xsl:template match="div/lg">
         <xsl:copy>
             <xsl:attribute name="type">
@@ -73,7 +77,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <!--Strophes-->
+    <!--Strophes : on reproduit la structure d'origine -->
     <xsl:template match="lg/lg">
         <xsl:copy>
             <xsl:attribute name="n">
