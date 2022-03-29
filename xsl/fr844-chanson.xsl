@@ -370,14 +370,21 @@
     <xsl:template match="choice" mode="graphem">
         <xsl:value-of select="sic"/>
         <xsl:if test="sic[not(text())]">
-            <!-- Si le sic indique une lacune et si une correction est proposée, on inscrit entre crochets l'éventuelle forme "orig", sinon, le noeud texte de "corr", sinon […] -->
+            <!-- Si le sic indique une lacune et si une correction est proposée, on inscrit entre crochets l'éventuelle forme "orig", sinon, le noeud texte de "corr", sinon "[…]" -->
             <xsl:choose>
+                <!-- Si l'élément corr comporte lui-même un choice -->
                 <xsl:when test="sic/following-sibling::corr//orig">
                     <xsl:text>[</xsl:text>
                     <xsl:value-of select="sic/following-sibling::corr//orig"/>
                     <xsl:value-of select="sic/following-sibling::corr/text()"/>
                     <xsl:text>]</xsl:text>
                 </xsl:when>
+                <!-- Si l'élément corr ne comporte pas de choice -->
+                <xsl:when test="sic/following-sibling::corr[not(descendant::orig)]">
+                    <xsl:text>[</xsl:text>
+                    <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:when>                
                 <xsl:otherwise>
                     <xsl:text>[…]</xsl:text>
                 </xsl:otherwise>
@@ -390,10 +397,18 @@
     <xsl:template match="choice" mode="interp">
         <xsl:choose>
             <xsl:when test="sic[not(text())]">
+                <!-- Si le sic indique une lacune et si une correction est proposée, on inscrit entre crochets l'éventuelle forme "reg", sinon, le noeud texte de "corr", sinon "[…]" -->
                 <xsl:choose>
+                    <!-- Si l'élément corr comporte lui-même un choice -->
                     <xsl:when test="sic/following-sibling::corr//reg">
                         <xsl:text>[</xsl:text>
                         <xsl:value-of select="sic/following-sibling::corr//reg"/>
+                        <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                        <xsl:text>]</xsl:text>
+                    </xsl:when>
+                    <!-- Si l'élément corr ne comporte pas lui-même de choice -->
+                    <xsl:when test="sic/following-sibling::corr[not(descendant::orig)]">
+                        <xsl:text>[</xsl:text>
                         <xsl:value-of select="sic/following-sibling::corr/text()"/>
                         <xsl:text>]</xsl:text>
                     </xsl:when>
