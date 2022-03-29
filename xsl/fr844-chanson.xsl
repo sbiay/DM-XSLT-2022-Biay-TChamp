@@ -567,61 +567,10 @@
     </xsl:template>
     
     <xsl:template name="stylePageChanson">
-        <style>
-            input {
-            margin-left: 10px;
-            }
-            body {
-            margin-top: 150px;
-            }
-            .intro {
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-bottom: 3%;
-            }
-            .intro > header {
-            margin-bottom: 30px;
-            font-size: 32pt;
-            }
-            .introConteneur {
-            display: flex;
-            justify-content: space-between;
-            }
-            .introColonne{
-            width: 40%;
-            }
-            .chansonConteneur {
-            background-color:  rgb(253, 245, 245);
-            margin-left: 3%;
-            margin-right: 3%;
-            }
-            h1 {
-            margin-bottom: 80px;
-            }
-            .corpsChanson {
-            display: flex;
-            justify-content: space-around;
-            }
-            .img {
-            }
-            .txt {
-            font-size: 16pt;
-            font-family: "Junicode";
-            max-width: 700px; 
-            }
-            /* Chansons */
-            .stanza {
-            margin-bottom: 20px;
-            }
-            /* Initiales ornées */
-            .ornate_initial {
-            font-size: 40pt;
-            }
-            /* Vers des chansons */
-            .stanza > p {
-            margin-bottom: 0px;
-            }
-        </style>
+        <xsl:element name="link">
+            <xsl:attribute name="rel">stylesheet</xsl:attribute>
+            <xsl:attribute name="href">../../static/pageChanson.css</xsl:attribute>
+        </xsl:element>
     </xsl:template>
     
     <!-- Animation de l'apparat -->

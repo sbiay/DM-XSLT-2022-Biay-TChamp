@@ -1,0 +1,15 @@
+body {
+margin-left: 15%;
+margin-right: 15%;
+margin-top: 150px;
+}
+ul {
+margin: 0px;
+}
+.container {
+padding: 80px;
+background-color:  rgb(253, 245, 245);
+}
+h1 {
+margin-bottom: 80px;
+}                        

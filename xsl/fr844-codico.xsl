@@ -167,23 +167,10 @@
     </xsl:template>
     
     <xsl:template name="stylePageContenu">
-        <style>
-            body {
-            margin-left: 15%;
-            margin-right: 15%;
-            margin-top: 150px;
-            }
-            ul {
-            margin: 0px;
-            }
-            .container {
-            padding: 80px;
-            background-color:  rgb(253, 245, 245);
-            }
-            h1 {
-            margin-bottom: 80px;
-            }                        
-        </style>
+        <xsl:element name="link">
+            <xsl:attribute name="rel">stylesheet</xsl:attribute>
+            <xsl:attribute name="href">../static/pageContenu.css</xsl:attribute>
+        </xsl:element>
     </xsl:template>
     
 </xsl:stylesheet>
