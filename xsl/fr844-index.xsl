@@ -102,7 +102,7 @@
                 <xsl:if test=".//persName[@ref=concat('#', $personne/@xml:id)]">    
                     <xsl:choose>    
                         <xsl:when test="position() != last()">
-                            <xsl:text> ‒ </xsl:text>
+                            <xsl:text>. ‒ </xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>.</xsl:text>
@@ -165,7 +165,7 @@
                 <xsl:if test=".//placeName[@ref=concat('#', $lieu/@xml:id)]">    
                     <xsl:choose>    
                         <xsl:when test="position() != last()">
-                            <xsl:text> ‒ </xsl:text>
+                            <xsl:text>. ‒ </xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>.</xsl:text>
