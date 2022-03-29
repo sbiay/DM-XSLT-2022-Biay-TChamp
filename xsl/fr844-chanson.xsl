@@ -56,9 +56,11 @@
                                 </a>                                
                             </div>
                             <div class="txt">
+                                <xsl:apply-templates select="descendant::head[@type='rubric']" mode="graphem"/>
                                 <xsl:apply-templates select="descendant::lg[@type='stanza']" mode="graphem"/>
                             </div>
                             <div class="txt">
+                                <xsl:apply-templates select="descendant::head[@type='rubric']" mode="interp"/>
                                 <xsl:apply-templates select="descendant::lg[@type='stanza']" mode="interp"/>
                             </div>
                         </div>
@@ -201,6 +203,12 @@
             </xsl:choose>
             <xsl:text>).</xsl:text>
         </p>
+    </xsl:template>
+    
+    <xsl:template match="head[@type='rubric']" mode="#all">
+    <span style="color: {./@rend}">    
+        <xsl:apply-templates mode="#current"/>
+    </span>
     </xsl:template>
     
     <!-- Strophes -->
