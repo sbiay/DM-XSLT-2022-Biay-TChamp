@@ -131,8 +131,7 @@
                             <h1>
                                 <xsl:value-of select="./head"/>
                             </h1>
-                            <p>Du texte pour présenter le chansonnier</p>
-                            <p><a class="btn btn-lg btn-primary" href="./fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html">Voir</a></p>
+                            <p><a class="btn btn-lg btn-secondary" href="./fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html">Voir</a></p>
                         </div>
                     </div>
                 </div>
@@ -151,8 +150,7 @@
                             <h1>
                                 <xsl:value-of select="./head"/>
                             </h1>
-                            <p>Du texte pour présenter le chansonnier</p>
-                            <p><a class="btn btn-lg btn-primary" href="./fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html">Voir</a></p>
+                            <p><a class="btn btn-lg btn-secondary" href="./fr844-tdm-{fn:lower-case(replace($nomChansonnier, ' ', '-'))}.html">Voir</a></p>
                         </div>
                     </div>
                 </div>
