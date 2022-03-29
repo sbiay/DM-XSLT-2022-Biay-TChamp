@@ -228,10 +228,19 @@
     </xsl:template>
     
     <!-- Lettres ornées -->
-    <xsl:template match="hi[@rend='ornate_initial']" mode="#all">
+    <xsl:template match="hi" mode="#all">
+    <xsl:choose>  
+        <xsl:when test=".[@rend='ornate_initial']">
         <span class="ornate_initial">        
             <xsl:apply-templates mode="#current"/>
         </span>
+        </xsl:when>
+        <xsl:when test=".[@rend='drop_capital']">
+            <span class="drop_capital">        
+                <xsl:apply-templates mode="#current"/>
+            </span>
+        </xsl:when>
+    </xsl:choose>
     </xsl:template>
     
     <!-- Mots -->
@@ -375,14 +384,14 @@
                 <!-- Si l'élément corr comporte lui-même un choice -->
                 <xsl:when test="sic/following-sibling::corr//orig">
                     <xsl:text>[</xsl:text>
-                    <xsl:value-of select="sic/following-sibling::corr//orig"/>
-                    <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                    <xsl:apply-templates select="sic/following-sibling::corr//orig"/>
+                    <xsl:apply-templates select="sic/following-sibling::corr/text()"/>
                     <xsl:text>]</xsl:text>
                 </xsl:when>
                 <!-- Si l'élément corr ne comporte pas de choice -->
                 <xsl:when test="sic/following-sibling::corr[not(descendant::orig)]">
                     <xsl:text>[</xsl:text>
-                    <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                    <xsl:apply-templates select="sic/following-sibling::corr/text()"/>
                     <xsl:text>]</xsl:text>
                 </xsl:when>                
                 <xsl:otherwise>
@@ -390,8 +399,8 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
-        <xsl:value-of select="orig"/>
-        <xsl:value-of select="abbr"/>
+        <xsl:apply-templates select="orig"/>
+        <xsl:apply-templates select="abbr"/>
     </xsl:template>
     
     <xsl:template match="choice" mode="interp">
@@ -402,14 +411,14 @@
                     <!-- Si l'élément corr comporte lui-même un choice -->
                     <xsl:when test="sic/following-sibling::corr//reg">
                         <xsl:text>[</xsl:text>
-                        <xsl:value-of select="sic/following-sibling::corr//reg"/>
-                        <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                        <xsl:apply-templates select="sic/following-sibling::corr//reg"/>
+                        <xsl:apply-templates select="sic/following-sibling::corr/text()"/>
                         <xsl:text>]</xsl:text>
                     </xsl:when>
                     <!-- Si l'élément corr ne comporte pas lui-même de choice -->
                     <xsl:when test="sic/following-sibling::corr[not(descendant::orig)]">
                         <xsl:text>[</xsl:text>
-                        <xsl:value-of select="sic/following-sibling::corr/text()"/>
+                        <xsl:apply-templates select="sic/following-sibling::corr/text()"/>
                         <xsl:text>]</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
@@ -419,10 +428,10 @@
             </xsl:when>
             <xsl:otherwise>
                 <!-- En l'absence d'élément sic, on copie la valeur de reg -->
-                <xsl:value-of select=".//reg"/>
+                <xsl:apply-templates select=".//reg"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:value-of select="expan"/>
+        <xsl:apply-templates select="expan"/>
     </xsl:template>
     
     <xsl:template match="pc" mode="graphem">
