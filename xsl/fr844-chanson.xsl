@@ -391,7 +391,7 @@
                 <!-- Si l'élément corr ne comporte pas de choice -->
                 <xsl:when test="sic/following-sibling::corr[not(descendant::orig)]">
                     <xsl:text>[</xsl:text>
-                    <xsl:apply-templates select="sic/following-sibling::corr/text()"/>
+                    <xsl:apply-templates select="sic/following-sibling::corr"/>
                     <xsl:text>]</xsl:text>
                 </xsl:when>                
                 <xsl:otherwise>
@@ -418,7 +418,7 @@
                     <!-- Si l'élément corr ne comporte pas lui-même de choice -->
                     <xsl:when test="sic/following-sibling::corr[not(descendant::orig)]">
                         <xsl:text>[</xsl:text>
-                        <xsl:apply-templates select="sic/following-sibling::corr/text()"/>
+                        <xsl:apply-templates select="sic/following-sibling::corr"/>
                         <xsl:text>]</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
