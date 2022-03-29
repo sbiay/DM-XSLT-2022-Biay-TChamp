@@ -723,6 +723,7 @@
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="cert" mode="delete"/>
+                  <attDef ident="instant" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
@@ -805,6 +806,7 @@
             <elementSpec ident="expan" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="instant" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="cert" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
@@ -989,6 +991,7 @@
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="met" mode="delete"/>
                   <attDef ident="real" mode="delete"/>
+                  <attDef ident="part" mode="delete"/>
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="chanson_amour"/>
@@ -1228,6 +1231,7 @@
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="cert" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
+                  <attDef ident="part" mode="delete"/>
                   <attDef ident="met" mode="delete"/>
                   <attDef ident="real" mode="delete"/>
                   <attDef ident="rhyme" mode="delete"/>
@@ -1252,6 +1256,7 @@
                   <attDef ident="unit" mode="delete"/>
                   <attDef ident="pre" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="part" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="cert" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
@@ -1306,6 +1311,7 @@
                   <attDef ident="cert" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="met" mode="delete"/>
+                  <attDef ident="part" mode="delete"/>
                   <attDef ident="real" mode="delete"/>
                   <attDef ident="rhyme" mode="delete"/>
                   <attDef ident="type" mode="change">
