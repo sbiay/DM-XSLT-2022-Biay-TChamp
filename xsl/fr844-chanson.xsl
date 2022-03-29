@@ -229,18 +229,18 @@
     
     <!-- Lettres ornées -->
     <xsl:template match="hi" mode="#all">
-    <xsl:choose>  
-        <xsl:when test=".[@rend='ornate_initial']">
-        <span class="ornate_initial">        
-            <xsl:apply-templates mode="#current"/>
-        </span>
-        </xsl:when>
-        <xsl:when test=".[@rend='drop_capital']">
-            <span class="drop_capital">        
-                <xsl:apply-templates mode="#current"/>
-            </span>
-        </xsl:when>
-    </xsl:choose>
+        <xsl:choose>  
+            <xsl:when test=".[@rend='ornate_initial']">
+                <span class="ornate_initial">        
+                    <xsl:apply-templates mode="#current"/>
+                </span>
+            </xsl:when>
+            <xsl:when test=".[@rend='drop_capital']">
+                <span class="drop_capital">        
+                    <xsl:apply-templates mode="#current"/>
+                </span>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
     <!-- Mots -->
@@ -292,11 +292,19 @@
                     </xsl:when>
                     <!-- Lorsque le mot est dans un élément app et qu'un signe de ponctuation suit cet élément, pas d'espace -->
                     <xsl:when test="./ancestor::app/following-sibling::*[1]/self::pc">    
-                        <xsl:apply-templates mode="interp"/>
+                        <xsl:apply-templates mode="interp"/>    
+                        <!-- Mais s'il est directement suivi d'un autre mot, il prend une espace -->
+                        <xsl:if test="./following-sibling::w">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
                     </xsl:when>
                     <!-- Idem lorsque le mot est dans un élément choice -->
                     <xsl:when test="./ancestor::choice/following-sibling::*[1]/self::pc">    
                         <xsl:apply-templates mode="interp"/>
+                        <!-- Mais s'il est directement suivi d'un autre mot, il prend une espace -->
+                        <xsl:if test="./following-sibling::w">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
                     </xsl:when>
                     <!-- Idem lorsque le mot est dans un élément placeName ou persName -->
                     <xsl:when test="./ancestor::placeName/following-sibling::*[1]/self::pc">    
