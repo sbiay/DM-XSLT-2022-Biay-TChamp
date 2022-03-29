@@ -83,14 +83,17 @@
         </div>
     </xsl:template>
     
+    <!-- Listes de témoins manuscrits -->
     <xsl:template match="listWit/listWit">
         <h3><xsl:value-of select="./head"/></h3>
         <p><xsl:apply-templates select="./desc"/></p>
-        <xsl:apply-templates select="./witness"/>
+        <ul>
+            <xsl:apply-templates select="./witness"/>
+        </ul>
     </xsl:template>
     
     <xsl:template match="witness">
-        <p><xsl:apply-templates/></p>
+        <li><xsl:apply-templates/></li>
     </xsl:template>
     
     <xsl:template match="desc">

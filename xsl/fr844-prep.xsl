@@ -7,7 +7,7 @@
     
     <!-- Cette feuille effectue des transformations du fichier source vers une sortie TEI afin de préparer la transformation XML vers HTML -->
     
-    <xsl:output method="xml" indent="yes" xmlns="http://www.tei-c.org/ns/1.0"/>
+    <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
     <!-- Supprime les espaces non voulues-->
     <xsl:strip-space elements="*"/>
     
@@ -30,7 +30,7 @@
     </xsl:template>
     
     <xsl:template match="body/div">
-        <div xmlns="http://www.tei-c.org/ns/1.0">
+        <div>
             <xsl:attribute name="type">
                 <xsl:text>chansonnier</xsl:text>
             </xsl:attribute>
