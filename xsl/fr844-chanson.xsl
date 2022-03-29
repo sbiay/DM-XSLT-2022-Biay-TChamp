@@ -530,13 +530,34 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./fr844-accueil.html">Accueil</a>
+                                <a class="nav-link active" aria-current="page" href="../fr844-accueil.html">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./fr844-index.html">Index</a>
+                                <a class="nav-link active" aria-current="page" href="../fr844-index.html">Index</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./fr844-codico.html">Manuscrit</a>
+                                <a class="nav-link active" aria-current="page" href="../fr844-codico.html">Manuscrit</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../fr844-tdm-chansonnier-m.html">Chansonnier M</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../fr844-tdm-chansonnier-mt.html">Chansonnier Mt</a>
+                            </li>
+                            <li>
+                                <!-- Boutons pour l'animation de l'apparat -->
+                                <xsl:choose>
+                                    <!-- On ne montre le bouton d'un apparat que lorsque le témoin est cité dans la pièce -->
+                                    <xsl:when test=".//rdg[@wit='#Mt']">    
+                                        <input id="mt" type="button" class="btn btn-success" value="Chanson. Mt"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <input id="mt" type="hidden" class="btn btn-success" value="Chanson. Mt"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </li>
+                            <li>
+                                <input id="wallenskold" type="button" class="btn btn-primary" value="Wallensköld"/>
                             </li>
                         </ul>
                     </div>

@@ -221,6 +221,12 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="./fr844-codico.html">Manuscrit</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./fr844-tdm-chansonnier-m.html">Chansonnier M</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./fr844-tdm-chansonnier-mt.html">Chansonnier Mt</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
