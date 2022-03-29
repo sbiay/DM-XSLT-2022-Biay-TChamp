@@ -297,6 +297,10 @@
                         <xsl:if test="./following-sibling::w">
                             <xsl:text> </xsl:text>
                         </xsl:if>
+                        <!-- Ou encore, s'il sagit d'un app dans un app -->
+                        <xsl:if test="./ancestor::app[ancestor::app][following-sibling::w]">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
                     </xsl:when>
                     <!-- Idem lorsque le mot est dans un élément choice -->
                     <xsl:when test="./ancestor::choice/following-sibling::*[1]/self::pc">    
