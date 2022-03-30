@@ -3,7 +3,7 @@ Corpus lyrique de Thibaut de Champagne
 
 ![BNF, fr. 844, f4r](https://gallica.bnf.fr/iiif/ark:/12148/btv1b84192440/f27/0,150,3426,1800/1200/0/default.jpg)
 
-Ce dépôt propose une visualisation HTML générée par XSLT pour le corpus lyrique de Thibaut de Champagne, d'après le Manuscrit du Roi, ms. fr. 844 de la Bibliothèque nationale de France, dont le texte a été établi par Viola Mariotti dans le cadre de l'ANR Maritem.
+Ce dépôt propose une visualisation HTML générée par XSLT pour le corpus lyrique de Thibaut de Champagne, d'après le Manuscrit du Roi, ms. fr. 844 de la Bibliothèque nationale de France, dont le texte a été établi et encodé par Viola Mariotti dans le cadre de l'ANR Maritem.
 
 La navigation dans le corpus procède à partir du fichier [./html/fr844-accueil.html](./html/fr844-accueil.html).
 
